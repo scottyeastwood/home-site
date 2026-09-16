@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scotty Eastwood — Dose of Courage Coaching</title>
+<meta name="description" content="Scotty Eastwood coaches Christian entrepreneurs on the Freedom Framework to win back their time, take focused action, and face fear instead of stalling.">
+<meta property="og:title" content="Scotty Eastwood — Dose of Courage Coaching">
+<meta property="og:description" content="You already know what to do. Something's still stopping you from doing it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scottyeastwood.com/">
+<link rel="canonical" href="https://scottyeastwood.com/">
+<meta property="og:image" content="https://scottyeastwood.com/images/scotty-eastwood.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon-optimized.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Scotty Eastwood","jobTitle":"Business & Mindset Coach","url":"https://scottyeastwood.com/about.html","worksFor":{"@type":"Organization","name":"Dose of Courage Coaching","url":"https://coaching.scottyeastwood.com"},"sameAs":["https://www.linkedin.com/in/scottyeastwood/","https://www.instagram.com/scotty_eastwood/","https://www.youtube.com/@ScottyBeforethesunsets"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ProfessionalService","name":"Dose of Courage Coaching","founder":{"@type":"Person","name":"Scotty Eastwood"},"description":"1:1 coaching for Christian entrepreneurs building freedom for their family, built on the Freedom Framework."}
+</script>
+<style>
+  :root{
+    --navy:#0C2340; --navy2:#163B5C; --blue:#04A4E9; --ink:#1A1D21;
+    --paper:#F7F8FA; --line:#E3E6EA; --grey:#6B7280; --white:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Roboto',sans-serif;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Montserrat',sans-serif;margin:0;line-height:1.15;color:var(--navy);}
+  a{color:inherit;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  section{padding:88px 0;}
+  .page{display:none;}
+  .page.active{display:block;}
+  .stars{display:flex;gap:2px;}
+  .stars svg{width:14px;height:14px;color:#F5A623;}
+
+  /* Nav */
+  nav.topnav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);}
+  nav.topnav .wrap{height:68px;display:flex;align-items:center;justify-content:space-between;}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:16px;cursor:pointer;}
+  .brand img{width:26px;height:26px;}
+  .navlinks{display:flex;gap:34px;}
+  .navlinks button{background:none;border:none;font-family:'Roboto',sans-serif;font-size:15px;color:var(--grey);cursor:pointer;padding:6px 0;position:relative;}
+  .navlinks button.active{color:var(--navy);}
+  .navlinks button.active::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--blue);}
+  .cta-btn{display:inline-block;background:var(--blue);color:#fff;font-weight:500;font-size:15px;padding:13px 26px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;transition:transform .15s ease;}
+  .cta-btn:hover{transform:translateY(-2px);}
+  .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+  .hamburger span{width:22px;height:2px;background:var(--ink);}
+  .mobile-menu{display:none;flex-direction:column;padding:10px 28px 18px;border-top:1px solid var(--line);}
+  .mobile-menu.open{display:flex;}
+  .mobile-menu button{background:none;border:none;text-align:left;font-size:15px;padding:10px 0;font-family:'Roboto',sans-serif;}
+
+  /* Hero: asymmetric split */
+  .hero-split{display:grid;grid-template-columns:1fr;gap:40px;}
+  @media(min-width:900px){.hero-split{grid-template-columns:7fr 5fr;gap:56px;align-items:start;}}
+  .hero-split h1{font-size:36px;font-weight:800;letter-spacing:-.4px;max-width:14ch;margin-bottom:20px;}
+  .hero-split .sub{font-size:17px;color:var(--grey);max-width:48ch;margin-bottom:28px;}
+  .field-note{background:var(--white);border-left:3px solid var(--blue);border-radius:4px;padding:26px;box-shadow:0 16px 36px rgba(12,35,64,.1);}
+  .field-note .label{font-size:12.5px;color:var(--grey);margin-bottom:10px;}
+  .field-note h4{font-size:16px;margin-bottom:10px;}
+  .field-note p{font-size:14.5px;margin:0 0 10px;}
+  .field-note .stat-line{font-size:14px;font-weight:500;color:var(--navy);}
+
+  .kicker{color:var(--blue);font-size:13.5px;font-weight:600;margin-bottom:8px;}
+  h2.h2{font-size:27px;font-weight:700;}
+  .lead{color:var(--grey);font-size:16px;}
+
+  /* Asymmetric split helper */
+  .split{display:grid;grid-template-columns:1fr;gap:28px;}
+  @media(min-width:900px){
+    .split.s-4-8{grid-template-columns:4fr 8fr;}
+    .split.s-8-4{grid-template-columns:8fr 4fr;}
+    .split.s-2-1{grid-template-columns:2fr 1fr;}
+  }
+
+  .result{border-top:2px solid var(--line);padding-top:16px;}
+  .result.feature{border-color:var(--navy);}
+  .result h3{font-size:17px;margin-bottom:8px;}
+  .result p{font-size:14.5px;color:var(--ink);margin:0;}
+
+  .proof-row{border-top:1px solid var(--line);padding:26px 0;display:grid;grid-template-columns:1fr;gap:8px;}
+  @media(min-width:900px){.proof-row{grid-template-columns:2fr 10fr;gap:24px;}}
+  .proof-row .tag{color:var(--blue);font-size:14px;}
+  .proof-row p{margin:0;font-size:15.5px;max-width:70ch;}
+
+  /* Testimonials 3D carousel */
+  .tsection{background:var(--paper);overflow:hidden;}
+  .thead{text-align:center;margin-bottom:30px;}
+  .tstage{position:relative;height:360px;perspective:1600px;margin:0 auto;max-width:1000px;}
+  .tstage-inner{position:absolute;inset:0;transform-style:preserve-3d;}
+  .tcard{position:absolute;top:50%;left:50%;width:min(460px,84vw);min-height:280px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 30px 60px rgba(12,35,64,.16);padding:32px 30px;transition:transform .7s cubic-bezier(.22,.61,.36,1),opacity .6s;will-change:transform,opacity;display:flex;flex-direction:column;}
+  .tcard .tstars{display:flex;gap:3px;margin-bottom:14px;}
+  .tcard .tstars svg{width:18px;height:18px;color:#F5A623;}
+  .tcard .tquote{font-size:15.5px;line-height:1.6;color:var(--ink);margin:0 0 18px;}
+  .tcard .tname{font-weight:700;color:var(--navy);font-size:15px;margin-top:auto;}
+  .tcard .trole{font-size:13px;color:var(--grey);}
+  .tnav{display:flex;justify-content:center;gap:14px;margin-top:24px;}
+  .tnav button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;cursor:pointer;font-size:20px;line-height:1;color:var(--navy);box-shadow:0 6px 16px rgba(12,35,64,.08);transition:transform .15s,background .15s,color .15s;}
+  .tnav button:hover{transform:translateY(-2px);background:var(--navy);color:#fff;}
+  .tdots{display:flex;justify-content:center;gap:8px;margin-top:16px;}
+  .tdots span{width:8px;height:8px;border-radius:50%;background:var(--line);cursor:pointer;transition:background .2s,transform .2s;}
+  .tdots span.on{background:var(--blue);transform:scale(1.3);}
+  footer{padding:36px 0;border-top:1px solid var(--line);text-align:center;color:var(--grey);font-size:13.5px;}
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="wrap">
+    <div class="brand" onclick="showPage('home')"><img src="images/dose-of-courage.png" alt="Dose of Courage" loading="lazy" decoding="async"> Scotty Eastwood</div>
+    <div class="navlinks" id="navlinks">
+      <button data-page="home" class="active" onclick="showPage('home')">Home</button>
+      <a href="about.html" style="text-decoration:none;color:var(--grey);font-size:15px;">About</a>
+      <a href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="text-decoration:none;color:var(--grey);font-size:15px;">Coaching</a>
+      <button data-page="youtube" onclick="showPage('youtube')">YouTube</button>
+      <!-- Free Resources paused until the tools are ready. Restore this line when live:
+      <button data-page="resources" onclick="showPage('resources')">Free Resources</button> -->
+      <a href="blog/index.html" class="navlink-blog" style="text-decoration:none;color:var(--grey);font-size:15px;">Blog</a>
+    </div>
+    <a class="cta-btn" href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" id="navCta">See the Offer</a>
+    <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button onclick="showPage('home')">Home</button>
+    <a href="about.html" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">About</a>
+    <a href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">Coaching</a>
+    <button onclick="showPage('youtube')">YouTube</button>
+    <a href="blog/index.html" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">Blog</a>
+    <a class="cta-btn" href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="text-align:center;margin-top:8px;">See the Offer</a>
+  </div>
+</nav>
+
+<!-- HOME -->
+<div class="page active" id="page-home">
+  <section style="padding-top:64px;background:linear-gradient(135deg,var(--navy),var(--navy2));text-align:center;">
+    <div class="wrap">
+      <h1 style="color:#fff;max-width:16ch;margin:0 auto 20px;">You already know what to do. Something's still stopping you from doing it.</h1>
+      <p class="sub" style="color:#D8E3EE;max-width:52ch;margin:0 auto 28px;">Coaching, content, and a real life built on courage instead of fear. This is all of it, in one place.</p>
+      <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:8px;">
+        <div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#fff;">10+</div><div style="font-size:13px;color:#B9CADC;">hours back / week</div></div>
+        <div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#fff;">10+</div><div style="font-size:13px;color:#B9CADC;">businesses started</div></div>
+        <div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#fff;">12.3K+</div><div style="font-size:13px;color:#B9CADC;">followers across platforms</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="background:var(--paper);">
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr;gap:24px;">
+        <a href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;"><div class="result feature" style="cursor:pointer;">
+          <h3>Coaching: The Freedom Framework</h3>
+          <p>1:1 coaching for Christian entrepreneurs building freedom for their family. Time back, focused action, and the courage to actually follow through.</p>
+        </div></a>
+        <div class="result" style="cursor:pointer;" onclick="showPage('youtube')">
+          <h3>Content: Before the Sun Sets</h3>
+          <p>Outdoor and family adventure content: dirt bikes, spearfishing, overlanding. Real, unscripted, on the road to 100K.</p>
+        </div>
+        <a href="about.html" style="text-decoration:none;color:inherit;"><div class="result" style="cursor:pointer;">
+          <h3>About: the guy behind both</h3>
+          <p>Husband, dad, entrepreneur who's built and lost businesses. Faith-driven, still building everything you see here.</p>
+        </div></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap hero-split">
+      <div>
+        <div class="kicker">Real client example</div>
+        <h2 class="h2" style="margin-bottom:16px;">A multi-million dollar acquisition, stalling at every decision</h2>
+        <p style="font-size:16px;color:var(--grey);max-width:52ch;">Every time he got close to a real decision, the deal slowed down. It looked like bad timing. It was fear, dressed up as hesitation. He kept showing up scared instead of waiting to feel ready, then closed and funded the deal, and still runs it today.</p>
+      </div>
+      <div class="field-note">
+        <div class="label">What you actually get, coaching-side</div>
+        <h4>Time back, focused action, real courage</h4>
+        <p>Clients who commit consistently get 10+ hours a week back, not by working harder but by finding the 20% that actually moves the number and clearing what's been quietly blocking it.</p>
+        <div class="stat-line">Faith, family, fun, finances, fitness, friendships. That is the point of the time back in the first place.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tsection">
+    <div class="wrap">
+      <div class="thead">
+        <div class="kicker">Real clients, real words</div>
+        <h2 class="h2">What working together actually feels like</h2>
+      </div>
+      <div class="tstage" id="tstage">
+        <div class="tstage-inner" id="tstageInner"></div>
+      </div>
+      <div class="tnav">
+        <button type="button" onclick="tGo(-1)" aria-label="Previous testimonial">&#8249;</button>
+        <button type="button" onclick="tGo(1)" aria-label="Next testimonial">&#8250;</button>
+      </div>
+      <div class="tdots" id="tdots"></div>
+    </div>
+  </section>
+
+  <section style="background:linear-gradient(135deg,var(--navy),var(--navy2));text-align:center;">
+    <div class="wrap">
+      <h2 class="h2" style="color:#fff;margin-bottom:8px;">Ready to see if this is a fit?</h2>
+      <p style="color:#C9D6E4;margin-bottom:24px;">Free 20-minute call. No pressure, just an honest conversation both ways.</p>
+      <a class="cta-btn" href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener">See the Freedom Framework</a>
+    </div>
+  </section>
+</div>
+
+<!-- ABOUT now lives on its own page: about.html (linked from nav + the home card). Kept as one canonical About for SEO and consistency. -->
+
+<!-- YOUTUBE / CONTENT -->
+<div class="page" id="page-youtube">
+  <img src="images/before-the-sun-sets-road-to-100k.jpg" alt="Before the Sun Sets — Road to 100K" style="width:100%;display:block;object-fit:cover;max-height:220px;" loading="lazy" decoding="async">
+  <section style="padding-top:44px;">
+    <div class="wrap split s-8-4">
+      <div>
+        <div class="kicker">Content</div>
+        <h1 style="font-size:32px;font-weight:800;max-width:16ch;margin-bottom:16px;">Before the Sun Sets</h1>
+        <p class="lead" style="max-width:56ch;">Outdoor and family adventure content: dirt bikes, spearfishing, overlanding, and the real, unscripted stuff in between. Not a separate persona. Just the rest of who I am.</p>
+        <a class="cta-btn" href="https://www.youtube.com/@scottybeforethesunsets" target="_blank" rel="noopener" style="margin-top:8px;display:inline-block;">Subscribe on YouTube</a>
+      </div>
+      <img src="images/before-the-sun-sets-logo.png" alt="Before the Sun Sets logo" style="width:120px;height:120px;object-fit:contain;justify-self:end;" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <section style="background:var(--paper);">
+    <div class="wrap">
+      <h2 class="h2" style="margin-bottom:24px;">Recent videos</h2>
+      <div style="display:grid;grid-template-columns:1fr;gap:20px;">
+        <a href="https://youtu.be/fSaVFfJkUU4" target="_blank" rel="noopener"><img src="images/spearfishing-and-sea-urchin-dive-video.jpg" alt="Spearfishing and sea urchin dive video" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
+        <a href="https://youtu.be/1JagFYn9Nhs" target="_blank" rel="noopener"><img src="images/catch-and-cook-fishing-video-in-hawaii.jpg" alt="Catch and cook fishing video in Hawaii" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
+        <a href="https://youtu.be/lwGobUkTWYc" target="_blank" rel="noopener"><img src="images/sur-ron-dirt-bike-overnight-moto-camp-video.jpg" alt="Sur-Ron dirt bike overnight moto camp video" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
+      </div>
+    </div>
+    <style>
+      @media(min-width:800px){
+        #page-youtube section:nth-of-type(2) .wrap > div{grid-template-columns:repeat(3,1fr) !important;}
+      }
+    </style>
+  </section>
+
+  <section style="text-align:center;">
+    <div class="wrap" style="max-width:600px;">
+      <img src="images/road-to-100-000-subscribers-goal.jpg" alt="Road to 100,000 subscribers goal" style="width:220px;margin:0 auto 20px;display:block;" loading="lazy" decoding="async">
+      <h2 class="h2" style="margin-bottom:10px;">The goal: 100K before she turns 2</h2>
+      <p class="lead">Every subscriber is one step closer. If outdoor, family, and adventure content is your thing, come along for it.</p>
+      <a class="cta-btn" href="https://www.youtube.com/@scottybeforethesunsets" target="_blank" rel="noopener" style="margin-top:8px;display:inline-block;">Subscribe on YouTube</a>
+    </div>
+  </section>
+</div>
+
+<!-- FREE RESOURCES page paused until the tools are ready. The RESOURCES data + renderResources() below are kept intact so this can be restored quickly. To bring it back: uncomment the nav link above and re-add the #page-resources section here. -->
+
+<footer>Dose of Courage Coaching &middot; <a href="privacy-policy.html">Privacy Policy</a></footer>
+
+<script>
+const RESOURCES = [
+  { title: "The Bottleneck Audit", desc: "20-question scored quiz — find exactly what's costing you time and momentum.", status: "live", link: "https://claude.ai/code/artifact/5f697b14-aa17-4b8c-9521-7e8a7d91ea4c" },
+  { title: "How to Stop Procrastinating", desc: "The real 3-step system: identity, schedule, remove friction.", status: "live", link: "blog/how-to-stop-procrastinating.html" },
+  { title: "Fear of Failure", desc: "Why it's rarely about failure itself, and how to move through it.", status: "live", link: "blog/fear-of-failure.html" },
+  { title: "Fear of Success", desc: "Why you sabotage yourself right when things start working.", status: "live", link: "blog/fear-of-success.html" },
+  { title: "How to Be More Disciplined", desc: "You're already disciplined — just not everywhere yet.", status: "live", link: "blog/how-to-be-more-disciplined.html" },
+  { title: "Why Do I Self-Sabotage?", desc: "It traces back to a belief or fear running underneath.", status: "live", link: "blog/why-do-i-self-sabotage.html" },
+  { title: "Self-Sabotage in Relationships", desc: "Fear wearing a disguise — how to spot the pattern.", status: "live", link: "blog/why-do-i-self-sabotage-my-relationships.html" },
+  { title: "Time Management for Entrepreneurs", desc: "Two habits, done daily and weekly — not a fancier app.", status: "live", link: "blog/time-management-for-entrepreneurs.html" },
+  { title: "Find Your 20% Worksheet", desc: "The best-month/worst-month exercise, guided step by step.", status: "soon" },
+  { title: "Weekly Action Plan Template", desc: "The actual planning tool used in 1:1 coaching sessions.", status: "soon" },
+  { title: "Unsexy Equity", desc: "15 overlooked, high-margin businesses you can launch this month.", status: "soon" },
+  { title: "The Freedom Toolkit", desc: "The full paid tool suite for doing this on your own — coming soon.", status: "soon" },
+];
+
+function renderResources(){
+  const grid = document.getElementById('resourceGrid');
+  if(!grid) return;
+  grid.innerHTML = RESOURCES.map(r => {
+    const badge = r.status === 'live'
+      ? '<span style="background:var(--blue);color:#fff;font-size:11px;padding:3px 9px;border-radius:10px;">Live now</span>'
+      : '<span style="background:var(--line);color:var(--grey);font-size:11px;padding:3px 9px;border-radius:10px;">Coming soon</span>';
+    const card = `
+      <div style="border:1.5px solid var(--line);border-radius:6px;padding:20px;${r.status==='soon' ? 'opacity:.6;' : ''}">
+        <div style="margin-bottom:10px;">${badge}</div>
+        <h3 style="font-size:16px;margin-bottom:6px;">${r.title}</h3>
+        <p style="color:var(--grey);font-size:14px;margin:0;">${r.desc}</p>
+      </div>`;
+    return r.status === 'live'
+      ? `<a href="${r.link}" target="${r.link.startsWith('http') ? '_blank' : '_self'}" rel="noopener" style="text-decoration:none;color:inherit;">${card}</a>`
+      : card;
+  }).join('');
+}
+
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  document.querySelectorAll('.navlinks button').forEach(b => b.classList.toggle('active', b.dataset.page === id));
+  document.getElementById('mobileMenu').classList.remove('open');
+  window.scrollTo({top:0, behavior:'instant'});
+  if(id === 'resources') renderResources();
+}
+
+/* Testimonials 3D carousel */
+const TESTIMONIALS = [
+  { q: "I've gotten more done in the last two weeks working with Scotty than I had in the last four months. He's accelerated my business growth by helping me focus on what actually matters, and helped me organize more time for my family. He has a true gift in this work.", n: "Michael", r: "Coaching client" },
+  { q: "Honestly, you should charge more. The value and knowledge you have has helped me leap forward, skipping steps. I always leave our conversations uplifted, excited for my work, and feeling unstoppable!", n: "M.M.", r: "Coaching client" },
+  { q: "Scotty helped me clear through the mess and chaos of everything I could be doing and focus on the most important things with a clear action plan. I'm already showing up more regularly and better for my work, and as a father and husband.", n: "P.G.", r: "Coaching client" },
+  { q: "I used to get up at 5:00 and watch TV until 7:00. Now I'm going for a 45-minute walk at 5:30, listening to a podcast, making my lunch. When I get to work, I engage with my team for the first hour instead of checking email.", n: "Paul", r: "Coaching client" },
+  { q: "Scotty's coaching is phenomenal! I even cried tears of joy at one point. Thanks for going above and beyond. I can sleep now. I highly recommend!", n: "J.T.", r: "Coaching client" },
+];
+let tActive = 0, tTimer = null;
+function tStar(){ return '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>'; }
+function tRender(){
+  const inner = document.getElementById('tstageInner'); if(!inner) return;
+  inner.innerHTML = TESTIMONIALS.map((t,i) => `<div class="tcard" data-i="${i}"><div class="tstars">${tStar().repeat(5)}</div><p class="tquote">${t.q}</p><div class="tname">${t.n}</div><div class="trole">${t.r}</div></div>`).join('');
+  const dots = document.getElementById('tdots');
+  if(dots) dots.innerHTML = TESTIMONIALS.map((_,i) => `<span data-i="${i}" onclick="tSet(${i})"></span>`).join('');
+  tPosition();
+}
+function tPosition(){
+  const n = TESTIMONIALS.length;
+  document.querySelectorAll('#tstageInner .tcard').forEach((c,i) => {
+    let o = i - tActive; if(o > n/2) o -= n; if(o < -n/2) o += n;
+    const a = Math.abs(o); let tf, op, z;
+    if(a === 0){ tf = 'translateX(0) translateZ(0) rotateY(0deg) scale(1)'; op = 1; z = 5; }
+    else if(a === 1){ tf = `translateX(${o>0?58:-58}%) translateZ(-150px) rotateY(${o>0?-38:38}deg) scale(.9)`; op = .5; z = 4; }
+    else if(a === 2){ tf = `translateX(${o>0?102:-102}%) translateZ(-340px) rotateY(${o>0?-46:46}deg) scale(.8)`; op = .18; z = 3; }
+    else { tf = 'translateX(0) translateZ(-520px) scale(.6)'; op = 0; z = 1; }
+    c.style.transform = `translate(-50%,-50%) ${tf}`; c.style.opacity = op; c.style.zIndex = z; c.style.pointerEvents = a === 0 ? 'auto' : 'none';
+  });
+  document.querySelectorAll('#tdots span').forEach((d,i) => d.classList.toggle('on', i === tActive));
+}
+function tSet(i){ tActive = (i + TESTIMONIALS.length) % TESTIMONIALS.length; tPosition(); tRestart(); }
+function tGo(d){ tSet(tActive + d); }
+function tRestart(){ clearInterval(tTimer); tTimer = setInterval(() => tGo(1), 5500); }
+function tInit(){
+  tRender(); tRestart();
+  const s = document.getElementById('tstage');
+  if(s){ s.addEventListener('mouseenter', () => clearInterval(tTimer)); s.addEventListener('mouseleave', tRestart); }
+}
+if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', tInit); else tInit();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+# 301 redirects from the old Wix URLs to the new site (Cloudflare Pages)
+/book-online            https://api.leadconnectorhq.com/widget/booking/TnZUEbyfYKdxCPuBADoB   301
+/freetraining           /blog/how-to-stop-procrastinating.html                                301
+/more-about-me          /about.html                                                           301
+/doseofcouragecoaching  https://coaching.scottyeastwood.com                                   301
+/doseofcourage-apply    https://coaching.scottyeastwood.com                                   301
+/motivational-speaking  /                                                                     301
+/events-page            /                                                                     301
+/feed                   /                                                                     301
+/product-page/*         /                                                                     301
