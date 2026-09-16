@@ -66,6 +66,11 @@
   .field-note p{font-size:14.5px;margin:0 0 10px;}
   .field-note .stat-line{font-size:14px;font-weight:500;color:var(--navy);}
 
+  .hero-stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:center;gap:clamp(18px,6vw,44px);margin-top:8px;}
+  .hstat-n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#fff;}
+  .hstat-l{font-size:13px;color:#B9CADC;margin-top:2px;}
+  @media(max-width:600px){.hero-stats{grid-template-columns:repeat(3,1fr);gap:10px;} .hstat-n{font-size:clamp(19px,6.2vw,24px);} .hstat-l{font-size:11px;line-height:1.2;}}
+
   .kicker{color:var(--blue);font-size:13.5px;font-weight:600;margin-bottom:8px;}
   h2.h2{font-size:27px;font-weight:700;}
   .lead{color:var(--grey);font-size:16px;}
@@ -161,10 +166,10 @@
       <h1 style="color:#fff;max-width:18ch;margin:0 auto 18px;font-size:clamp(30px,5.6vw,44px);line-height:1.1;">Today Is Someday. So Why Not Today?</h1>
       <p class="sub" style="color:#fff;max-width:46ch;margin:0 auto 14px;font-size:clamp(16px,2.4vw,19px);">Life is worth living as full as you can, not to shrink, hold back, or wait. You have real potential, and the courage to reach it.</p>
       <p class="sub" style="color:#B9CADC;max-width:48ch;margin:0 auto 28px;font-size:15px;">Coaching, content, and a real life built on courage instead of fear. All of it, in one place.</p>
-      <div style="display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-top:8px;">
-        <div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#fff;">10+</div><div style="font-size:13px;color:#B9CADC;">hours back / week</div></div>
-        <div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#fff;">10+</div><div style="font-size:13px;color:#B9CADC;">businesses started</div></div>
-        <div><div style="font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#fff;">12.3K+</div><div style="font-size:13px;color:#B9CADC;">followers across platforms</div></div>
+      <div class="hero-stats">
+        <div><div class="hstat-n">10+</div><div class="hstat-l">hours back / week</div></div>
+        <div><div class="hstat-n">10+</div><div class="hstat-l">businesses started</div></div>
+        <div><div class="hstat-n">12.3K+</div><div class="hstat-l">followers across platforms</div></div>
       </div>
     </div>
   </section>
@@ -188,22 +193,6 @@
     </div>
   </section>
 
-  <section>
-    <div class="wrap hero-split">
-      <div>
-        <div class="kicker">Real client example</div>
-        <h2 class="h2" style="margin-bottom:16px;">A multi-million dollar acquisition, stalling at every decision</h2>
-        <p style="font-size:16px;color:var(--grey);max-width:52ch;">Every time he got close to a real decision, the deal slowed down. It looked like bad timing. It was fear, dressed up as hesitation. He kept showing up scared instead of waiting to feel ready, then closed and funded the deal, and still runs it today.</p>
-      </div>
-      <div class="field-note">
-        <div class="label">What you actually get, coaching-side</div>
-        <h4>Time back, focused action, real courage</h4>
-        <p>Clients who commit consistently get 10+ hours a week back, not by working harder but by finding the 20% that actually moves the number and clearing what's been quietly blocking it.</p>
-        <div class="stat-line">Faith, family, fun, finances, fitness, friendships. That is the point of the time back in the first place.</div>
-      </div>
-    </div>
-  </section>
-
   <section class="tsection">
     <div class="wrap">
       <div class="thead">
@@ -218,6 +207,22 @@
         <button type="button" onclick="tGo(1)" aria-label="Next testimonial">&#8250;</button>
       </div>
       <div class="tdots" id="tdots"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap hero-split">
+      <div>
+        <div class="kicker">Real client example</div>
+        <h2 class="h2" style="margin-bottom:16px;">A multi-million dollar acquisition, stalling at every decision</h2>
+        <p style="font-size:16px;color:var(--grey);max-width:52ch;">Every time he got close to a real decision, the deal slowed down. It looked like bad timing. It was fear, dressed up as hesitation. He kept showing up scared instead of waiting to feel ready, then closed and funded the deal, and still runs it today.</p>
+      </div>
+      <div class="field-note">
+        <div class="label">What you actually get, coaching-side</div>
+        <h4>Time back, focused action, real courage</h4>
+        <p>Clients who commit consistently get 10+ hours a week back, not by working harder but by finding the 20% that actually moves the number and clearing what's been quietly blocking it.</p>
+        <div class="stat-line">Faith, family, fun, finances, fitness, friendships. That is the point of the time back in the first place.</div>
+      </div>
     </div>
   </section>
 
