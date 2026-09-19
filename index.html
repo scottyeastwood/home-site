@@ -12,9 +12,9 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Scotty Eastwood — Dose of Courage Coaching</title>
+<title>Scotty Eastwood, Dose of Courage Coaching</title>
 <meta name="description" content="Scotty Eastwood coaches Christian entrepreneurs on the Freedom Framework to win back their time, take focused action, and face fear instead of stalling.">
-<meta property="og:title" content="Scotty Eastwood — Dose of Courage Coaching">
+<meta property="og:title" content="Scotty Eastwood, Dose of Courage Coaching">
 <meta property="og:description" content="You already know what to do. Something's still stopping you from doing it.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://scottyeastwood.com/">
@@ -138,6 +138,28 @@
     .tcard .tquote{font-size:15px;}
   }
 </style>
+<!--refresh-injected-->
+<style>
+/* Free Resources dropdown + blog audit note (refresh) */
+.navright{display:flex;align-items:center;gap:20px;}
+.resmenu{position:relative;display:inline-block;}
+.resmenu>summary{list-style:none;cursor:pointer;color:var(--grey);font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:6px;}
+.resmenu>summary::-webkit-details-marker{display:none;}
+.resmenu>summary::after{content:"";border:5px solid transparent;border-top-color:currentColor;margin-top:4px;transition:transform .15s;}
+.resmenu[open]>summary::after{transform:rotate(180deg);}
+.resmenu-panel{position:absolute;top:calc(100% + 12px);right:0;background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:0 14px 34px rgba(12,35,64,.16);padding:8px;min-width:190px;z-index:60;}
+.resmenu-panel a{display:block;padding:10px 12px;border-radius:6px;text-decoration:none;color:var(--ink);font-size:14.5px;white-space:nowrap;font-weight:500;}
+.resmenu-panel a:hover{background:var(--paper);color:var(--blue);}
+.audit-note{margin:26px 0 0;padding:16px 18px;background:var(--paper);border-left:3px solid var(--blue);border-radius:8px;font-size:15.5px;}
+.audit-note a{font-weight:600;}
+@media(max-width:600px){.navright{gap:12px;}.resmenu>summary{font-size:14px;}}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Dose of Courage Coaching","url":"https://scottyeastwood.com/","logo":"https://scottyeastwood.com/images/dose-of-courage.png","founder":{"@type":"Person","name":"Scotty Eastwood"},"sameAs":["https://www.linkedin.com/in/scottyeastwood/", "https://www.instagram.com/scotty_eastwood/", "https://www.youtube.com/@ScottyBeforethesunsets"]}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Scotty Eastwood","url":"https://scottyeastwood.com/","publisher":{"@type":"Organization","name":"Dose of Courage Coaching"}}
+</script>
 </head>
 <body>
 
@@ -151,7 +173,7 @@
       <button data-page="youtube" onclick="showPage('youtube')">YouTube</button>
       <!-- Free Resources paused until the tools are ready. Restore this line when live:
       <button data-page="resources" onclick="showPage('resources')">Free Resources</button> -->
-      <a href="blog/index.html" class="navlink-blog" style="text-decoration:none;color:var(--grey);font-size:15px;">Blog</a>
+      <details class="resmenu"><summary>Free Resources</summary><div class="resmenu-panel"><a href="/time-audit/">Free Time Audit</a><a href="/blog/">Blog</a></div></details>
     </div>
     <a class="cta-btn" href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" id="navCta">See the Offer</a>
     <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
@@ -163,7 +185,8 @@
     <a href="about.html" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">About</a>
     <a href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">Coaching</a>
     <button onclick="showPage('youtube')">YouTube</button>
-    <a href="blog/index.html" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">Blog</a>
+    <a href="/time-audit/" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">Free Time Audit</a>
+    <a href="/blog/" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">Blog</a>
     <a class="cta-btn" href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="text-align:center;margin-top:8px;">See the Offer</a>
   </div>
 </nav>

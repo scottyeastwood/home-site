@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5KC749ZJ7C"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-5KC749ZJ7C");
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Time Audit for Entrepreneurs | Find the Hours Hiding in Your Week</title>
+<meta name="description" content="Take the free 2-minute time audit and find out how many hours a week you could reclaim. Built for Christian entrepreneurs who want more results in less time and more time with their family.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Scotty Eastwood">
+<link rel="canonical" href="https://scottyeastwood.com/time-audit/">
+<meta property="og:title" content="Free Time Audit: Find the Hours Hiding in Your Week">
+<meta property="og:description" content="A free 2-minute audit that shows how many hours a week you are leaking, your top 3 time leaks, and the first fix for each.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scottyeastwood.com/time-audit/">
+<meta property="og:image" content="https://scottyeastwood.com/images/scotty-eastwood.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon-optimized.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebApplication","name":"The Time Audit","url":"https://scottyeastwood.com/time-audit/","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"A free 2-minute time audit for entrepreneurs that estimates how many hours a week you could reclaim, identifies your top 3 time leaks, and gives the first fix for each.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"Person","name":"Scotty Eastwood","url":"https://scottyeastwood.com/about.html"}}
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What is a time audit?","acceptedAnswer":{"@type":"Answer","text":"A time audit is a quick assessment of where your working hours actually go, so you can see which activities drain time without driving results and reclaim those hours. This one takes about two minutes and estimates how many hours a week you could get back."}},
+{"@type":"Question","name":"How long does the time audit take?","acceptedAnswer":{"@type":"Answer","text":"About two minutes. It is 10 short questions, and you get your results as soon as you finish."}},
+{"@type":"Question","name":"What do I get at the end?","acceptedAnswer":{"@type":"Answer","text":"Your estimated reclaimable hours per week and per year, your top 3 time leaks, and the first fix for each one."}},
+{"@type":"Question","name":"Is the time audit free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is completely free. You enter your email to unlock your full personalized results."}}
+]}
+</script>
+<style>
+  :root{
+    --navy:#0C2340;--navy2:#163B5C;--blue:#04A4E9;--blue-d:#0384bd;
+    --ink:#1A1D21;--paper:#F5F6F8;--line:#E4E7EB;--grey:#6B7280;--white:#fff;
+    --gold:#E8B23A;--maxw:760px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;font-family:'Roboto',sans-serif;color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;background:var(--white);}
+  h1,h2,h3{font-family:'Montserrat',sans-serif;color:var(--navy);line-height:1.2;}
+  a{color:var(--blue);}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
+  /* nav */
+  nav{border-bottom:1px solid var(--line);padding:14px 0;position:sticky;top:0;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);z-index:20;}
+  nav .wrap{max-width:1040px;display:flex;justify-content:space-between;align-items:center;}
+  .brand{display:flex;align-items:center;gap:9px;font-weight:700;text-decoration:none;color:var(--ink);font-size:15px;}
+  .brand img{height:30px;width:auto;display:block;}
+  .cta-btn{display:inline-block;text-align:center;background:var(--blue);color:#fff;padding:11px 22px;border-radius:5px;text-decoration:none;font-size:14px;font-weight:600;border:none;cursor:pointer;transition:transform .15s ease,background .15s ease;}
+  .cta-btn:hover{transform:translateY(-2px);background:var(--blue-d);}
+  .nav-cta{padding:9px 18px;font-size:13.5px;}
+  /* hero */
+  .hero{background:linear-gradient(160deg,var(--navy),var(--navy2));color:#fff;padding:52px 0 64px;text-align:center;}
+  .hero .kicker{color:var(--blue);font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin-bottom:14px;}
+  .hero h1{color:#fff;font-size:clamp(28px,5.4vw,42px);font-weight:800;letter-spacing:-.5px;max-width:18ch;margin:0 auto 16px;}
+  .hero .sub{color:#D8E3EE;font-size:clamp(16px,2.4vw,19px);max-width:50ch;margin:0 auto 8px;}
+  .hero .trust{color:#96AAC0;font-size:13.5px;margin-top:14px;}
+  /* audit card */
+  .card{background:#fff;border-radius:14px;box-shadow:0 24px 60px rgba(12,35,64,.28);max-width:620px;margin:34px auto -46px;padding:30px 30px 34px;position:relative;text-align:left;}
+  .progress{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:8px;}
+  .progress > i{display:block;height:100%;width:0;background:var(--blue);border-radius:99px;transition:width .35s ease;}
+  .qcount{font-size:12.5px;color:var(--grey);font-weight:500;margin-bottom:20px;}
+  .qstage{animation:fade .32s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
+  .qtext{font-family:'Montserrat',sans-serif;font-size:21px;font-weight:700;color:var(--navy);margin:0 0 4px;line-height:1.3;}
+  .qhelp{font-size:14px;color:var(--grey);margin:0 0 18px;}
+  .opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:9px;padding:15px 17px;margin-bottom:11px;font-size:15.5px;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s,transform .1s;font-family:'Roboto',sans-serif;line-height:1.4;}
+  .opt:hover{border-color:var(--blue);background:#F3FAFE;}
+  .opt:active{transform:scale(.995);}
+  .opt.sel{border-color:var(--blue);background:#EAF7FE;font-weight:600;}
+  .back{background:none;border:none;color:var(--grey);font-size:13.5px;cursor:pointer;margin-top:6px;padding:4px 0;}
+  .back:hover{color:var(--navy);}
+  /* email + results */
+  .step{display:none;}
+  .step.on{display:block;}
+  .teaser{text-align:center;margin-bottom:22px;}
+  .teaser .big{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(40px,10vw,58px);color:var(--blue);line-height:1;}
+  .teaser .blurwrap{filter:blur(7px);opacity:.55;user-select:none;pointer-events:none;margin-top:6px;font-weight:600;color:var(--navy);}
+  .gate-h{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:var(--navy);text-align:center;margin:4px 0 6px;}
+  .gate-p{font-size:14.5px;color:var(--grey);text-align:center;max-width:42ch;margin:0 auto 18px;}
+  #formMount iframe{width:100%;min-height:560px;border:none;border-radius:12px;}
+  .reveal-fallback{text-align:center;margin-top:10px;}
+  .reveal-fallback button{background:none;border:none;color:var(--blue);font-size:13.5px;cursor:pointer;text-decoration:underline;}
+  /* result */
+  .r-badge{display:inline-block;background:#EAF7FE;color:var(--blue-d);font-size:12.5px;font-weight:600;padding:5px 13px;border-radius:99px;margin-bottom:14px;}
+  .r-hero{text-align:center;padding:6px 0 8px;}
+  .r-num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(46px,12vw,72px);color:var(--blue);line-height:1;}
+  .r-num small{font-size:.32em;color:var(--grey);font-weight:600;display:block;margin-top:6px;letter-spacing:.02em;}
+  .r-year{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:11px;padding:20px 22px;text-align:center;margin:20px 0 8px;}
+  .r-year b{color:var(--gold);}
+  .r-frame{font-size:16px;color:var(--navy);font-weight:500;background:var(--paper);border-left:3px solid var(--blue);border-radius:6px;padding:15px 17px;margin:20px 0;}
+  .r-leaks{margin:22px 0 6px;}
+  .leak{border:1px solid var(--line);border-radius:10px;padding:15px 17px;margin-bottom:12px;}
+  .leak .lh{display:flex;align-items:center;gap:9px;margin-bottom:5px;}
+  .leak .rank{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:12px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;}
+  .leak .lt{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:var(--navy);}
+  .leak .fix{font-size:14.5px;color:var(--ink);margin:0;}
+  .leak .fix b{color:var(--blue-d);}
+  .r-cta{background:linear-gradient(160deg,var(--navy),var(--navy2));border-radius:12px;padding:26px 22px;text-align:center;margin-top:24px;}
+  .r-cta h3{color:#fff;font-size:20px;margin:0 0 8px;}
+  .r-cta p{color:#C9D6E4;font-size:14.5px;max-width:44ch;margin:0 auto 18px;}
+  /* content */
+  .content{padding:78px 0 30px;}
+  .content h2{font-size:23px;margin:34px 0 10px;}
+  .content p{font-size:16px;margin:0 0 16px;}
+  .da{background:var(--paper);border-left:3px solid var(--blue);border-radius:6px;padding:18px 20px;margin:8px 0 26px;}
+  .da .label{font-size:12px;color:var(--blue);font-weight:600;text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;}
+  .da p{margin:0;font-size:16px;}
+  .faq{border-top:1px solid var(--line);margin-top:34px;padding-top:10px;}
+  .faq h3{font-size:16px;margin:22px 0 5px;}
+  .faq p{font-size:15px;color:var(--ink);margin:0 0 6px;}
+  .links{background:var(--paper);border-radius:10px;padding:20px 22px;margin:26px 0;}
+  .links h3{font-size:15px;margin:0 0 8px;}
+  .links a{display:inline-block;margin:0 14px 4px 0;font-weight:500;}
+  footer{padding:34px 0;text-align:center;color:var(--grey);font-size:13px;border-top:1px solid var(--line);margin-top:36px;}
+  footer a{color:var(--grey);}
+  @media(max-width:600px){
+    .card{margin:26px auto -40px;padding:24px 20px 28px;border-radius:12px;}
+    .qtext{font-size:19px;}
+  }
+  /* Free Resources dropdown */
+  .navright{display:flex;align-items:center;gap:16px;}
+  .resmenu{position:relative;display:inline-block;}
+  .resmenu>summary{list-style:none;cursor:pointer;color:var(--grey);font-size:14px;font-weight:600;display:inline-flex;align-items:center;gap:6px;}
+  .resmenu>summary::-webkit-details-marker{display:none;}
+  .resmenu>summary::after{content:"";border:5px solid transparent;border-top-color:currentColor;margin-top:4px;transition:transform .15s;}
+  .resmenu[open]>summary::after{transform:rotate(180deg);}
+  .resmenu-panel{position:absolute;top:calc(100% + 12px);right:0;background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:0 14px 34px rgba(12,35,64,.16);padding:8px;min-width:190px;z-index:60;}
+  .resmenu-panel a{display:block;padding:10px 12px;border-radius:6px;text-decoration:none;color:var(--ink);font-size:14.5px;white-space:nowrap;font-weight:500;}
+  .resmenu-panel a:hover{background:var(--paper);color:var(--blue-d);}
+  @media(max-width:600px){.navright{gap:11px;}.resmenu>summary{font-size:13px;}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="brand" href="https://scottyeastwood.com/"><img src="images/dose-of-courage.png" alt="Dose of Courage"> Scotty Eastwood</a>
+  <div class="navright"><details class="resmenu"><summary>Free Resources</summary><div class="resmenu-panel"><a href="/time-audit/">Free Time Audit</a><a href="/blog/">Blog</a></div></details><a class="cta-btn nav-cta" href="https://api.leadconnectorhq.com/widget/booking/TnZUEbyfYKdxCPuBADoB" target="_blank" rel="noopener">Book a free call</a></div>
+</div></nav>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="kicker">The Time Audit &middot; 2 minutes</div>
+    <h1>Find the hours hiding in your week.</h1>
+    <p class="sub">Answer 10 quick questions and see how many hours a week you could reclaim, your top 3 time leaks, and the first fix for each.</p>
+    <p class="trust">Free &middot; Built for Christian entrepreneurs</p>
+  </div>
+
+  <!-- AUDIT CARD -->
+  <div class="card">
+    <!-- QUIZ -->
+    <div id="quizStep" class="step on">
+      <div class="progress"><i id="bar"></i></div>
+      <div class="qcount" id="qcount">Question 1 of 10</div>
+      <div class="qstage" id="quizStage"></div>
+      <button class="back" id="backBtn" style="display:none;">&larr; Back</button>
+    </div>
+
+    <!-- EMAIL GATE -->
+    <div id="emailStep" class="step">
+      <div class="teaser">
+        <div class="r-badge" id="teaserBadge">Your audit is ready</div>
+        <div class="big" id="teaserNum">--</div>
+        <div style="font-size:13px;color:var(--grey);font-weight:600;margin-top:2px;">estimated hours you could reclaim per week</div>
+        <div class="blurwrap">Your top 3 leaks: xxxxxxxx, xxxxxxxx, xxxxxxxx and the first fix for each</div>
+      </div>
+      <div class="gate-h">Where should I send your full results?</div>
+      <div class="gate-p">Enter your email to unlock your top 3 time leaks, the first fix for each, and what those hours add up to in a year.</div>
+      <div id="formMount"></div>
+    </div>
+
+    <!-- RESULTS -->
+    <div id="resultStep" class="step">
+      <div class="r-hero">
+        <div class="r-badge" id="tierBadge">significant leaks</div>
+        <div class="r-num" id="rNum">10<small>estimated hours you could reclaim per week</small></div>
+      </div>
+      <div class="r-year">Over a year, that is about <b id="rYearHours">500 hours</b>, the equivalent of <b id="rYearDays">62 workdays</b> back for your family and what God has called you to do.</div>
+      <div class="r-frame" id="rFrame"></div>
+      <div class="r-leaks">
+        <h3 id="leaksHeading" style="font-size:16px;margin:0 0 12px;">Your top 3 time leaks</h3>
+        <div id="rLeaks"></div>
+      </div>
+      <div class="r-cta">
+        <h3>Want help getting those hours back?</h3>
+        <p>Book a free 20-minute call. On it, I will help you find at least 3 hours hiding in your week, whether you hire me or not.</p>
+        <a class="cta-btn" id="bookBtn" href="https://api.leadconnectorhq.com/widget/booking/TnZUEbyfYKdxCPuBADoB" target="_blank" rel="noopener" style="padding:14px 30px;">Book my free call</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="content">
+  <div class="wrap">
+    <h2>What is a time audit?</h2>
+    <div class="da">
+      <div class="label">Direct answer</div>
+      <p>A time audit is a quick assessment of where your working hours actually go, so you can see which activities drain your time without driving results and reclaim those hours. This one takes about two minutes and estimates how many hours a week you could get back.</p>
+    </div>
+    <p>Most entrepreneurs are not short on effort. They are short on leverage. The hours leak out through unclear priorities, a day that starts without a plan, constant distraction, doing work someone else could do, and putting off the one task that actually moves the business. You feel busy all day and still finish behind. This audit shows you exactly where your hours are going and hands you the first fix for each leak.</p>
+
+    <h2>How this time audit works</h2>
+    <p>You answer 10 short questions about how you actually run your week. The audit scores each answer, estimates the hours you are leaking, and ranks your top 3 leaks. Then it gives you the first move to plug each one, drawn from the same Freedom Framework I use with private clients: get clear on your 20%, protect it on the calendar, and clear the fear or guilt underneath the stalls.</p>
+
+    <div class="links">
+      <h3>Keep reading</h3>
+      <a href="https://scottyeastwood.com/blog/time-management-for-entrepreneurs.html">Time management for entrepreneurs</a>
+      <a href="https://scottyeastwood.com/blog/the-80-20-rule.html">The 80/20 rule</a>
+      <a href="https://scottyeastwood.com/blog/how-to-stop-procrastinating.html">How to stop procrastinating</a>
+    </div>
+
+    <div class="faq">
+      <h2 style="border:none;margin-top:8px;">Time audit FAQ</h2>
+      <h3>How long does the time audit take?</h3>
+      <p>About two minutes. It is 10 short questions, and you get your results as soon as you finish.</p>
+      <h3>What do I get at the end?</h3>
+      <p>Your estimated reclaimable hours per week and per year, your top 3 time leaks, and the first fix for each one.</p>
+      <h3>Is the time audit free?</h3>
+      <p>Yes. It is completely free. You enter your email to unlock your full personalized results.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Dose of Courage Coaching &middot; <a href="https://scottyeastwood.com/">scottyeastwood.com</a> &middot; <a href="https://scottyeastwood.com/privacy-policy.html">Privacy Policy</a>
+</footer>
+
+<!-- GHL form embed script -->
+<script src="https://link.msgsndr.com/js/form_embed.js"></script>
+<script>
+/* =========================================================
+   CONFIG
+   To tag every GHL lead by their result, fill in the
+   "Query Key" of each hidden field from your GHL form below.
+   (GHL: form builder > click the hidden field > Query Key.)
+   Leave blank and the form still captures name + email fine.
+========================================================= */
+var GHL = {
+  baseSrc: "https://api.leadconnectorhq.com/widget/form/1Wrmd8QEOoOFODxv0uza",
+  formId:  "1Wrmd8QEOoOFODxv0uza",
+  fieldKeys: { bucket: "bucket", est_hours: "est_hours", top_leaks: "top_leaks" }  // GHL hidden-field query keys
+};
+
+/* =========================================================
+   QUESTIONS
+========================================================= */
+var LEAKS = {
+  clarity:{t:"No clear 20%", fix:"<b>Find your 20%.</b> Write down the 3 activities that actually drive results and protect them first."},
+  planning:{t:"No plan for the day", fix:"<b>Plan the night before.</b> Never start a day deciding what to do."},
+  focus:{t:"Distraction and task-switching", fix:"<b>Time-block and put the phone in another room.</b> Protect the time from all distractions."},
+  leverage:{t:"Not enough delegation", fix:"<b>If it is not your 20% and someone else can do it 80% as well, hand it off.</b>"},
+  busywork:{t:"Too much busywork", fix:"<b>Batch email and meetings into set windows.</b> Default-decline what does not grow the business."},
+  procrastination:{t:"Putting off the needle-mover", fix:"<b>The resistance is fear of discomfort.</b> Do the needle-mover first, uncomfortable. Motion shifts emotion. Set a reward for yourself once the most important action is done first."},
+  perfectionism:{t:"Perfectionism and rework", fix:"<b>Done beats perfect.</b> Ship it, then improve. 100% done but 80% good is infinitely better than 100% good and 0% shipped."},
+  presence:{t:"Work bleeding into family time", fix:"<b>Set a hard stop and protect family time like a client meeting.</b> Presence is a decision, not leftover time."}
+};
+
+var BUCKETS = {
+  execution:"Your problem isn't knowing what to do. It's the resistance between you and taking the action. That's fixable.",
+  clarity:"The issue is clarity. Once you know your 20%, it's a lot easier to focus and get results.",
+  presence:"You don't have to choose between growth and being present. The hours you reclaim go straight back to where you need to spend it, with family and what God has called you to do."
+};
+
+var QUESTIONS = [
+  { q:"Which sounds most like you right now?",
+    opts:[
+      {label:"I know what to do, I just don't do it consistently.", bucket:"execution"},
+      {label:"I'm working hard but not sure what actually moves the business.", bucket:"clarity"},
+      {label:"The business is growing, but it's eating the time I want with my family.", bucket:"presence"}
+    ]},
+  { q:"In a typical week, how many hours do you work?",
+    opts:[
+      {label:"Under 40", worked:"under40"},
+      {label:"40 to 50", worked:"40-50"},
+      {label:"50 to 60", worked:"50-60"},
+      {label:"60 or more", worked:"60plus"}
+    ]},
+  { q:"Do you know the specific 20% of activities driving most of your results?",
+    opts:[
+      {label:"Yes, written down and clear", pts:0, leak:"clarity"},
+      {label:"Roughly, it's in my head", pts:1.5, leak:"clarity"},
+      {label:"Not really, I tackle what's in front of me", pts:3, leak:"clarity"}
+    ]},
+  { q:"How do you start your workday?",
+    opts:[
+      {label:"With a written plan I made the night before", pts:0, leak:"planning"},
+      {label:"I decide in the morning", pts:1.5, leak:"planning"},
+      {label:"I react to whatever hits me first", pts:3, leak:"planning"}
+    ]},
+  { q:"During deep work, where's your phone?",
+    opts:[
+      {label:"Away. I single-task in blocks", pts:0, leak:"focus"},
+      {label:"Nearby, I check it sometimes", pts:1.5, leak:"focus"},
+      {label:"On me, I'm switching constantly", pts:3, leak:"focus"}
+    ]},
+  { q:"How much of your week is spent on tasks someone else (or software) could do?",
+    opts:[
+      {label:"Little. I've delegated or automated it", pts:0, leak:"leverage"},
+      {label:"Some. I know I should hand off more", pts:2, leak:"leverage"},
+      {label:"A lot. It's basically all on me", pts:3.5, leak:"leverage"}
+    ]},
+  { q:"How many hours a week go to email, meetings, or admin that don't grow the business?",
+    opts:[
+      {label:"Under 3", pts:0, leak:"busywork"},
+      {label:"3 to 7", pts:2, leak:"busywork"},
+      {label:"8 or more", pts:3.5, leak:"busywork"}
+    ]},
+  { q:"The needle-mover task, the one that really matters, how often do you put it off?",
+    opts:[
+      {label:"Rarely. I do it first", pts:0, leak:"procrastination"},
+      {label:"Sometimes, when it's uncomfortable", pts:2, leak:"procrastination"},
+      {label:"Often. I stay busy with easier stuff", pts:3, leak:"procrastination"}
+    ]},
+  { q:"How often do you redo work or hold it back because it's not perfect?",
+    opts:[
+      {label:"Rarely. I ship and improve", pts:0, leak:"perfectionism"},
+      {label:"Sometimes", pts:1.5, leak:"perfectionism"},
+      {label:"Often. I over-polish", pts:2.5, leak:"perfectionism"}
+    ]},
+  { q:"How often does work bleed into family time (phone at dinner, working nights and weekends)?",
+    opts:[
+      {label:"Rarely. I protect that time", pts:0, leak:"presence"},
+      {label:"Sometimes", pts:1.5, leak:"presence"},
+      {label:"Constantly. There's no real line", pts:3, leak:"presence"}
+    ]}
+];
+
+/* =========================================================
+   STATE + RENDER
+========================================================= */
+var idx = 0;
+var answers = [];
+var started = false;
+var stage = document.getElementById("quizStage");
+var bar = document.getElementById("bar");
+var qcount = document.getElementById("qcount");
+var backBtn = document.getElementById("backBtn");
+
+function renderQuestion(){
+  var Q = QUESTIONS[idx];
+  bar.style.width = (idx/QUESTIONS.length*100) + "%";
+  qcount.textContent = "Question " + (idx+1) + " of " + QUESTIONS.length;
+  var html = '<div class="qtext">' + Q.q + '</div>';
+  html += '<div class="opts">';
+  Q.opts.forEach(function(o,i){
+    var sel = (answers[idx] && answers[idx].i === i) ? " sel" : "";
+    html += '<button class="opt'+sel+'" data-i="'+i+'">'+o.label+'</button>';
+  });
+  html += '</div>';
+  stage.innerHTML = html;
+  stage.classList.remove("qstage"); void stage.offsetWidth; stage.classList.add("qstage");
+  backBtn.style.display = idx > 0 ? "inline-block" : "none";
+  Array.prototype.forEach.call(stage.querySelectorAll(".opt"), function(btn){
+    btn.addEventListener("click", function(){
+      var i = +btn.getAttribute("data-i");
+      answers[idx] = Object.assign({i:i}, QUESTIONS[idx].opts[i]);
+      Array.prototype.forEach.call(stage.querySelectorAll(".opt"), function(b){b.classList.remove("sel");});
+      btn.classList.add("sel");
+      if(!started){ started = true; gtag("event","time_audit_start"); }
+      setTimeout(next, 230);
+    });
+  });
+}
+
+function next(){
+  if(idx < QUESTIONS.length - 1){ idx++; renderQuestion(); }
+  else { finishQuiz(); }
+}
+backBtn.addEventListener("click", function(){ if(idx>0){ idx--; renderQuestion(); } });
+
+/* =========================================================
+   SCORING
+========================================================= */
+function compute(){
+  var bucket = answers[0].bucket;
+  var worked = answers[1].worked;
+  var total = 0, leakMap = {};
+  for(var i=2;i<answers.length;i++){
+    var a = answers[i];
+    if(a && a.pts){ total += a.pts; leakMap[a.leak] = (leakMap[a.leak]||0) + a.pts; }
+  }
+  // tier -> midpoint hours
+  var tier, mid;
+  if(total <= 5){ tier="a few small leaks"; mid=3; }
+  else if(total <= 11){ tier="some clear leaks"; mid=6; }
+  else if(total <= 16){ tier="significant leaks"; mid=10; }
+  else { tier="major leaks"; mid=13; }
+  // clamp to hours actually worked (keeps the number credible)
+  var cap = {under40:5,"40-50":8,"50-60":12,"60plus":99}[worked];
+  mid = Math.max(2, Math.min(mid, cap));
+  // top 3 leaks
+  var leaks = Object.keys(leakMap).map(function(k){return {k:k,p:leakMap[k]};})
+    .sort(function(a,b){return b.p-a.p;}).slice(0,3);
+  var yearHours = mid*50;
+  var workdays = Math.round(yearHours/8);
+  return {bucket:bucket, worked:worked, total:total, tier:tier, mid:mid,
+          leaks:leaks, yearHours:yearHours, workdays:workdays};
+}
+
+var RESULT = null;
+
+function finishQuiz(){
+  bar.style.width = "100%";
+  RESULT = compute();
+  try{ localStorage.setItem("timeAuditResult", JSON.stringify(RESULT)); }catch(e){}
+  gtag("event","time_audit_complete",{bucket:RESULT.bucket, est_hours:RESULT.mid});
+  // teaser
+  document.getElementById("teaserNum").textContent = "~" + RESULT.mid;
+  document.getElementById("teaserBadge").textContent = "Your audit is ready";
+  // mount GHL form (with prefill params if keys provided)
+  mountForm();
+  showStep("emailStep");
+}
+
+function buildSrc(){
+  var params = [];
+  var map = {bucket:RESULT.bucket, est_hours:RESULT.mid,
+             top_leaks:RESULT.leaks.map(function(l){return LEAKS[l.k].t;}).join(", ")};
+  Object.keys(GHL.fieldKeys).forEach(function(f){
+    var key = GHL.fieldKeys[f];
+    if(key){ params.push(encodeURIComponent(key)+"="+encodeURIComponent(map[f])); }
+  });
+  return GHL.baseSrc + (params.length ? ("?"+params.join("&")) : "");
+}
+
+function mountForm(){
+  var mount = document.getElementById("formMount");
+  var src = buildSrc();
+  mount.innerHTML =
+    '<iframe src="'+src+'" style="width:100%;height:575px;border:none;border-radius:12px;" '+
+    'id="inline-'+GHL.formId+'" data-layout="{\'id\':\'INLINE\'}" '+
+    'data-form-id="'+GHL.formId+'" data-height="575" data-form-name="3-Hour Reclaim Form" '+
+    'data-layout-iframe-id="inline-'+GHL.formId+'" title="Time Audit Form"></iframe>';
+  if(window._LC && typeof window._LC.reInit === "function"){ try{ window._LC.reInit(); }catch(e){} }
+}
+
+/* reveal results after GHL submit (auto + manual fallback) */
+function revealResults(){
+  if(!RESULT) return;
+  document.getElementById("tierBadge").textContent = RESULT.tier;
+  var rn = document.getElementById("rNum");
+  rn.innerHTML = RESULT.mid + '<small>estimated hours you could reclaim per week</small>';
+  document.getElementById("rYearHours").textContent = RESULT.yearHours + " hours";
+  document.getElementById("rYearDays").textContent = RESULT.workdays + " workdays";
+  document.getElementById("rFrame").textContent = BUCKETS[RESULT.bucket];
+  var n = RESULT.leaks.length;
+  var heading = document.getElementById("leaksHeading");
+  var lc = document.getElementById("rLeaks"); lc.innerHTML = "";
+  if(n === 0){
+    heading.textContent = "You're running a tight ship";
+    lc.innerHTML = '<div class="leak"><p class="fix">No major leaks showed up, which is rare. '+
+      'The move now is to <b>protect what is working</b> and reinvest the time you free up into your 20% and your family.</p></div>';
+  } else {
+    heading.textContent = n === 1 ? "Your biggest time leak" : ("Your top " + n + " time leaks");
+    RESULT.leaks.forEach(function(l,i){
+      var L = LEAKS[l.k];
+      lc.innerHTML += '<div class="leak"><div class="lh"><span class="rank">'+(i+1)+'</span>'+
+        '<span class="lt">'+L.t+'</span></div><p class="fix">'+L.fix+'</p></div>';
+    });
+  }
+  countUp(rn, RESULT.mid);
+  showStep("resultStep");
+  gtag("event","time_audit_lead",{bucket:RESULT.bucket, est_hours:RESULT.mid});
+}
+
+document.getElementById("bookBtn").addEventListener("click", function(){ gtag("event","time_audit_book_click"); });
+
+/* listen for GHL form submission message */
+window.addEventListener("message", function(e){
+  var d = e.data;
+  if(!d) return;
+  var hit = false;
+  if(typeof d === "string"){ hit = /form.?submit|submitted|form_submitted/i.test(d); }
+  else if(typeof d === "object"){
+    var s = (d.type||"") + " " + (d.event||"") + " " + (d.action||"") + " " + (d.name||"");
+    hit = /submit|submitted/i.test(s);
+  }
+  if(hit){ revealResults(); }
+}, false);
+
+function showStep(id){
+  ["quizStep","emailStep","resultStep"].forEach(function(s){
+    document.getElementById(s).classList.toggle("on", s===id);
+  });
+  document.querySelector(".card").scrollIntoView({behavior:"smooth", block:"start"});
+}
+
+function countUp(el, target){
+  var start = 0, dur = 700, t0 = null;
+  function tick(t){
+    if(!t0) t0 = t;
+    var p = Math.min((t-t0)/dur, 1);
+    var v = Math.round(start + (target-start)*p);
+    el.childNodes[0].nodeValue = v;
+    if(p < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+}
+
+renderQuestion();
+
+/* Reveal-on-submit: set the GHL form's On-Submit action to redirect to
+   https://scottyeastwood.com/time-audit/#results . After a real submission
+   the page loads at #results, restores the saved result, and reveals it,
+   skipping GHL's own thank-you screen. Requires a submission first, so no bypass. */
+(function restoreAfterRedirect(){
+  try{
+    var qp = new URLSearchParams(location.search);
+    var wantResults = (location.hash === "#results" || qp.get("audit") === "done");
+    if(!wantResults) return;
+    // If GHL redirected the iframe instead of the top window, break out to the top.
+    if(window.top && window.top !== window.self){
+      window.top.location.href = location.href;
+      return;
+    }
+    var saved = localStorage.getItem("timeAuditResult");
+    if(saved){ RESULT = JSON.parse(saved); revealResults(); }
+  }catch(e){}
+})();
+</script>
+</body>
+</html>
