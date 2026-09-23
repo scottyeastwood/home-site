@@ -13,10 +13,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Blog | Dose of Courage Coaching</title>
-<meta name="description" content="Straight answers on procrastination, fear, discipline, and building a business without burning out or losing what matters, from Scotty Eastwood.">
+<meta name="description" content="Straight answers for Christian entrepreneurs on faith and business, family, time and freedom, mindset, and building a business without burning out, from Scotty Eastwood.">
 <link rel="canonical" href="https://scottyeastwood.com/blog/">
 <meta property="og:image" content="https://scottyeastwood.com/images/scotty-eastwood.jpg">
 <meta name="twitter:card" content="summary_large_image">
+<meta property="og:title" content="Blog | Dose of Courage Coaching">
+<meta property="og:description" content="Straight answers for Christian entrepreneurs on faith and business, family, time and freedom, and mindset.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://scottyeastwood.com/blog/">
 <link rel="icon" href="../favicon-optimized.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -24,7 +28,7 @@
   :root{--navy:#0C2340;--navy2:#163B5C;--blue:#04A4E9;--ink:#1A1D21;--paper:#F7F8FA;--line:#E3E6EA;--grey:#6B7280;}
   *{box-sizing:border-box;}
   body{margin:0;font-family:'Roboto',sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
-  h1,h3{font-family:'Montserrat',sans-serif;color:var(--navy);}
+  h1,h2,h3{font-family:'Montserrat',sans-serif;color:var(--navy);}
   a{color:inherit;text-decoration:none;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
   nav{border-bottom:1px solid var(--line);padding:18px 0;}
@@ -32,7 +36,13 @@
   .brand{font-weight:700;}
   .cta-btn{display:inline-block;text-align:center;line-height:1.35;background:var(--blue);color:#fff !important;padding:11px 22px;border-radius:4px;font-size:14px;font-weight:500;}
   .kicker{color:var(--blue);font-size:13.5px;font-weight:600;margin-bottom:8px;}
-  h1{font-size:32px;font-weight:800;margin:40px 0 32px;}
+  h1{font-size:32px;font-weight:800;margin:40px 0 10px;}
+  .intro{color:var(--grey);font-size:16px;max-width:60ch;margin:0 0 24px;}
+  .jump{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 8px;padding-bottom:8px;}
+  .jump a{font-size:13.5px;color:var(--blue);border:1px solid var(--line);border-radius:99px;padding:7px 15px;transition:background .15s;}
+  .jump a:hover{background:var(--paper);}
+  .cat{font-size:21px;margin:46px 0 2px;scroll-margin-top:80px;}
+  .cat-desc{color:var(--grey);font-size:14.5px;margin:0 0 2px;}
   .post-row{display:grid;grid-template-columns:1fr;gap:6px;border-top:1px solid var(--line);padding:22px 0;}
   @media(min-width:800px){.post-row{grid-template-columns:2fr 8fr 2fr;gap:20px;align-items:center;}}
   .post-row:hover{background:var(--paper);}
@@ -41,22 +51,17 @@
   .post-row p{color:var(--grey);margin:0;font-size:14.5px;}
   .read{color:var(--blue);font-size:14px;}
   footer{padding:36px 0;text-align:center;color:var(--grey);font-size:13px;border-top:1px solid var(--line);margin-top:20px;}
-</style>
-<!--refresh-injected-->
-<style>
-/* Free Resources dropdown + blog audit note (refresh) */
-.navright{display:flex;align-items:center;gap:20px;}
-.resmenu{position:relative;display:inline-block;}
-.resmenu>summary{list-style:none;cursor:pointer;color:var(--grey);font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:6px;}
-.resmenu>summary::-webkit-details-marker{display:none;}
-.resmenu>summary::after{content:"";border:5px solid transparent;border-top-color:currentColor;margin-top:4px;transition:transform .15s;}
-.resmenu[open]>summary::after{transform:rotate(180deg);}
-.resmenu-panel{position:absolute;top:calc(100% + 12px);right:0;background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:0 14px 34px rgba(12,35,64,.16);padding:8px;min-width:190px;z-index:60;}
-.resmenu-panel a{display:block;padding:10px 12px;border-radius:6px;text-decoration:none;color:var(--ink);font-size:14.5px;white-space:nowrap;font-weight:500;}
-.resmenu-panel a:hover{background:var(--paper);color:var(--blue);}
-.audit-note{margin:26px 0 0;padding:16px 18px;background:var(--paper);border-left:3px solid var(--blue);border-radius:8px;font-size:15.5px;}
-.audit-note a{font-weight:600;}
-@media(max-width:600px){.navright{gap:12px;}.resmenu>summary{font-size:14px;}}
+  /* Free Resources dropdown */
+  .navright{display:flex;align-items:center;gap:20px;}
+  .resmenu{position:relative;display:inline-block;}
+  .resmenu>summary{list-style:none;cursor:pointer;color:var(--grey);font-size:15px;font-weight:600;display:inline-flex;align-items:center;gap:6px;}
+  .resmenu>summary::-webkit-details-marker{display:none;}
+  .resmenu>summary::after{content:"";border:5px solid transparent;border-top-color:currentColor;margin-top:4px;transition:transform .15s;}
+  .resmenu[open]>summary::after{transform:rotate(180deg);}
+  .resmenu-panel{position:absolute;top:calc(100% + 12px);right:0;background:#fff;border:1px solid var(--line);border-radius:9px;box-shadow:0 14px 34px rgba(12,35,64,.16);padding:8px;min-width:190px;z-index:60;}
+  .resmenu-panel a{display:block;padding:10px 12px;border-radius:6px;text-decoration:none;color:var(--ink);font-size:14.5px;white-space:nowrap;font-weight:500;}
+  .resmenu-panel a:hover{background:var(--paper);color:var(--blue);}
+  @media(max-width:600px){.navright{gap:12px;}.resmenu>summary{font-size:14px;}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Organization","name":"Dose of Courage Coaching","url":"https://scottyeastwood.com/","logo":"https://scottyeastwood.com/images/dose-of-courage.png","founder":{"@type":"Person","name":"Scotty Eastwood"},"sameAs":["https://www.linkedin.com/in/scottyeastwood/", "https://www.instagram.com/scotty_eastwood/", "https://www.youtube.com/@ScottyBeforethesunsets"]}
@@ -64,22 +69,59 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Scotty Eastwood","url":"https://scottyeastwood.com/","publisher":{"@type":"Organization","name":"Dose of Courage Coaching"}}
 </script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://scottyeastwood.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://scottyeastwood.com/blog/"}]}
+</script>
 </head>
 <body>
 <nav><div class="wrap"><a class="brand" href="/">Scotty Eastwood</a><div class="navright"><details class="resmenu"><summary>Free Resources</summary><div class="resmenu-panel"><a href="/time-audit/">Free Time Audit</a><a href="/start-a-business/">Start-a-Business Guide</a><a href="/newsletter/">Newsletter</a><a href="/blog/">Blog</a></div></details><a class="cta-btn" href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener">See the Offer</a></div></div></nav>
 <div class="wrap">
   <div class="kicker">Blog</div>
   <h1>Straight answers, not generic productivity advice</h1>
+  <p class="intro">Real help for Christian entrepreneurs who want to grow a business without losing their faith, their family, or their time. Pick a topic.</p>
 
-  <a class="post-row" href="how-to-stop-procrastinating.html"><div class="tag">Mindset</div><div><h3>How to Stop Procrastinating</h3><p>It isn't laziness. It's resistance driven by fear. Here's the real 3-step system.</p></div><div class="read">Read →</div></a>
+  <div class="jump">
+    <a href="#faith">Faith + Business</a>
+    <a href="#family">Family &amp; Marriage</a>
+    <a href="#time">Time &amp; Freedom</a>
+    <a href="#mindset">Mindset &amp; Discipline</a>
+    <a href="#build">Build &amp; Coaching</a>
+  </div>
+
+  <h2 class="cat" id="faith">Faith + Business</h2>
+  <p class="cat-desc">Running a business as a Christian: stewardship, priorities, and keeping God first.</p>
+  <a class="post-row" href="how-to-balance-business-family-and-faith-as-a-christian-man.html"><div class="tag">Faith + Family</div><div><h3>How to Balance Business, Family, and Faith as a Christian Man</h3><p>Stop chasing balance. Seek harmony. The reframe, the right order, and how to carry the weight.</p></div><div class="read">Read →</div></a>
+  <a class="post-row" href="christian-time-management-for-entrepreneurs.html"><div class="tag">Faith + Business</div><div><h3>Christian Time Management for Entrepreneurs</h3><p>It starts with God, not your calendar. The heart behind it, and the one habit that changes everything.</p></div><div class="read">Read →</div></a>
+  <a class="post-row" href="what-does-the-bible-say-about-business.html"><div class="tag">Faith + Business</div><div><h3>What Does the Bible Say About Business?</h3><p>Business as stewardship: magnify your talents, and truly serve people.</p></div><div class="read">Read →</div></a>
+  <a class="post-row" href="how-to-make-time-for-god-when-you-own-a-business.html"><div class="tag">Faith + Business</div><div><h3>How to Make Time for God When You Own a Business</h3><p>Give God the first part of your day, not the leftovers.</p></div><div class="read">Read →</div></a>
+
+  <h2 class="cat" id="family">Family &amp; Marriage</h2>
+  <p class="cat-desc">Being a present father and a better husband while you build.</p>
+  <a class="post-row" href="how-to-be-a-present-father-while-running-a-business.html"><div class="tag">Fatherhood + Business</div><div><h3>How to Be a Present Father While Running a Business</h3><p>You love them, which is why you work. Here's how to actually be there.</p></div><div class="read">Read →</div></a>
+  <a class="post-row" href="how-to-be-a-better-husband-while-building-a-business.html"><div class="tag">Marriage + Business</div><div><h3>How to Be a Better Husband While Building a Business</h3><p>You keep every business appointment. Are you keeping any with her?</p></div><div class="read">Read →</div></a>
+  <a class="post-row" href="why-do-i-self-sabotage-my-relationships.html"><div class="tag">Relationships</div><div><h3>Why Do I Self-Sabotage My Relationships?</h3><p>It's fear wearing a disguise. Here's how to spot the pattern.</p></div><div class="read">Read →</div></a>
+
+  <h2 class="cat" id="time">Time &amp; Freedom</h2>
+  <p class="cat-desc">Working less, managing your time, and winning your hours back.</p>
+  <a class="post-row" href="how-many-hours-should-an-entrepreneur-work.html"><div class="tag">Founders</div><div><h3>How Many Hours Should an Entrepreneur Work?</h3><p>No magic number. The real test is whether God and your family are slipping.</p></div><div class="read">Read →</div></a>
+  <a class="post-row" href="how-to-stop-working-so-much.html"><div class="tag">Founders</div><div><h3>How to Stop Working So Much (Without the Business Slowing Down)</h3><p>Focus on what moves the needle, outsource and automate the rest.</p></div><div class="read">Read →</div></a>
+  <a class="post-row" href="how-to-stop-feeling-guilty-taking-time-off.html"><div class="tag">Faith + Freedom</div><div><h3>How to Stop Feeling Guilty About Taking Time Off</h3><p>The guilt is usually a priorities signal. Here's how to read it and let it go.</p></div><div class="read">Read →</div></a>
+  <a class="post-row" href="time-management-for-entrepreneurs.html"><div class="tag">Founders</div><div><h3>Time Management for Entrepreneurs</h3><p>Two habits, done daily and weekly. Not a fancier app.</p></div><div class="read">Read →</div></a>
   <a class="post-row" href="the-80-20-rule.html"><div class="tag">Founders</div><div><h3>The 80/20 Rule: What to Actually Focus On</h3><p>About 20% of what you do drives 80% of your results. Here's how to find your 20%.</p></div><div class="read">Read →</div></a>
-  <a class="post-row" href="how-to-be-more-positive.html"><div class="tag">Mindset</div><div><h3>How to Be More Positive</h3><p>Positivity isn't a personality. It's a muscle you train. The 4 daily habits.</p></div><div class="read">Read →</div></a>
+
+  <h2 class="cat" id="mindset">Mindset &amp; Discipline</h2>
+  <p class="cat-desc">Procrastination, fear, discipline, and the beliefs running underneath them.</p>
+  <a class="post-row" href="how-to-stop-procrastinating.html"><div class="tag">Mindset</div><div><h3>How to Stop Procrastinating</h3><p>It isn't laziness. It's resistance driven by fear. Here's the real 3-step system.</p></div><div class="read">Read →</div></a>
+  <a class="post-row" href="how-to-be-more-disciplined.html"><div class="tag">Mindset</div><div><h3>How to Be More Disciplined</h3><p>You're already disciplined, just not everywhere yet.</p></div><div class="read">Read →</div></a>
   <a class="post-row" href="fear-of-failure.html"><div class="tag">Mindset</div><div><h3>Fear of Failure: What It Actually Means</h3><p>It's rarely about failure itself. It's about being seen failing.</p></div><div class="read">Read →</div></a>
   <a class="post-row" href="fear-of-success.html"><div class="tag">Mindset</div><div><h3>Fear of Success</h3><p>Why you sabotage yourself right when things start working.</p></div><div class="read">Read →</div></a>
-  <a class="post-row" href="how-to-be-more-disciplined.html"><div class="tag">Mindset</div><div><h3>How to Be More Disciplined</h3><p>You're already disciplined, just not everywhere yet.</p></div><div class="read">Read →</div></a>
   <a class="post-row" href="why-do-i-self-sabotage.html"><div class="tag">Mindset</div><div><h3>Why Do I Self-Sabotage?</h3><p>It almost always traces back to a belief or a fear running underneath.</p></div><div class="read">Read →</div></a>
-  <a class="post-row" href="why-do-i-self-sabotage-my-relationships.html"><div class="tag">Relationships</div><div><h3>Why Do I Self-Sabotage My Relationships?</h3><p>It's fear wearing a disguise. Here's how to spot the pattern.</p></div><div class="read">Read →</div></a>
-  <a class="post-row" href="time-management-for-entrepreneurs.html"><div class="tag">Founders</div><div><h3>Time Management for Entrepreneurs</h3><p>Two habits, done daily and weekly. Not a fancier app.</p></div><div class="read">Read →</div></a>
+  <a class="post-row" href="how-to-be-more-positive.html"><div class="tag">Mindset</div><div><h3>How to Be More Positive</h3><p>Positivity isn't a personality. It's a muscle you train. The 4 daily habits.</p></div><div class="read">Read →</div></a>
+
+  <h2 class="cat" id="build">Build &amp; Coaching</h2>
+  <p class="cat-desc">Building a business that runs without you, and choosing the right kind of help.</p>
+  <a class="post-row" href="how-to-build-a-business-that-doesnt-depend-on-you.html"><div class="tag">Founders</div><div><h3>How to Build a Business That Doesn't Depend on You</h3><p>Replace yourself on purpose. Bring someone to master level, leverage tech.</p></div><div class="read">Read →</div></a>
+  <a class="post-row" href="christian-business-coaching-vs-consulting-vs-life-coaching.html"><div class="tag">Coaching</div><div><h3>Christian Business Coaching vs. Consulting vs. Life Coaching</h3><p>Which do you need? When each fits, and why values matter.</p></div><div class="read">Read →</div></a>
 
   <div style="border-top:1px solid var(--line);"></div>
 </div>
