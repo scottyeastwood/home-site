@@ -90,11 +90,18 @@
   .reveal-fallback button{background:none;border:none;color:var(--blue);font-size:13.5px;cursor:pointer;text-decoration:underline;}
   /* result */
   .r-badge{display:inline-block;background:#EAF7FE;color:var(--blue-d);font-size:12.5px;font-weight:600;padding:5px 13px;border-radius:99px;margin-bottom:14px;}
-  .r-hero{text-align:center;padding:6px 0 8px;}
-  .r-num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(46px,12vw,72px);color:var(--blue);line-height:1;}
-  .r-num small{font-size:.32em;color:var(--grey);font-weight:600;display:block;margin-top:6px;letter-spacing:.02em;}
-  .r-year{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:11px;padding:20px 22px;text-align:center;margin:20px 0 8px;}
-  .r-year b{color:var(--gold);}
+  .r-hero{text-align:center;padding:2px 0 4px;}
+  .r-eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
+  .r-headline{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(20px,5vw,26px);color:var(--navy);line-height:1.1;}
+  .r-num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(74px,22vw,134px);color:var(--blue);line-height:.9;margin:2px 0 0;}
+  .r-unit{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(19px,5.4vw,28px);color:var(--navy);line-height:1.1;margin-bottom:14px;}
+  .r-tier{display:inline-block;background:#EAF7FE;color:var(--blue-d);font-size:12.5px;font-weight:700;padding:5px 14px;border-radius:99px;}
+  .r-year{display:flex;align-items:center;justify-content:center;gap:clamp(16px,6vw,38px);background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:14px;padding:22px 20px;text-align:center;margin:24px 0 6px;}
+  .r-yr-item{display:flex;flex-direction:column;line-height:1;}
+  .r-yr-num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(32px,9vw,48px);color:var(--gold);}
+  .r-yr-lbl{font-size:clamp(12px,3.4vw,14px);color:#C9D6E4;font-weight:600;margin-top:8px;letter-spacing:.02em;}
+  .r-yr-x{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;color:#5B6F86;}
+  .r-year-sub{text-align:center;font-size:14.5px;color:var(--grey);margin:12px auto 0;max-width:42ch;}
   .r-frame{font-size:16px;color:var(--navy);font-weight:500;background:var(--paper);border-left:3px solid var(--blue);border-radius:6px;padding:15px 17px;margin:20px 0;}
   .r-leaks{margin:22px 0 6px;}
   .leak{border:1px solid var(--line);border-radius:10px;padding:15px 17px;margin-bottom:12px;}
@@ -137,6 +144,7 @@
   .resmenu-panel a:hover{background:var(--paper);color:var(--blue-d);}
   @media(max-width:600px){.navright{gap:11px;}.resmenu>summary{font-size:13px;}}
 </style>
+<!--wrap-balance--><style>h1,h2,h3,h4{text-wrap:balance;}p,li,.sub,.lead,.cta-sub,.trust,.r-year-sub{text-wrap:pretty;}</style>
 </head>
 <body>
 
@@ -179,10 +187,18 @@
     <!-- RESULTS -->
     <div id="resultStep" class="step">
       <div class="r-hero">
-        <div class="r-badge" id="tierBadge">significant leaks</div>
-        <div class="r-num" id="rNum">10<small>estimated hours you could reclaim per week</small></div>
+        <div class="r-eyebrow">Your Time Audit</div>
+        <div class="r-headline">You could reclaim</div>
+        <div class="r-num" id="rNum">0</div>
+        <div class="r-unit">hours every week</div>
+        <div class="r-tier" id="tierBadge">significant leaks</div>
       </div>
-      <div class="r-year">Over a year, that is about <b id="rYearHours">500 hours</b>, the equivalent of <b id="rYearDays">62 workdays</b> back for your family and what God has called you to do.</div>
+      <div class="r-year">
+        <div class="r-yr-item"><span class="r-yr-num" id="rYearHours">0</span><span class="r-yr-lbl">hours a year</span></div>
+        <div class="r-yr-x">=</div>
+        <div class="r-yr-item"><span class="r-yr-num" id="rYearDays">0</span><span class="r-yr-lbl">full workdays back</span></div>
+      </div>
+      <p class="r-year-sub">Time back for your family and what God has called you to do.</p>
       <div class="r-frame" id="rFrame"></div>
       <div class="r-leaks">
         <h3 id="leaksHeading" style="font-size:16px;margin:0 0 12px;">Your top 3 time leaks</h3>
@@ -446,9 +462,9 @@ function revealResults(){
   if(!RESULT) return;
   document.getElementById("tierBadge").textContent = RESULT.tier;
   var rn = document.getElementById("rNum");
-  rn.innerHTML = RESULT.mid + '<small>estimated hours you could reclaim per week</small>';
-  document.getElementById("rYearHours").textContent = RESULT.yearHours + " hours";
-  document.getElementById("rYearDays").textContent = RESULT.workdays + " workdays";
+  rn.textContent = "0";
+  var yh = document.getElementById("rYearHours"); yh.textContent = "0";
+  var yd = document.getElementById("rYearDays"); yd.textContent = "0";
   document.getElementById("rFrame").textContent = BUCKETS[RESULT.bucket];
   var n = RESULT.leaks.length;
   var heading = document.getElementById("leaksHeading");
@@ -466,6 +482,8 @@ function revealResults(){
     });
   }
   countUp(rn, RESULT.mid);
+  countUp(yh, RESULT.yearHours);
+  countUp(yd, RESULT.workdays);
   showStep("resultStep");
   gtag("event","time_audit_lead",{bucket:RESULT.bucket, est_hours:RESULT.mid});
 }

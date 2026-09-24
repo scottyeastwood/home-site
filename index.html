@@ -160,6 +160,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Scotty Eastwood","url":"https://scottyeastwood.com/","publisher":{"@type":"Organization","name":"Dose of Courage Coaching"}}
 </script>
+<!--wrap-balance--><style>h1,h2,h3,h4{text-wrap:balance;}p,li,.sub,.lead,.cta-sub,.trust,.r-year-sub{text-wrap:pretty;}</style>
 </head>
 <body>
 
@@ -195,7 +196,7 @@
 
 <!-- HOME -->
 <div class="page active" id="page-home">
-  <section style="padding-top:64px;background:linear-gradient(135deg,var(--navy),var(--navy2));text-align:center;">
+  <section class="hero-enter" style="padding-top:64px;background:linear-gradient(180deg,rgba(12,35,64,.52) 0%,rgba(12,35,64,.72) 58%,rgba(12,35,64,.85) 100%),url('images/family-beach.jpg') center 32%/cover no-repeat;text-align:center;text-shadow:0 2px 18px rgba(0,0,0,.45);">
     <div class="wrap">
       <h1 style="color:#fff;max-width:18ch;margin:0 auto 18px;font-size:clamp(30px,5.6vw,44px);line-height:1.1;">Today Is Someday. So Why Not Today?</h1>
       <p class="sub" style="color:#fff;max-width:46ch;margin:0 auto 14px;font-size:clamp(16px,2.4vw,19px);">Life is worth living as full as you can, not to shrink, hold back, or wait. You have real potential, and the courage to reach it.</p>
@@ -401,5 +402,15 @@ function tInit(){
 if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', tInit); else tInit();
 </script>
 
+<!--motion--><style>
+@media (prefers-reduced-motion:no-preference){
+ @keyframes ffHeroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+ @keyframes ctaNudge{0%,86%,100%{transform:none}89%{transform:scale(1.045) rotate(-1.3deg)}92%{transform:scale(1.045) rotate(1.3deg)}95%{transform:scale(1.02)}}
+ .cta-btn{animation:ctaNudge 5s ease-in-out 2.6s infinite}
+ .cta-btn:hover{animation:none}
+ .hero-enter h1,.hero-enter .sub,.hero-enter .hero-stats{animation:ffHeroIn .7s ease both}
+ .hero-enter .sub{animation-delay:.12s}.hero-enter .hero-stats{animation-delay:.28s}
+}
+</style>
 </body>
 </html>
