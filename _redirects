@@ -1,5 +1,5 @@
 # 301 redirects from the old Wix URLs to the new site (Cloudflare Pages)
-/book-online            https://api.leadconnectorhq.com/widget/booking/TnZUEbyfYKdxCPuBADoB   301
+/book-online            /book/                                                                301
 /freetraining           /blog/how-to-stop-procrastinating.html                                301
 /more-about-me          /about                                                                301
 /guides                 /blog/                                                                301

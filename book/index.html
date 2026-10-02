@@ -25,6 +25,12 @@
 <link rel="icon" href="favicon-optimized.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Warm up the booking widget connection before the iframe requests it -->
+<link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin>
+<link rel="preconnect" href="https://link.msgsndr.com" crossorigin>
+<link rel="dns-prefetch" href="https://api.leadconnectorhq.com">
+<link rel="dns-prefetch" href="https://link.msgsndr.com">
+<link rel="preload" as="script" href="https://link.msgsndr.com/js/form_embed.js">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[
 {"@type":"ListItem","position":1,"name":"Home","item":"https://scottyeastwood.com/"},
@@ -67,7 +73,14 @@
   .quote cite{display:block;margin-top:10px;font-style:normal;font-weight:600;color:var(--navy);font-size:13.5px;}
   .reassure{max-width:660px;margin:26px auto 0;text-align:center;font-size:15px;color:var(--ink);background:var(--paper);border-radius:10px;padding:16px 20px;}
   .cal-card{background:#fff;border-radius:14px;box-shadow:0 24px 60px rgba(12,35,64,.28);max-width:900px;margin:28px auto -40px;padding:14px;position:relative;overflow:hidden;}
-  .cal-card iframe{width:100%;min-height:760px;border:none;overflow:hidden;}
+  .cal-card iframe{width:100%;min-height:760px;border:none;overflow:hidden;position:relative;z-index:2;opacity:0;transition:opacity .4s ease;}
+  .cal-card.loaded iframe{opacity:1;}
+  .cal-skeleton{position:absolute;inset:14px;border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:var(--grey);font-size:14px;font-weight:500;background:linear-gradient(100deg,#eef2f6 28%,#f8fafc 50%,#eef2f6 72%);background-size:200% 100%;animation:calShim 1.25s linear infinite;z-index:1;}
+  .cal-card.loaded .cal-skeleton{opacity:0;visibility:hidden;transition:opacity .35s ease,visibility 0s .35s;}
+  .cal-spin{width:34px;height:34px;border:3px solid #d6dfe8;border-top-color:var(--blue);border-radius:50%;animation:calSpin .8s linear infinite;}
+  @keyframes calShim{to{background-position:-200% 0;}}
+  @keyframes calSpin{to{transform:rotate(360deg);}}
+  @media(prefers-reduced-motion:reduce){.cal-skeleton{animation:none;}.cal-spin{animation:none;}.cal-card iframe{transition:none;}}
   .content{padding:70px 0 20px;}
   .content h2{font-size:22px;margin:30px 0 12px;text-align:center;}
   .grid{display:grid;grid-template-columns:1fr;gap:16px;max-width:760px;margin:0 auto;}
@@ -97,7 +110,8 @@
     <p class="trust">Rated 5.0 by coaching clients &middot; Free &middot; No pressure, an interview both ways</p>
   </div>
   <div class="cal-card" id="calendar">
-    <iframe src="https://api.leadconnectorhq.com/widget/booking/TnZUEbyfYKdxCPuBADoB" allow="payment" scrolling="no" id="TnZUEbyfYKdxCPuBADoB_book" title="Book a free strategy call"></iframe>
+    <div class="cal-skeleton" aria-hidden="true"><div class="cal-spin"></div>Loading the calendar&hellip;</div>
+    <iframe src="https://api.leadconnectorhq.com/widget/booking/TnZUEbyfYKdxCPuBADoB" allow="payment" scrolling="no" id="TnZUEbyfYKdxCPuBADoB_book" title="Book a free strategy call" onload="this.closest('.cal-card').classList.add('loaded')"></iframe>
   </div>
 </section>
 
@@ -124,5 +138,7 @@
 </footer>
 
 <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+<script>/* Failsafe: reveal the calendar even if the iframe onload is slow/blocked */
+setTimeout(function(){var c=document.getElementById('calendar');if(c)c.classList.add('loaded');},4000);</script>
 </body>
 </html>
