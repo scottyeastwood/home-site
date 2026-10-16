@@ -80,6 +80,8 @@
   .hstat-n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#fff;}
   .hstat-l{font-size:13px;color:#B9CADC;margin-top:2px;}
   @media(max-width:600px){.hero-stats{grid-template-columns:repeat(3,1fr);gap:10px;} .hstat-n{font-size:clamp(19px,6.2vw,24px);} .hstat-l{font-size:11px;line-height:1.2;}}
+  .home-hero{min-height:min(86vh,650px);display:flex;flex-direction:column;justify-content:space-between;padding:88px 0 40px;text-align:center;text-shadow:0 2px 18px rgba(0,0,0,.66),0 1px 4px rgba(0,0,0,.5);}
+  @media(max-width:600px){.home-hero{min-height:min(84vh,560px);padding:74px 0 30px;}}
 
   .kicker{color:var(--blue);font-size:13.5px;font-weight:600;margin-bottom:8px;}
   h2.h2{font-size:27px;font-weight:700;}
@@ -197,11 +199,12 @@
 
 <!-- HOME -->
 <div class="page active" id="page-home">
-  <section class="hero-enter" style="padding-top:64px;background:linear-gradient(180deg,rgba(12,35,64,.52) 0%,rgba(12,35,64,.72) 58%,rgba(12,35,64,.85) 100%),url('images/family-beach.webp') center 32%/cover no-repeat;text-align:center;text-shadow:0 2px 18px rgba(0,0,0,.45);">
+  <section class="hero-enter home-hero" style="background:linear-gradient(180deg,rgba(12,35,64,.94) 0%,rgba(12,35,64,.89) 20%,rgba(12,35,64,.62) 36%,rgba(12,35,64,.14) 50%,rgba(12,35,64,.14) 72%,rgba(12,35,64,.82) 100%),url('images/family-beach.webp') center 46%/cover no-repeat;">
     <div class="wrap">
-      <h1 style="color:#fff;max-width:18ch;margin:0 auto 18px;font-size:clamp(30px,5.6vw,44px);line-height:1.1;">Today Is Someday. So Why Not Today?</h1>
-      <p class="sub" style="color:#fff;max-width:46ch;margin:0 auto 14px;font-size:clamp(16px,2.4vw,19px);">Life is worth living as full as you can, not to shrink, hold back, or wait. You have real potential, and the courage to reach it.</p>
-      <p class="sub" style="color:#B9CADC;max-width:48ch;margin:0 auto 28px;font-size:15px;">Coaching, content, and a real life built on courage instead of fear. All of it, in one place.</p>
+      <h1 style="color:#fff;max-width:18ch;margin:0 auto 14px;font-size:clamp(30px,5.6vw,44px);line-height:1.1;">Today Is Someday. So Why Not Today?</h1>
+      <p class="sub" style="color:#fff;max-width:44ch;margin:0 auto;font-size:clamp(16px,2.4vw,18px);">Build an extraordinary life, without sacrificing the people and the faith that make it worth living.</p>
+    </div>
+    <div class="wrap">
       <div class="hero-stats">
         <div><div class="hstat-n">10+</div><div class="hstat-l">hours back / week</div></div>
         <div><div class="hstat-n">10+</div><div class="hstat-l">businesses started</div></div>
@@ -436,11 +439,23 @@ if(document.readyState === 'loading') document.addEventListener('DOMContentLoade
 @media (prefers-reduced-motion:no-preference){
  @keyframes ffHeroIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
  @keyframes ctaNudge{0%,86%,100%{transform:none}89%{transform:scale(1.045) rotate(-1.3deg)}92%{transform:scale(1.045) rotate(1.3deg)}95%{transform:scale(1.02)}}
- .cta-btn{animation:ctaNudge 5s ease-in-out 2.6s infinite}
+  @keyframes ctaWob{0%{transform:none}18%{transform:scale(1.05) rotate(-1.5deg)}42%{transform:scale(1.05) rotate(1.5deg)}66%{transform:scale(1.02) rotate(-.6deg)}100%{transform:none}}
+ .cta-btn.cta-wobble{animation:ctaWob 1.15s ease-in-out}
  .cta-btn:hover{animation:none}
  .hero-enter h1,.hero-enter .sub,.hero-enter .hero-stats{animation:ffHeroIn .7s ease both}
  .hero-enter .sub{animation-delay:.12s}.hero-enter .hero-stats{animation-delay:.28s}
 }
 </style>
+<script>(function(){
+  var mq=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)');
+  if(mq&&mq.matches)return;
+  var btns=[].slice.call(document.querySelectorAll('.cta-btn')).filter(function(b){return !b.closest('nav')&&!b.closest('header')&&!b.closest('.mobile-sticky')&&!b.closest('#exitPopup');});
+  if(!btns.length)return;
+  btns.forEach(function(b){b.addEventListener('animationend',function(){b.classList.remove('cta-wobble');});});
+  var i=0;
+  function visible(el){var r=el.getBoundingClientRect();return r.width>0&&r.height>0&&r.top<(window.innerHeight-16)&&r.bottom>16&&!(el.matches&&el.matches(':hover'));}
+  function tick(){var v=btns.filter(visible);if(!v.length)return;btns.forEach(function(b){b.classList.remove('cta-wobble');});var el=v[i%v.length];i++;void el.offsetWidth;el.classList.add('cta-wobble');}
+  setInterval(tick,3600);setTimeout(tick,2600);
+})();</script>
 </body>
 </html>
