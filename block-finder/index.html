@@ -321,7 +321,7 @@
 var GHL = {
   baseSrc: "https://api.leadconnectorhq.com/widget/form/a6YNwEhe6I38UKsgqLto",
   formId:  "a6YNwEhe6I38UKsgqLto",
-  fieldKeys: { block: "block", struggle: "struggle" }  // GHL hidden-field query keys (contact.block / contact.struggle)
+  fieldKeys: { block: "block", struggle: "struggle", fix: "fix" }  // GHL hidden-field query keys (contact.block / contact.struggle / contact.fix)
 };
 
 /* =========================================================
@@ -613,7 +613,7 @@ function showResult(){
 
 function buildSrc(){
   var params = [];
-  var map = {block:RESULT.blockName, struggle:RESULT.subName};
+  var map = {block:RESULT.blockName, struggle:RESULT.subName, fix:RESULT.move};
   Object.keys(GHL.fieldKeys).forEach(function(f){
     var key = GHL.fieldKeys[f];
     if(key){ params.push(encodeURIComponent(key)+"="+encodeURIComponent(map[f])); }
@@ -666,7 +666,7 @@ function showStep(id){
   if(EMBED){
     var _c=document.querySelector(".card"); if(_c){ _c.scrollTop=0; }
     // ask the host page to bring the widget to the top so the result starts at the top
-    if(id==="resultStep" && window.parent!==window){ try{ window.parent.postMessage({type:"bf-top"},"*"); }catch(e){} }
+    if(id==="resultStep" && window.parent!==window){ try{ window.parent.postMessage({type:"bf-result"},"*"); }catch(e){} }
   }
   else { document.querySelector(".card").scrollIntoView({behavior:"smooth", block:"start"}); }
   postHeight();
@@ -699,7 +699,9 @@ renderQuestion();
     var qp = new URLSearchParams(location.search);
     var wantResults = (location.hash === "#results" || qp.get("done") === "1");
     if(!wantResults) return;
-    if(window.top && window.top !== window.self){ window.top.location.href = location.href; return; }
+    // Reveal the result IN PLACE (inside the widget). Do NOT break out to the top
+    // window — that was opening a full new page. In the embedded widget this just
+    // shows the fix right where the form was.
     var saved = localStorage.getItem("blockFinderResult");
     if(saved){ RESULT = JSON.parse(saved); revealFix(); }
   }catch(e){}
