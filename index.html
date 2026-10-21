@@ -163,7 +163,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Scotty Eastwood","url":"https://scottyeastwood.com/","publisher":{"@type":"Organization","name":"Dose of Courage Coaching"}}
 </script>
-<!--wrap-balance--><style>h1,h2,h3,h4{text-wrap:balance;}p,li,.sub,.lead,.cta-sub,.trust,.r-year-sub{text-wrap:pretty;}</style>
+<!--wrap-balance--><style>*{text-wrap:pretty;}h1,h2,h3,h4,h5,h6,summary{text-wrap:balance;}p,li,.sub,.lead,.cta-sub,.trust,.r-year-sub{text-wrap:pretty;}</style>
 </head>
 <body>
 
@@ -177,7 +177,7 @@
       <button data-page="youtube" onclick="showPage('youtube')">YouTube</button>
       <!-- Free Resources paused until the tools are ready. Restore this line when live:
       <button data-page="resources" onclick="showPage('resources')">Free Resources</button> -->
-      <details class="resmenu"><summary>Free Resources</summary><div class="resmenu-panel"><a href="/time-audit/">Free Time Audit</a><a href="/start-a-business/">Start-a-Business Guide</a><a href="/newsletter/">Newsletter</a><a href="/blog/">Blog</a><a href="/book/">Free Strategy Call</a></div></details>
+      <details class="resmenu"><summary>Free Resources</summary><div class="resmenu-panel"><a href="/block-finder/">Block Finder</a><a href="/time-audit/">Free Time Audit</a><a href="/start-a-business/">Start-a-Business Guide</a><a href="/newsletter/">Newsletter</a><a href="/blog/">Blog</a><a href="/book/">Free Strategy Call</a></div></details>
     </div>
     <a class="cta-btn" href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" id="navCta">See the Offer</a>
     <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
@@ -199,41 +199,74 @@
 
 <!-- HOME -->
 <div class="page active" id="page-home">
-  <section class="hero-enter home-hero" style="background:linear-gradient(180deg,rgba(12,35,64,.94) 0%,rgba(12,35,64,.89) 20%,rgba(12,35,64,.62) 36%,rgba(12,35,64,.14) 50%,rgba(12,35,64,.14) 72%,rgba(12,35,64,.82) 100%),url('images/family-beach.webp') center 46%/cover no-repeat;">
-    <div class="wrap">
-      <h1 style="color:#fff;max-width:18ch;margin:0 auto 14px;font-size:clamp(30px,5.6vw,44px);line-height:1.1;">Today Is Someday. So Why Not Today?</h1>
-      <p class="sub" style="color:#fff;max-width:44ch;margin:0 auto;font-size:clamp(16px,2.4vw,18px);">Build an extraordinary life, without sacrificing the people and the faith that make it worth living.</p>
-      <a class="cta-btn hero-cta" href="/time-audit/" style="margin-top:22px;padding:14px 30px;font-size:15.5px;">Take the Free 2-Minute Time Audit</a>
-      <div class="hero-cta-sub" style="color:#DDE7F1;font-size:13.5px;margin-top:10px;">See how many hours a week you could reclaim.</div>
-    </div>
-    <div class="wrap">
-      <div class="hero-stats">
-        <div><div class="hstat-n">10+</div><div class="hstat-l">hours back / week</div></div>
-        <div><div class="hstat-n">10+</div><div class="hstat-l">businesses started</div></div>
-        <div><div class="hstat-n">12.3K+</div><div class="hstat-l">followers across platforms</div></div>
-      </div>
-    </div>
-  </section>
-
-  <section style="background:var(--paper);">
-    <div class="wrap">
-      <div style="display:grid;grid-template-columns:1fr;gap:24px;">
-        <a href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;"><div class="result feature" style="cursor:pointer;">
-          <h3>Coaching: The Freedom Framework</h3>
-          <p>1:1 coaching for Christian entrepreneurs building freedom for their family. Time back, focused action, and the courage to actually follow through. Real clients get more results in 4 weeks than they did the entire quarter before.</p>
-        </div></a>
-        <div class="result" style="cursor:pointer;" onclick="showPage('youtube')">
-          <h3>Content: Before the Sun Sets</h3>
-          <p>Outdoor and family adventure content: surfing, spearfishing, camping, hiking. On the road to 100K. Subscribe if you like it!</p>
+  <section class="hero-enter home-hero hero-split" style="background:linear-gradient(180deg,rgba(12,35,64,.94) 0%,rgba(12,35,64,.9) 22%,rgba(12,35,64,.72) 45%,rgba(12,35,64,.6) 70%,rgba(12,35,64,.82) 100%),url('images/family-beach.webp') center 46%/cover no-repeat;">
+    <div class="wrap hero-grid">
+      <div class="hero-left">
+        <h1 style="color:#fff;max-width:17ch;margin:0 0 14px;font-size:clamp(30px,5.6vw,44px);line-height:1.1;">Today Is Someday. So Why Not Today?</h1>
+        <p class="sub" style="color:#fff;max-width:42ch;margin:0 0 24px;font-size:clamp(16px,2.4vw,18px);">Build an extraordinary life, without sacrificing the people and the faith that make it worth living.</p>
+        <div class="hero-stats">
+          <div><div class="hstat-n">10+</div><div class="hstat-l">hours back / week</div></div>
+          <div><div class="hstat-n">10+</div><div class="hstat-l">businesses started</div></div>
+          <div><div class="hstat-n">12.3K+</div><div class="hstat-l">followers across platforms</div></div>
         </div>
-        <a href="about" style="text-decoration:none;color:inherit;"><div class="result" style="cursor:pointer;">
-          <h3>About: the guy behind both</h3>
-          <p>Husband, dad, entrepreneur who's built and lost businesses. Faith-driven, still building everything you see here.</p>
-        </div></a>
+      </div>
+      <div class="hero-right">
+        <div class="bf-shell" id="bfShell">
+          <button class="bf-expand" id="bfExpand" type="button" aria-label="Expand" title="Expand"></button>
+          <iframe id="bfFrame" src="/block-finder/?embed=1" title="Find out what is really stopping you"></iframe>
+        </div>
       </div>
     </div>
   </section>
-
+  <div class="bf-backdrop" id="bfBackdrop"></div>
+  <style>
+    .home-hero.hero-split{min-height:0;padding:94px 0 54px;}
+    .hero-grid{display:flex;flex-direction:column;gap:28px;width:100%;}
+    .hero-grid .hero-right{order:2;}
+    /* Fixed widget height keeps the hero height (and the fold) stable; the taller
+       result/form states scroll inside the widget instead of growing the page. */
+    .bf-shell{position:relative;height:600px;border-radius:16px;box-shadow:0 22px 54px rgba(8,22,40,.42);transition:box-shadow .2s;}
+    #bfFrame{width:100%;height:100%;border:none;border-radius:16px;background:#fff;display:block;}
+    .bf-expand{position:absolute;top:10px;right:10px;z-index:4;width:34px;height:34px;padding:0;border:none;border-radius:9px;background:rgba(255,255,255,.9);color:var(--navy);box-shadow:0 2px 10px rgba(12,35,64,.18);cursor:pointer;display:none;align-items:center;justify-content:center;transition:background .15s,transform .15s;}
+    .bf-expand:hover{background:#fff;transform:translateY(-1px);}
+    .bf-expand svg{width:16px;height:16px;display:block;}
+    /* focus (expand) overlay: enlarges the SAME iframe, homepage dimmed behind */
+    .bf-backdrop{position:fixed;inset:0;background:rgba(12,35,64,.55);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);z-index:1000;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s;}
+    body.bf-expanded{overflow:hidden;}
+    body.bf-expanded .bf-backdrop{opacity:1;visibility:visible;}
+    body.bf-expanded .bf-shell{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(780px,92vw);height:min(880px,90vh);z-index:1001;box-shadow:0 30px 80px rgba(0,0,0,.5);}
+    @media(min-width:900px){
+      .home-hero.hero-split{text-align:left;padding:70px 0 66px;}
+      .hero-grid{flex-direction:row;align-items:center;justify-content:space-between;gap:50px;}
+      .hero-grid .hero-left{flex:1;max-width:50%;}
+      .hero-grid .hero-right{flex:0 0 420px;order:0;}
+      .hero-split .hero-stats{justify-content:flex-start;}
+      .bf-expand{display:flex;}   /* expand is a desktop-only affordance */
+    }
+    @media(max-width:600px){ .bf-shell{height:650px;} }
+  </style>
+  <script>
+  (function(){
+    var btn=document.getElementById('bfExpand'), bd=document.getElementById('bfBackdrop');
+    if(!btn||!bd) return;
+    var EXP='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg>';
+    var CLS='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>';
+    btn.innerHTML=EXP;
+    function set(on){ document.body.classList.toggle('bf-expanded',on); btn.innerHTML=on?CLS:EXP; var t=on?'Close':'Expand'; btn.title=t; btn.setAttribute('aria-label',t); }
+    btn.addEventListener('click',function(){ set(!document.body.classList.contains('bf-expanded')); });
+    bd.addEventListener('click',function(){ set(false); });
+    document.addEventListener('keydown',function(e){ if(e.key==='Escape') set(false); });
+    // when the widget reaches its result, bring it to the top of the viewport
+    window.addEventListener('message',function(e){
+      var d=e.data;
+      if(d&&d.type==='bf-top'){
+        if(document.body.classList.contains('bf-expanded')) return;
+        var el=document.getElementById('bfShell');
+        if(el){ var y=el.getBoundingClientRect().top+window.pageYOffset-70; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); }
+      }
+    },false);
+  })();
+  </script>
 
   <section>
     <div class="wrap">
@@ -280,19 +313,44 @@
     </div>
   </section>
 
+  <!-- Three things: Coaching / Content / About (moved down here per layout order) -->
   <section>
-    <div class="wrap hero-split">
-      <div>
-        <div class="kicker">Real client example</div>
-        <h2 class="h2" style="margin-bottom:16px;">A multi-million dollar acquisition, stalling at every decision</h2>
-        <p style="font-size:16px;color:var(--grey);max-width:52ch;">Every time he got close to a real decision, the deal slowed down. It looked like bad timing. It was fear, dressed up as hesitation. He kept showing up scared instead of waiting to feel ready, then closed and funded the deal, and still runs it today.</p>
+    <div class="wrap">
+      <div style="display:grid;grid-template-columns:1fr;gap:24px;">
+        <a href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;"><div class="result feature" style="cursor:pointer;">
+          <h3>Coaching: The Freedom Framework</h3>
+          <p>1:1 coaching for Christian entrepreneurs building freedom for their family. Time back, focused action, and the courage to actually follow through. Real clients get more results in 4 weeks than they did the entire quarter before.</p>
+        </div></a>
+        <div class="result" style="cursor:pointer;" onclick="showPage('youtube')">
+          <h3>Content: Before the Sun Sets</h3>
+          <p>Outdoor and family adventure content: surfing, spearfishing, camping, hiking. On the road to 100K. Subscribe if you like it!</p>
+        </div>
+        <a href="about" style="text-decoration:none;color:inherit;"><div class="result" style="cursor:pointer;">
+          <h3>About: the guy behind both</h3>
+          <p>Husband, dad, entrepreneur who's built and lost businesses. Faith-driven, still building everything you see here.</p>
+        </div></a>
       </div>
-      <div class="field-note">
+    </div>
+  </section>
+
+  <!-- What you actually get (now above the client example, just under the three cards) -->
+  <section style="background:var(--paper);">
+    <div class="wrap">
+      <div class="field-note" style="max-width:660px;margin:0 auto;">
         <div class="label">What you actually get, coaching-side</div>
         <h4>Time back, focused action, real courage</h4>
         <p>Clients who commit consistently get 10+ hours a week back, not by working harder but by finding the 20% that actually moves the number and clearing what's been quietly blocking it.</p>
         <div class="stat-line">Faith, family, fun, finances, fitness, friendships. That is the point of the time back in the first place.</div>
       </div>
+    </div>
+  </section>
+
+  <!-- Real client example -->
+  <section>
+    <div class="wrap">
+      <div class="kicker">Real client example</div>
+      <h2 class="h2" style="margin-bottom:16px;">A multi-million dollar acquisition, stalling at every decision</h2>
+      <p style="font-size:16px;color:var(--grey);max-width:52ch;">Every time he got close to a real decision, the deal slowed down. It looked like bad timing. It was fear, dressed up as hesitation. He kept showing up scared instead of waiting to feel ready, then closed and funded the deal, and still runs it today.</p>
     </div>
   </section>
 
@@ -354,18 +412,18 @@
 
 <script>
 const RESOURCES = [
-  { title: "The Bottleneck Audit", desc: "20-question scored quiz — find exactly what's costing you time and momentum.", status: "live", link: "https://claude.ai/code/artifact/5f697b14-aa17-4b8c-9521-7e8a7d91ea4c" },
+  { title: "The Bottleneck Audit", desc: "20-question scored quiz, find exactly what's costing you time and momentum.", status: "live", link: "https://claude.ai/code/artifact/5f697b14-aa17-4b8c-9521-7e8a7d91ea4c" },
   { title: "How to Stop Procrastinating", desc: "The real 3-step system: identity, schedule, remove friction.", status: "live", link: "blog/how-to-stop-procrastinating" },
   { title: "Fear of Failure", desc: "Why it's rarely about failure itself, and how to move through it.", status: "live", link: "blog/fear-of-failure" },
   { title: "Fear of Success", desc: "Why you sabotage yourself right when things start working.", status: "live", link: "blog/fear-of-success" },
-  { title: "How to Be More Disciplined", desc: "You're already disciplined — just not everywhere yet.", status: "live", link: "blog/how-to-be-more-disciplined" },
+  { title: "How to Be More Disciplined", desc: "You're already disciplined, just not everywhere yet.", status: "live", link: "blog/how-to-be-more-disciplined" },
   { title: "Why Do I Self-Sabotage?", desc: "It traces back to a belief or fear running underneath.", status: "live", link: "blog/why-do-i-self-sabotage" },
-  { title: "Self-Sabotage in Relationships", desc: "Fear wearing a disguise — how to spot the pattern.", status: "live", link: "blog/why-do-i-self-sabotage-my-relationships" },
-  { title: "Time Management for Entrepreneurs", desc: "Two habits, done daily and weekly — not a fancier app.", status: "live", link: "blog/time-management-for-entrepreneurs" },
+  { title: "Self-Sabotage in Relationships", desc: "Fear wearing a disguise, how to spot the pattern.", status: "live", link: "blog/why-do-i-self-sabotage-my-relationships" },
+  { title: "Time Management for Entrepreneurs", desc: "Two habits, done daily and weekly, not a fancier app.", status: "live", link: "blog/time-management-for-entrepreneurs" },
   { title: "Find Your 20% Worksheet", desc: "The best-month/worst-month exercise, guided step by step.", status: "soon" },
   { title: "Weekly Action Plan Template", desc: "The actual planning tool used in 1:1 coaching sessions.", status: "soon" },
   { title: "Unsexy Equity", desc: "15 overlooked, high-margin businesses you can launch this month.", status: "soon" },
-  { title: "The Freedom Toolkit", desc: "The full paid tool suite for doing this on your own — coming soon.", status: "soon" },
+  { title: "The Freedom Toolkit", desc: "The full paid tool suite for doing this on your own, coming soon.", status: "soon" },
 ];
 
 function renderResources(){
