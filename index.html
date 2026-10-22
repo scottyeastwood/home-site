@@ -199,7 +199,7 @@
 
 <!-- HOME -->
 <div class="page active" id="page-home">
-  <section class="hero-enter home-hero hero-split" style="background:linear-gradient(180deg,rgba(12,35,64,.94) 0%,rgba(12,35,64,.9) 22%,rgba(12,35,64,.72) 45%,rgba(12,35,64,.6) 70%,rgba(12,35,64,.82) 100%),url('images/family-beach.webp') center 46%/cover no-repeat;">
+  <section class="hero-enter home-hero hero-split" style="background:linear-gradient(180deg,rgba(12,35,64,.82) 0,rgba(12,35,64,.78) 22vw,rgba(12,35,64,.8) 42vw,rgba(12,35,64,.9) 52vw,#0C2340 58vw,#0C2340 100%),url('images/family-beach.webp') top center/100% auto no-repeat;background-color:#0C2340;">
     <div class="wrap hero-grid">
       <div class="hero-left">
         <div class="hero-top">
@@ -240,31 +240,43 @@
     @media(min-width:900px){
       /* Desktop: keep the family photo on the LEFT (under the copy) and blend it
          seamlessly into solid navy on the right, behind the widget column. */
+      .home-hero.hero-split .wrap{max-width:1200px;}
       .home-hero.hero-split{text-align:left;padding:70px 0 66px;
         background:
           linear-gradient(90deg,
-            rgba(12,35,64,.30) 0%,
-            rgba(12,35,64,.16) 34%,
-            rgba(12,35,64,.24) 52%,
-            rgba(12,35,64,.46) 66%,
-            rgba(12,35,64,.80) 80%,
-            #0C2340 90%, #0C2340 100%),
+            rgba(12,35,64,.34) 0%,
+            rgba(12,35,64,.2) 30%,
+            rgba(12,35,64,.2) 55%,
+            rgba(12,35,64,.4) 64%,
+            rgba(12,35,64,.82) 74%,
+            #0C2340 85%, #0C2340 100%),
           linear-gradient(180deg,
-            rgba(12,35,64,.55) 0%,
-            rgba(12,35,64,.1) 24%,
-            rgba(12,35,64,0) 40%,
-            rgba(12,35,64,0) 62%,
+            rgba(12,35,64,.52) 0%,
+            rgba(12,35,64,.34) 13%,
+            rgba(12,35,64,.14) 28%,
+            rgba(12,35,64,.06) 44%,
+            rgba(12,35,64,.06) 62%,
             rgba(12,35,64,.4) 84%,
-            rgba(12,35,64,.62) 100%),
-          url('images/family-beach.webp') 88% 42% / 135% auto no-repeat !important;
+            rgba(12,35,64,.6) 100%),
+          url('images/family-beach.webp') 100% 40% / 120% auto no-repeat !important;
         background-color:#0C2340 !important;}
-      .hero-grid{flex-direction:row;align-items:stretch;justify-content:space-between;gap:50px;}
-      .hero-grid .hero-left{flex:1;max-width:50%;display:flex;flex-direction:column;justify-content:space-between;}
+      .hero-grid{flex-direction:row;align-items:stretch;justify-content:space-between;gap:60px;}
+      .hero-grid .hero-left{flex:1;display:flex;flex-direction:column;justify-content:space-between;}
       .hero-grid .hero-right{flex:0 0 420px;order:0;}
-      .hero-split .hero-stats{justify-content:flex-start;}
+      .hero-split .hero-stats{justify-content:space-between;width:100%;gap:0;}
       .bf-expand{display:flex;}   /* expand is a desktop-only affordance */
+      .hero-split .hero-top h1{font-size:48px !important;line-height:1.08 !important;}
+      .hero-split .hero-top .sub{font-size:19px !important;}
     }
     @media(max-width:600px){ .bf-shell{height:650px;} }
+    /* Mobile hero spacing: headline to the very top over the photo, everything pulled up, tight gap to the widget. */
+    @media(max-width:899px){
+      .home-hero.hero-split{padding:34px 0 30px;}
+      .hero-grid{gap:18px;}
+      .hero-split .hero-top h1{margin-bottom:14px !important;}
+      .hero-split .hero-top .sub{font-size:13.5px !important;line-height:1.45;max-width:44ch !important;}
+      .hero-split .hero-stats{margin-top:16px;}
+    }
   </style>
   <script>
   (function(){
