@@ -131,6 +131,10 @@
   .r-cta{background:linear-gradient(160deg,var(--navy),var(--navy2));border-radius:12px;padding:26px 22px;text-align:center;margin-top:24px;}
   .r-cta h3{color:#fff;font-size:20px;margin:0 0 8px;}
   .r-cta p{color:#C9D6E4;font-size:14.5px;max-width:46ch;margin:0 auto 18px;}
+  @media(prefers-reduced-motion:no-preference){
+    #fixReveal{animation:bfReveal .5s cubic-bezier(.2,.7,.3,1) both;}
+    @keyframes bfReveal{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+  }
   /* content */
   .content{padding:78px 0 30px;}
   .content h2{font-size:23px;margin:34px 0 10px;}

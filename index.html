@@ -202,8 +202,10 @@
   <section class="hero-enter home-hero hero-split" style="background:linear-gradient(180deg,rgba(12,35,64,.94) 0%,rgba(12,35,64,.9) 22%,rgba(12,35,64,.72) 45%,rgba(12,35,64,.6) 70%,rgba(12,35,64,.82) 100%),url('images/family-beach.webp') center 46%/cover no-repeat;">
     <div class="wrap hero-grid">
       <div class="hero-left">
-        <h1 style="color:#fff;max-width:17ch;margin:0 0 14px;font-size:clamp(30px,5.6vw,44px);line-height:1.1;">Today Is Someday. So Why Not Today?</h1>
-        <p class="sub" style="color:#fff;max-width:42ch;margin:0 0 24px;font-size:clamp(16px,2.4vw,18px);">Build an extraordinary life, without sacrificing the people and the faith that make it worth living.</p>
+        <div class="hero-top">
+          <h1 style="color:#fff;max-width:17ch;margin:0 0 14px;font-size:clamp(30px,5.6vw,44px);line-height:1.1;">Today Is Someday. So Why Not Today?</h1>
+          <p class="sub" style="color:#fff;max-width:42ch;margin:0;font-size:clamp(16px,2.4vw,18px);">Build an extraordinary life, without sacrificing the people and the faith that make it worth living.</p>
+        </div>
         <div class="hero-stats">
           <div><div class="hstat-n">10+</div><div class="hstat-l">hours back / week</div></div>
           <div><div class="hstat-n">10+</div><div class="hstat-l">businesses started</div></div>
@@ -236,9 +238,28 @@
     body.bf-expanded .bf-backdrop{opacity:1;visibility:visible;}
     body.bf-expanded .bf-shell{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);width:min(780px,92vw);height:min(880px,90vh);z-index:1001;box-shadow:0 30px 80px rgba(0,0,0,.5);}
     @media(min-width:900px){
-      .home-hero.hero-split{text-align:left;padding:70px 0 66px;}
-      .hero-grid{flex-direction:row;align-items:center;justify-content:space-between;gap:50px;}
-      .hero-grid .hero-left{flex:1;max-width:50%;}
+      /* Desktop: keep the family photo on the LEFT (under the copy) and blend it
+         seamlessly into solid navy on the right, behind the widget column. */
+      .home-hero.hero-split{text-align:left;padding:70px 0 66px;
+        background:
+          linear-gradient(90deg,
+            rgba(12,35,64,.30) 0%,
+            rgba(12,35,64,.16) 34%,
+            rgba(12,35,64,.24) 52%,
+            rgba(12,35,64,.46) 66%,
+            rgba(12,35,64,.80) 80%,
+            #0C2340 90%, #0C2340 100%),
+          linear-gradient(180deg,
+            rgba(12,35,64,.55) 0%,
+            rgba(12,35,64,.1) 24%,
+            rgba(12,35,64,0) 40%,
+            rgba(12,35,64,0) 62%,
+            rgba(12,35,64,.4) 84%,
+            rgba(12,35,64,.62) 100%),
+          url('images/family-beach.webp') 88% 42% / 135% auto no-repeat !important;
+        background-color:#0C2340 !important;}
+      .hero-grid{flex-direction:row;align-items:stretch;justify-content:space-between;gap:50px;}
+      .hero-grid .hero-left{flex:1;max-width:50%;display:flex;flex-direction:column;justify-content:space-between;}
       .hero-grid .hero-right{flex:0 0 420px;order:0;}
       .hero-split .hero-stats{justify-content:flex-start;}
       .bf-expand{display:flex;}   /* expand is a desktop-only affordance */
@@ -268,6 +289,18 @@
         if(el){ var y=el.getBoundingClientRect().top+window.pageYOffset-70; window.scrollTo({top:Math.max(0,y),behavior:'smooth'}); }
       }
     },false);
+    // Returning from the GHL form submit (redirect set to /?bfresult=1): load the
+    // widget straight into its saved result so it reveals in place on the home page.
+    (function(){
+      try{
+        var qp=new URLSearchParams(location.search);
+        if(qp.get('bfresult')==='1'){
+          var fr=document.getElementById('bfFrame');
+          if(fr){ fr.src='/block-finder/?embed=1&done=1'; }
+          history.replaceState(null,'',location.pathname);
+        }
+      }catch(e){}
+    })();
   })();
   </script>
 
