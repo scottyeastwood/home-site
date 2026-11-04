@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon-optimized.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebApplication","name":"The Time Audit","url":"https://scottyeastwood.com/time-audit/","applicationCategory":"BusinessApplication","operatingSystem":"Web","description":"A free 2-minute time audit for entrepreneurs that estimates how many hours a week you could reclaim, identifies your top 3 time leaks, and gives the first fix for each.","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"creator":{"@type":"Person","name":"Scotty Eastwood","url":"https://scottyeastwood.com/about"}}
 </script>
@@ -45,8 +45,8 @@
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{margin:0;font-family:'Roboto',sans-serif;color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;background:var(--white);}
-  h1,h2,h3{font-family:'Montserrat',sans-serif;color:var(--navy);line-height:1.2;}
+  body{margin:0;font-family:'Hanken Grotesk',sans-serif;color:var(--ink);line-height:1.7;-webkit-font-smoothing:antialiased;background:var(--white);}
+  h1,h2,h3{font-family:'Hanken Grotesk',sans-serif;font-weight:800;letter-spacing:-.01em;color:var(--navy);line-height:1.2;}
   a{color:var(--blue);}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px;}
   /* nav */
@@ -70,9 +70,9 @@
   .qcount{font-size:12.5px;color:var(--grey);font-weight:500;margin-bottom:20px;}
   .qstage{animation:fade .32s ease;}
   @keyframes fade{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:none;}}
-  .qtext{font-family:'Montserrat',sans-serif;font-size:21px;font-weight:700;color:var(--navy);margin:0 0 4px;line-height:1.3;}
+  .qtext{font-family:'Hanken Grotesk',sans-serif;font-size:21px;font-weight:700;color:var(--navy);margin:0 0 4px;line-height:1.3;}
   .qhelp{font-size:14px;color:var(--grey);margin:0 0 18px;}
-  .opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:9px;padding:15px 17px;margin-bottom:11px;font-size:15.5px;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s,transform .1s;font-family:'Roboto',sans-serif;line-height:1.4;}
+  .opt{display:block;width:100%;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:9px;padding:15px 17px;margin-bottom:11px;font-size:15.5px;color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s,transform .1s;font-family:'Hanken Grotesk',sans-serif;line-height:1.4;}
   .opt:hover{border-color:var(--blue);background:#F3FAFE;}
   .opt:active{transform:scale(.995);}
   .opt.sel{border-color:var(--blue);background:#EAF7FE;font-weight:600;}
@@ -82,9 +82,9 @@
   .step{display:none;}
   .step.on{display:block;}
   .teaser{text-align:center;margin-bottom:22px;}
-  .teaser .big{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(40px,10vw,58px);color:var(--blue);line-height:1;}
+  .teaser .big{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:clamp(40px,10vw,58px);color:var(--blue);line-height:1;}
   .teaser .blurwrap{filter:blur(7px);opacity:.55;user-select:none;pointer-events:none;margin-top:6px;font-weight:600;color:var(--navy);}
-  .gate-h{font-family:'Montserrat',sans-serif;font-size:20px;font-weight:800;color:var(--navy);text-align:center;margin:4px 0 6px;}
+  .gate-h{font-family:'Hanken Grotesk',sans-serif;font-size:20px;font-weight:800;color:var(--navy);text-align:center;margin:4px 0 6px;}
   .gate-p{font-size:14.5px;color:var(--grey);text-align:center;max-width:42ch;margin:0 auto 18px;}
   #formMount iframe{width:100%;min-height:560px;border:none;border-radius:12px;}
   .reveal-fallback{text-align:center;margin-top:10px;}
@@ -93,22 +93,22 @@
   .r-badge{display:inline-block;background:#EAF7FE;color:var(--blue-d);font-size:12.5px;font-weight:600;padding:5px 13px;border-radius:99px;margin-bottom:14px;}
   .r-hero{text-align:center;padding:2px 0 4px;}
   .r-eyebrow{font-size:12.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:6px;}
-  .r-headline{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(20px,5vw,26px);color:var(--navy);line-height:1.1;}
-  .r-num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(74px,22vw,134px);color:var(--blue);line-height:.9;margin:2px 0 0;}
-  .r-unit{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(19px,5.4vw,28px);color:var(--navy);line-height:1.1;margin-bottom:14px;}
+  .r-headline{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:clamp(20px,5vw,26px);color:var(--navy);line-height:1.1;}
+  .r-num{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:clamp(74px,22vw,134px);color:var(--blue);line-height:.9;margin:2px 0 0;}
+  .r-unit{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:clamp(19px,5.4vw,28px);color:var(--navy);line-height:1.1;margin-bottom:14px;}
   .r-tier{display:inline-block;background:#EAF7FE;color:var(--blue-d);font-size:12.5px;font-weight:700;padding:5px 14px;border-radius:99px;}
   .r-year{display:flex;align-items:center;justify-content:center;gap:clamp(16px,6vw,38px);background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;border-radius:14px;padding:22px 20px;text-align:center;margin:24px 0 6px;}
   .r-yr-item{display:flex;flex-direction:column;line-height:1;}
-  .r-yr-num{font-family:'Montserrat',sans-serif;font-weight:800;font-size:clamp(32px,9vw,48px);color:var(--gold);}
+  .r-yr-num{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:clamp(32px,9vw,48px);color:var(--gold);}
   .r-yr-lbl{font-size:clamp(12px,3.4vw,14px);color:#C9D6E4;font-weight:600;margin-top:8px;letter-spacing:.02em;}
-  .r-yr-x{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;color:#5B6F86;}
+  .r-yr-x{font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:20px;color:#5B6F86;}
   .r-year-sub{text-align:center;font-size:14.5px;color:var(--grey);margin:12px auto 0;max-width:42ch;}
   .r-frame{font-size:16px;color:var(--navy);font-weight:500;background:var(--paper);border-left:3px solid var(--blue);border-radius:6px;padding:15px 17px;margin:20px 0;}
   .r-leaks{margin:22px 0 6px;}
   .leak{border:1px solid var(--line);border-radius:10px;padding:15px 17px;margin-bottom:12px;}
   .leak .lh{display:flex;align-items:center;gap:9px;margin-bottom:5px;}
-  .leak .rank{background:var(--navy);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:12px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;}
-  .leak .lt{font-family:'Montserrat',sans-serif;font-weight:700;font-size:15.5px;color:var(--navy);}
+  .leak .rank{background:var(--navy);color:#fff;font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:12px;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;}
+  .leak .lt{font-family:'Hanken Grotesk',sans-serif;font-weight:700;font-size:15.5px;color:var(--navy);}
   .leak .fix{font-size:14.5px;color:var(--ink);margin:0;}
   .leak .fix b{color:var(--blue-d);}
   .r-cta{background:linear-gradient(160deg,var(--navy),var(--navy2));border-radius:12px;padding:26px 22px;text-align:center;margin-top:24px;}
@@ -146,7 +146,7 @@
   @media(max-width:600px){.navright{gap:11px;}.resmenu>summary{font-size:13px;}}
 </style>
 <!--wrap-balance--><style>*{text-wrap:pretty;}h1,h2,h3,h4,h5,h6,summary{text-wrap:balance;}p,li,.sub,.lead,.cta-sub,.trust,.r-year-sub{text-wrap:pretty;}</style>
-</head>
+<style>.anton{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.012em;line-height:.98;}h2.h2{font-family:'Anton',sans-serif !important;font-weight:400 !important;text-transform:uppercase;letter-spacing:.012em;line-height:1.05;}</style></head>
 <body>
 
 <nav><div class="wrap">
@@ -157,7 +157,7 @@
 <section class="hero">
   <div class="wrap">
     <div class="kicker">The Time Audit &middot; 2 minutes</div>
-    <h1>Find the hours hiding in your week.</h1>
+    <h1 class="anton" style="letter-spacing:.012em;">Find the hours hiding in your week.</h1>
     <p class="sub">Answer 10 quick questions and see how many hours a week you could reclaim, your top 3 time leaks, and the first fix for each.</p>
     <p class="trust">Free &middot; Built for Christian entrepreneurs</p>
   </div>

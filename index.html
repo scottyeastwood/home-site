@@ -24,7 +24,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="favicon-optimized.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Person","name":"Scotty Eastwood","jobTitle":"Business & Mindset Coach","url":"https://scottyeastwood.com/about","worksFor":{"@type":"Organization","name":"Dose of Courage Coaching","url":"https://coaching.scottyeastwood.com"},"sameAs":["https://www.linkedin.com/in/scottyeastwood/","https://www.instagram.com/scotty_eastwood/","https://www.youtube.com/@ScottyBeforethesunsets"]}
 </script>
@@ -38,8 +38,9 @@
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{margin:0;font-family:'Roboto',sans-serif;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
-  h1,h2,h3,h4{font-family:'Montserrat',sans-serif;margin:0;line-height:1.15;color:var(--navy);}
+  body{margin:0;font-family:'Hanken Grotesk',sans-serif;color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Hanken Grotesk',sans-serif;margin:0;line-height:1.15;color:var(--navy);font-weight:800;letter-spacing:-.01em;}
+  .anton{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.012em;line-height:.98;}
   a{color:inherit;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
   section{padding:88px 0;}
@@ -54,7 +55,7 @@
   .brand{display:flex;align-items:center;gap:9px;font-weight:700;font-size:16px;cursor:pointer;}
   .brand img{height:28px;width:auto;}
   .navlinks{display:flex;gap:34px;}
-  .navlinks button{background:none;border:none;font-family:'Roboto',sans-serif;font-size:15px;color:var(--grey);cursor:pointer;padding:6px 0;position:relative;}
+  .navlinks button{background:none;border:none;font-family:'Hanken Grotesk',sans-serif;font-size:15px;color:var(--grey);cursor:pointer;padding:6px 0;position:relative;}
   .navlinks button.active{color:var(--navy);}
   .navlinks button.active::after{content:'';position:absolute;left:0;right:0;bottom:-2px;height:2px;background:var(--blue);}
   .cta-btn{display:inline-block;background:var(--blue);color:#fff;font-weight:500;font-size:15px;padding:13px 26px;border-radius:4px;border:none;cursor:pointer;text-decoration:none;transition:transform .15s ease;}
@@ -63,13 +64,16 @@
   .hamburger span{width:22px;height:2px;background:var(--ink);}
   .mobile-menu{display:none;flex-direction:column;padding:10px 28px 18px;border-top:1px solid var(--line);}
   .mobile-menu.open{display:flex;}
-  .mobile-menu button{background:none;border:none;text-align:left;font-size:15px;padding:10px 0;font-family:'Roboto',sans-serif;}
+  .mobile-menu button{background:none;border:none;text-align:left;font-size:15px;padding:10px 0;font-family:'Hanken Grotesk',sans-serif;}
 
   /* Hero: asymmetric split */
   .hero-split{display:grid;grid-template-columns:1fr;gap:40px;}
   @media(min-width:900px){.hero-split{grid-template-columns:7fr 5fr;gap:56px;align-items:start;}}
   .hero-split h1{font-size:36px;font-weight:800;letter-spacing:-.4px;max-width:14ch;margin-bottom:20px;}
   .hero-split .sub{font-size:17px;color:var(--grey);max-width:48ch;margin-bottom:28px;}
+  .home-hero .hero-triad{font-size:clamp(50px,9vw,96px);color:#fff;max-width:none;margin:0 0 20px;letter-spacing:.01em;}
+  .home-hero .hero-triad .hl{color:var(--blue);}
+  .home-hero .hero-steward{color:#EAF2FA;max-width:42ch;margin:0 auto;font-size:clamp(16px,2.3vw,19px);font-weight:500;line-height:1.5;}
   .field-note{background:var(--white);border-left:3px solid var(--blue);border-radius:4px;padding:26px;box-shadow:0 16px 36px rgba(12,35,64,.1);}
   .field-note .label{font-size:12.5px;color:var(--grey);margin-bottom:10px;}
   .field-note h4{font-size:16px;margin-bottom:10px;}
@@ -77,14 +81,14 @@
   .field-note .stat-line{font-size:14px;font-weight:500;color:var(--navy);}
 
   .hero-stats{display:grid;grid-template-columns:repeat(3,auto);justify-content:center;gap:clamp(18px,6vw,44px);margin-top:8px;}
-  .hstat-n{font-family:'Montserrat',sans-serif;font-weight:800;font-size:28px;color:#fff;}
+  .hstat-n{font-family:'Hanken Grotesk',sans-serif;font-weight:800;font-size:28px;color:#fff;}
   .hstat-l{font-size:13px;color:#B9CADC;margin-top:2px;}
   @media(max-width:600px){.hero-stats{grid-template-columns:repeat(3,1fr);gap:10px;} .hstat-n{font-size:clamp(19px,6.2vw,24px);} .hstat-l{font-size:11px;line-height:1.2;}}
   .home-hero{min-height:min(86vh,650px);display:flex;flex-direction:column;justify-content:space-between;padding:88px 0 40px;text-align:center;text-shadow:0 2px 18px rgba(0,0,0,.66),0 1px 4px rgba(0,0,0,.5);}
   @media(max-width:600px){.home-hero{min-height:min(84vh,560px);padding:74px 0 30px;}}
 
   .kicker{color:var(--blue);font-size:13.5px;font-weight:600;margin-bottom:8px;}
-  h2.h2{font-size:27px;font-weight:700;}
+  h2.h2{font-family:'Anton',sans-serif;font-weight:400;text-transform:uppercase;letter-spacing:.012em;font-size:clamp(28px,3.6vw,40px);line-height:1.02;}
   .lead{color:var(--grey);font-size:16px;}
 
   /* Asymmetric split helper */
@@ -174,7 +178,6 @@
       <button data-page="home" class="active" onclick="showPage('home')">Home</button>
       <a href="about" style="text-decoration:none;color:var(--grey);font-size:15px;">About</a>
       <a href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="text-decoration:none;color:var(--grey);font-size:15px;">Coaching</a>
-      <button data-page="youtube" onclick="showPage('youtube')">YouTube</button>
       <!-- Free Resources paused until the tools are ready. Restore this line when live:
       <button data-page="resources" onclick="showPage('resources')">Free Resources</button> -->
       <details class="resmenu"><summary>Free Resources</summary><div class="resmenu-panel"><a href="/block-finder/">Block Finder</a><a href="/time-audit/">Free Time Audit</a><a href="/start-a-business/">Start-a-Business Guide</a><a href="/newsletter/">Newsletter</a><a href="/blog/">Blog</a><a href="/book/">Free Strategy Call</a></div></details>
@@ -188,7 +191,6 @@
     <button onclick="showPage('home')">Home</button>
     <a href="about" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">About</a>
     <a href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">Coaching</a>
-    <button onclick="showPage('youtube')">YouTube</button>
     <a href="/time-audit/" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">Free Time Audit</a>
     <a href="/start-a-business/" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">Start-a-Business Guide</a>
     <a href="/newsletter/" style="text-decoration:none;color:var(--ink);font-size:15px;padding:10px 0;display:block;">Newsletter</a>
@@ -203,8 +205,9 @@
     <div class="wrap hero-grid">
       <div class="hero-left">
         <div class="hero-top">
-          <h1 style="color:#fff;max-width:17ch;margin:0 0 14px;font-size:clamp(30px,5.6vw,44px);line-height:1.1;">Today Is Someday. So Why Not Today?</h1>
-          <p class="sub" style="color:#fff;max-width:42ch;margin:0;font-size:clamp(16px,2.4vw,18px);">Build an extraordinary life, without sacrificing the people and the faith that make it worth living.</p>
+          <div style="color:#7ec8f0;font-size:13px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;">Dose of Courage Coaching</div>
+          <h1 class="anton hero-triad">Faith.<br>Family.<br><span class="hl">Business.</span></h1>
+          <p class="sub hero-steward">Steward your time, energy, and resources to build your faith, family, and business, and become the man, husband, and father God knows you can become.</p>
         </div>
         <div class="hero-stats">
           <div><div class="hstat-n">10+</div><div class="hstat-l">hours back / week</div></div>
@@ -265,7 +268,7 @@
       .hero-grid .hero-right{flex:0 0 420px;order:0;}
       .hero-split .hero-stats{justify-content:space-between;width:100%;gap:0;}
       .bf-expand{display:flex;}   /* expand is a desktop-only affordance */
-      .hero-split .hero-top h1{font-size:48px !important;line-height:1.08 !important;}
+      .hero-split .hero-top h1{font-size:clamp(56px,6.2vw,86px) !important;line-height:.98 !important;}
       .hero-split .hero-top .sub{font-size:19px !important;}
     }
     @media(max-width:600px){ .bf-shell{height:650px;} }
@@ -318,36 +321,79 @@
 
   <section>
     <div class="wrap">
-      <div class="kicker">Who this is for</div>
-      <h2 class="h2" style="max-width:22ch;margin-bottom:14px;">Build the business without losing the family it's all for</h2>
-      <p class="lead" style="max-width:66ch;margin-bottom:30px;">Scotty Eastwood is a <a href="/christian-business-coach" style="color:#7ec8f0;font-weight:600;">Christian business coach</a> for driven entrepreneurs, founders, and creators who are already producing real results and still working too many hours for what they get back. The whole method answers one question: how do you build an extraordinary life without sacrificing the people and things that make it worth living? Here is where most men get stuck, with a straight answer for each.</p>
-      <div style="display:grid;grid-template-columns:1fr;gap:20px;" id="homeTopics">
-        <a class="result" href="blog/christian-time-management-for-entrepreneurs" style="text-decoration:none;cursor:pointer;">
-          <h3>"I'm working all the time and still feel behind"</h3>
-          <p><strong>Christian time management for entrepreneurs:</strong> start the day with God, find the 20% that actually moves the needle, and protect it on the calendar. Read it &rarr;</p>
-        </a>
-        <a class="result" href="blog/how-to-balance-business-family-and-faith-as-a-christian-man" style="text-decoration:none;cursor:pointer;">
-          <h3>"I'm missing time with my family"</h3>
-          <p><strong>Balancing business, family, and faith as a Christian man</strong> is about harmony, not a perfect 50/50 split. Put first things first and the rest falls into place. Read it &rarr;</p>
-        </a>
-        <a class="result" href="blog/why-do-i-self-sabotage" style="text-decoration:none;cursor:pointer;">
-          <h3>"I know what to do, I just don't do it"</h3>
-          <p>The block is usually <strong>fear or a belief underneath, not laziness.</strong> Name it honestly and it shrinks every step you get closer. Read it &rarr;</p>
-        </a>
-        <a class="result" href="start-a-business/" style="text-decoration:none;cursor:pointer;">
-          <h3>"I want to start or grow, but I'm stuck"</h3>
-          <p>From <strong>starting a business the right way</strong> to building one that doesn't depend on you, with faith-first strategy and real accountability. Read it &rarr;</p>
-        </a>
+      <div class="whoRow">
+        <div class="whoCopy">
+          <div class="kicker">Is this you?</div>
+          <h2 class="h2" style="max-width:20ch;margin-bottom:14px;">Grow the business without missing the people it's all for</h2>
+          <p class="lead" style="margin-bottom:12px;">You're already driven. You're already producing real results. And you're still working too many hours for what you get back, caught in the pull between providing for your family and actually being there for them. As a <a href="/christian-business-coach" style="color:var(--blue);font-weight:600;">Christian business coach</a> for founders, salespeople, and creators, I work with men in exactly that spot. The goal isn't to work less for its own sake. It's to stop letting work, or anything else, crowd out the moments that matter most, so you don't look up in ten years with regrets you can't undo.</p>
+          <p class="lead" style="margin-bottom:0;font-weight:700;color:var(--navy);font-size:19px;">Build more. Miss less of what matters.</p>
+        </div>
+        <div class="whoPhoto"><img src="images/family-casual.webp" alt="Scotty Eastwood with his wife and daughters" loading="lazy" decoding="async"></div>
       </div>
-      <p style="margin-top:26px;font-size:15.5px;"><a href="blog/" style="color:var(--blue);font-weight:600;text-decoration:none;">More straight answers on the blog &rarr;</a></p>
+      <p style="max-width:60ch;margin:36px 0 20px;color:var(--grey);font-size:15.5px;">If any of these sound like you, you're exactly who I built this for:</p>
+      <div style="display:grid;grid-template-columns:1fr;gap:20px;" id="homeTopics">
+        <div class="result">
+          <h3>"I'm working all the time and still feel behind"</h3>
+          <p>You're not lazy. You're buried in busywork that feels productive but isn't moving the number that actually matters.</p>
+        </div>
+        <div class="result">
+          <h3>"I'm missing time with my family"</h3>
+          <p>The income is for them. But the hours it takes keep coming out of the time with them, and that quiet trade adds up fast.</p>
+        </div>
+        <div class="result">
+          <h3>"I know what to do, I just don't do it"</h3>
+          <p>It's rarely a knowledge problem. It's usually a fear or a belief running underneath, and it shrinks the moment you name it.</p>
+        </div>
+        <div class="result">
+          <h3>"I want to start or grow, but I'm stuck"</h3>
+          <p>You can feel the next level. You just can't see the next step. That's exactly where a clear plan and real accountability change everything.</p>
+        </div>
+      </div>
     </div>
-    <style>@media(min-width:760px){#homeTopics{grid-template-columns:1fr 1fr;gap:20px 36px;}}</style>
+    <style>
+      @media(min-width:760px){#homeTopics{grid-template-columns:1fr 1fr;gap:20px 36px;}}
+      .whoRow{display:grid;grid-template-columns:1fr;gap:4px;align-items:center;}
+      .whoPhoto img{width:100%;object-fit:cover;display:block;border-radius:0;box-shadow:none;
+        -webkit-mask-image:linear-gradient(to bottom, transparent 0%, #000 15%, #000 85%, transparent 100%);
+        mask-image:linear-gradient(to bottom, transparent 0%, #000 15%, #000 85%, transparent 100%);}
+      @media(max-width:819px){.whoPhoto img{aspect-ratio:4/5;object-position:center 28%;max-width:440px;margin:0 auto;}}
+      @media(min-width:820px){
+        .whoRow{grid-template-columns:1.05fr .95fr;gap:16px;}
+        .whoPhoto img{aspect-ratio:4/5;object-position:center 48%;
+          -webkit-mask-image:linear-gradient(to right, transparent 0%, rgba(0,0,0,.14) 12%, #000 30%);
+          mask-image:linear-gradient(to right, transparent 0%, rgba(0,0,0,.14) 12%, #000 30%);}
+      }
+    </style>
+  </section>
+
+  <!-- The Freedom Framework: method made visible (proof of system / authority) -->
+  <section style="background:linear-gradient(135deg,var(--navy),var(--navy2));">
+    <div class="wrap">
+      <div class="kicker" style="color:#7ec8f0;">How it helps</div>
+      <h2 class="h2" style="color:#fff;margin-bottom:8px;">The Freedom Framework</h2>
+      <p style="max-width:62ch;color:#C9D6E4;margin:0 0 30px;font-size:16px;">A simple, repeatable system we run together every week. You don't figure this out alone, I show you the exact order that gets you unstuck, wins your time back, and helps you thrive in the areas of life that matter most.</p>
+      <div class="ff-steps">
+        <div class="ff-step"><div class="ff-n">1</div><h3>We find your 20%</h3><p>Together we reverse-engineer the few actions actually driving your results, then cut the busywork that only feels productive.</p></div>
+        <div class="ff-step"><div class="ff-n">2</div><h3>We protect it on the calendar</h3><p>If it isn't scheduled, it doesn't happen. We build your week around the number that matters, then guard that time.</p></div>
+        <div class="ff-step"><div class="ff-n">3</div><h3>We clear what's blocking it</h3><p>Whether it's your actions, your habits, or the emotional resistance underneath, like fear, resentment, or guilt, we work through it together and get you moving again.</p></div>
+      </div>
+      <p style="color:#C9D6E4;max-width:62ch;margin:28px 0 0;font-size:15.5px;">The result isn't just a bigger business. It's 10+ hours a week back, pointed at the faith, family, and life the work was always for.</p>
+      <div style="margin-top:26px;"><a class="cta-btn" href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener">See how the coaching program works</a></div>
+    </div>
+    <style>
+      .ff-steps{display:grid;grid-template-columns:1fr;gap:16px;}
+      .ff-step{background:#fff;border-radius:12px;padding:24px;box-shadow:0 18px 40px rgba(8,22,40,.28);}
+      .ff-step .ff-n{width:36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;font-weight:800;font-family:'Hanken Grotesk',sans-serif;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+      .ff-step h3{font-family:'Hanken Grotesk',sans-serif;color:var(--navy);margin:0 0 6px;font-size:18px;}
+      .ff-step p{margin:0;font-size:15px;color:var(--ink);line-height:1.55;}
+      @media(min-width:760px){.ff-steps{grid-template-columns:repeat(3,1fr);gap:22px;}}
+    </style>
   </section>
 
   <section class="tsection">
     <div class="wrap">
       <div class="thead">
-        <div class="kicker">Real clients, real words</div>
+        <div class="kicker">Real clients, real results</div>
         <h2 class="h2">What working together actually feels like</h2>
       </div>
       <div class="tstage" id="tstage">
@@ -361,98 +407,162 @@
     </div>
   </section>
 
-  <!-- Three things: Coaching / Content / About (moved down here per layout order) -->
+  <!-- Proof, part 2: a short case study -->
   <section>
     <div class="wrap">
-      <div style="display:grid;grid-template-columns:1fr;gap:24px;">
-        <a href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;"><div class="result feature" style="cursor:pointer;">
-          <h3>Coaching: The Freedom Framework</h3>
-          <p>1:1 coaching for Christian entrepreneurs building freedom for their family. Time back, focused action, and the courage to actually follow through. Real clients get more results in 4 weeks than they did the entire quarter before.</p>
-        </div></a>
-        <div class="result" style="cursor:pointer;" onclick="showPage('youtube')">
-          <h3>Content: Before the Sun Sets</h3>
-          <p>Outdoor and family adventure content: surfing, spearfishing, camping, hiking. On the road to 100K. Subscribe if you like it!</p>
-        </div>
-        <a href="about" style="text-decoration:none;color:inherit;"><div class="result" style="cursor:pointer;">
-          <h3>About: the guy behind both</h3>
-          <p>Husband, dad, entrepreneur who's built and lost businesses. Faith-driven, still building everything you see here.</p>
-        </div></a>
+      <div style="max-width:660px;margin:0 auto;background:var(--paper);border-left:3px solid var(--blue);border-radius:10px;padding:26px 28px;">
+        <div class="kicker">A case in point</div>
+        <h3 style="font-family:'Hanken Grotesk',sans-serif;color:var(--navy);font-size:19px;margin:4px 0 10px;line-height:1.25;">A multi-million dollar acquisition, stalling at every decision</h3>
+        <p style="font-size:15.5px;color:var(--ink);margin:0;">Every time he got close to a real decision, the deal slowed down. It looked like bad timing. It was fear, dressed up as hesitation. He kept showing up scared instead of waiting to feel ready, closed and funded the deal, and still runs it today.</p>
       </div>
     </div>
   </section>
 
-  <!-- What you actually get (now above the client example, just under the three cards) -->
+  <!-- Why me: differentiation + credibility (complements, does not copy, the coaching landing page) -->
   <section style="background:var(--paper);">
     <div class="wrap">
-      <div class="field-note" style="max-width:660px;margin:0 auto;">
-        <div class="label">What you actually get, coaching-side</div>
-        <h4>Time back, focused action, real courage</h4>
-        <p>Clients who commit consistently get 10+ hours a week back, not by working harder but by finding the 20% that actually moves the number and clearing what's been quietly blocking it.</p>
-        <div class="stat-line">Faith, family, fun, finances, fitness, friendships. That is the point of the time back in the first place.</div>
+      <h2 class="h2" style="max-width:26ch;margin-bottom:18px;">Why choose Dose of Courage Coaching?</h2>
+      <div class="why-lead">
+        <img src="images/scotty-eastwood.jpg" alt="Scotty Eastwood, Dose of Courage Coaching" loading="lazy" decoding="async">
+        <p>I'm Scotty. Husband, father, and serial entrepreneur. The coach you'd actually be working with, every single call, is me. Here's why men choose this over the alternatives.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><h3>I've lived it, not just studied it</h3><p>I've run more than ten businesses, from local services to digital marketing, through real wins and real losses, like a partnership that cost me multiple six figures but earned me the hard lessons I now hand straight to my clients. I coach from the exact stall points I've hit, not from theory. I've lived it, and so have my clients.</p></div>
+        <div class="why-item"><h3>Faith is the foundation, not a label</h3><p>Principles taught by Jesus Christ are woven through how I coach. This is built on faith, and faith without works is dead, so we pair real belief with real action. God first, then family, then the business, in that order.</p></div>
+        <div class="why-item"><h3>Personalized every week, just for you</h3><p>Every call is with me, and your coaching is built custom around your progress, so each week stacks on the last. It's a real relationship, not a group program or an event you get lost in.</p></div>
+        <div class="why-item"><h3>A named method, and a guarantee</h3><p>The Freedom Framework is specific and repeatable, and it's backed by my Time-Back Guarantee: do the plan and win back at least 10 hours, or your money back.</p></div>
+      </div>
+      <div class="why-feature">
+        <h3>And honestly, I care, that's the real difference</h3>
+        <p>I do this because I genuinely love the people I work with. I want you to win in your life and in your mission as a husband and father, or the one you're becoming. Who you are matters. It shapes the generations coming after you, and I coach you like it does.</p>
+      </div>
+      <div style="margin-top:30px;">
+        <a class="cta-btn" href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener">Learn about the coaching program</a>
+        <p style="margin:16px 0 0;font-size:14.5px;color:var(--grey);">Prefer the backstory first? Read <a href="about" style="color:var(--blue);font-weight:600;text-decoration:none;">more of my story &rarr;</a></p>
       </div>
     </div>
+    <style>
+      .why-lead{display:flex;gap:22px;align-items:stretch;margin-bottom:30px;}
+      .why-lead img{width:230px;flex:none;object-fit:cover;object-position:center 28%;border-radius:0;box-shadow:none;
+        -webkit-mask-image:linear-gradient(to right, #000 66%, transparent 100%);
+        mask-image:linear-gradient(to right, #000 66%, transparent 100%);}
+      .why-lead p{margin:0;font-size:16px;color:var(--ink);flex:1;align-self:center;}
+      @media(max-width:600px){
+        .why-lead{align-items:flex-start;gap:14px;}
+        .why-lead img{width:118px;height:152px;align-self:flex-start;object-position:center 22%;
+          -webkit-mask-image:linear-gradient(to right, #000 68%, transparent 100%);
+          mask-image:linear-gradient(to right, #000 68%, transparent 100%);}
+        .why-lead p{font-size:15px;}
+      }
+      .why-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+      .why-item h3{font-family:'Hanken Grotesk',sans-serif;color:var(--navy);font-size:17px;margin:0 0 6px;}
+      .why-item p{margin:0;font-size:15px;color:var(--ink);line-height:1.55;}
+      @media(min-width:760px){.why-grid{grid-template-columns:1fr 1fr;gap:24px 36px;}}
+      .why-feature{margin-top:24px;background:linear-gradient(135deg,var(--navy),var(--navy2));border-radius:14px;padding:28px 30px;box-shadow:0 20px 44px rgba(8,22,40,.22);}
+      .why-feature h3{font-family:'Hanken Grotesk',sans-serif;color:#fff;font-size:19px;margin:0 0 8px;}
+      .why-feature p{margin:0;font-size:15.5px;color:#D8E3EF;line-height:1.6;max-width:70ch;}
+    </style>
   </section>
 
-  <!-- Real client example -->
+  <!-- Free help = the lead engine -->
   <section>
     <div class="wrap">
-      <div class="kicker">Real client example</div>
-      <h2 class="h2" style="margin-bottom:16px;">A multi-million dollar acquisition, stalling at every decision</h2>
-      <p style="font-size:16px;color:var(--grey);max-width:52ch;">Every time he got close to a real decision, the deal slowed down. It looked like bad timing. It was fear, dressed up as hesitation. He kept showing up scared instead of waiting to feel ready, then closed and funded the deal, and still runs it today.</p>
+      <h2 class="h2" style="max-width:26ch;margin-bottom:10px;">Free resources to help you overcome your obstacles</h2>
+      <p class="lead" style="max-width:60ch;margin-bottom:28px;">Real answers in a couple of minutes, and a clear first step you can take today.</p>
+      <div class="free-grid">
+        <a class="result" href="/block-finder/" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="free-ico"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="17" stroke="#5CC6F5" stroke-width="2" opacity=".45"/><circle cx="24" cy="24" r="11" stroke="#8FD8F8" stroke-width="2" opacity=".65"/><path d="M24 4v7M24 37v7M4 24h7M37 24h7" stroke="#CDEBFB" stroke-width="2.4" stroke-linecap="round"/><circle cx="24" cy="24" r="4.5" fill="#04A4E9"/><circle cx="24" cy="24" r="4.5" stroke="#CDEBFB" stroke-width="2"/></svg></div>
+          <h3>The Block Finder</h3>
+          <p>A few quick questions to find the #1 hidden block capping your growth, fear, clarity, priority, discipline, or a limiting belief, with the first move to clear it.</p>
+          <span class="free-cta">Find my block &rarr;</span>
+        </a>
+        <a class="result" href="/book/" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="free-ico"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M16.5 8.5c1.3-.4 2.6.3 3.1 1.6l1.9 4.6c.4 1 .2 2.2-.6 3l-2 1.9c1.4 3 3.9 5.5 6.9 6.9l1.9-2c.8-.8 2-1 3-.6l4.6 1.9c1.3.5 2 1.8 1.6 3.1l-1 3.4c-.4 1.4-1.7 2.3-3.1 2.1C21.6 37.1 10.9 26.4 9.3 14.6c-.2-1.4.7-2.7 2.1-3.1l5.1-3z" fill="#CDEBFB"/><path d="M28.5 12.5a8 8 0 0 1 7 7" stroke="#04A4E9" stroke-width="2.6" stroke-linecap="round"/><path d="M28 6.5a14 14 0 0 1 13.5 13.5" stroke="#5CC6F5" stroke-width="2.4" stroke-linecap="round" opacity=".7"/></svg></div>
+          <h3>A Free 1:1 Call</h3>
+          <p>A free 30-minute strategy call with me. We find your single biggest opportunity and your very next move.</p>
+          <span class="free-cta">Book my call &rarr;</span>
+        </a>
+        <a class="result" href="/time-audit/" style="text-decoration:none;color:inherit;cursor:pointer;">
+          <div class="free-ico"><svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="16" stroke="#8FD8F8" stroke-width="2" opacity=".55"/><path d="M24 24V13" stroke="#CDEBFB" stroke-width="2.8" stroke-linecap="round"/><path d="M24 24l7 4" stroke="#CDEBFB" stroke-width="2.8" stroke-linecap="round"/><path d="M24 8a16 16 0 1 1-11.3 4.7" stroke="#04A4E9" stroke-width="2.8" stroke-linecap="round"/><path d="M12.7 12.7V6.9M12.7 12.7h5.8" stroke="#04A4E9" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h3>The Time Audit</h3>
+          <p>See how many hours a week you could win back, with your top three time leaks and a fix for each. About two minutes.</p>
+          <span class="free-cta">Find my hours &rarr;</span>
+        </a>
+      </div>
     </div>
+    <style>
+      .free-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+      .free-ico{width:60px;height:60px;border-radius:16px;background:linear-gradient(150deg,#0C2340,#17436B);display:flex;align-items:center;justify-content:center;margin-bottom:16px;position:relative;box-shadow:0 10px 22px rgba(12,35,64,.2),inset 0 1px 0 rgba(255,255,255,.14);}
+      .free-ico::after{content:"";position:absolute;left:13px;right:13px;top:8px;height:12px;border-radius:999px;background:linear-gradient(rgba(255,255,255,.22),transparent);}
+      .free-ico svg{width:32px;height:32px;position:relative;z-index:1;}
+      .free-cta{display:inline-block;margin-top:10px;color:var(--blue);font-weight:700;font-size:14.5px;}
+      @media(min-width:760px){.free-grid{grid-template-columns:repeat(3,1fr);gap:24px;}}
+    </style>
   </section>
 
+  <!-- Keep reading: website depth, placed low so it doesn't pull people off before the Framework -->
+  <section style="background:var(--paper);">
+    <div class="wrap">
+      <div class="kicker">Keep reading</div>
+      <h2 class="h2" style="margin-bottom:8px;">Straight answers on the things that keep men stuck</h2>
+      <p class="lead" style="max-width:60ch;margin:0 0 26px;">No fluff, no filler. Real answers in my own words, pulled from what I actually coach.</p>
+      <div class="blog-grid">
+        <a href="blog/christian-time-management-for-entrepreneurs">Christian time management for entrepreneurs</a>
+        <a href="blog/how-to-balance-business-family-and-faith-as-a-christian-man">Balancing business, family, and faith as a Christian man</a>
+        <a href="blog/why-do-i-self-sabotage">Why do I self-sabotage?</a>
+        <a href="blog/how-to-run-a-business-without-sacrificing-your-family">How to run a business without sacrificing your family</a>
+      </div>
+      <p style="margin-top:22px;font-size:15.5px;"><a href="blog/" style="color:var(--blue);font-weight:600;text-decoration:none;">See all articles &rarr;</a></p>
+    </div>
+    <style>
+      .blog-grid{display:grid;grid-template-columns:1fr;gap:12px;}
+      .blog-grid a{display:flex;align-items:flex-start;gap:10px;color:var(--navy);text-decoration:none;font-weight:600;font-size:16px;line-height:1.35;}
+      .blog-grid a::before{content:"";flex:none;width:7px;height:7px;margin-top:7px;border-radius:50%;background:var(--blue);}
+      .blog-grid a:hover{color:var(--blue);}
+      @media(min-width:760px){.blog-grid{grid-template-columns:1fr 1fr;gap:14px 36px;}}
+    </style>
+  </section>
+
+  <!-- Family band: the emotional payoff before the close (blue scrim, text over the photo) -->
+  <section class="fam-band">
+    <div class="wrap">
+      <div class="fam-copy">
+        <h2>This is what the hours are for.</h2>
+        <p>Not someday, when things finally slow down. Now, while they are still this small. Win back the time, and spend it where it actually counts.</p>
+      </div>
+    </div>
+    <style>
+      .fam-band{position:relative;padding:96px 0;background:
+        linear-gradient(90deg, rgba(12,35,64,.9) 0%, rgba(12,35,64,.74) 36%, rgba(12,35,64,.3) 62%, rgba(12,35,64,.1) 100%),
+        url('images/family-fun.webp') center 28% / cover no-repeat;
+        background-color:#0C2340;}
+      .fam-band .fam-copy{max-width:40ch;}
+      .fam-band h2{font-family:'Hanken Grotesk',sans-serif;color:#fff;font-size:clamp(26px,4vw,38px);line-height:1.12;margin:0 0 14px;text-shadow:0 2px 20px rgba(8,22,40,.5);}
+      .fam-band p{color:#eaf1f8;font-size:17px;line-height:1.6;margin:0;max-width:34ch;text-shadow:0 1px 10px rgba(8,22,40,.5);}
+      @media(max-width:899px){
+        .fam-band{padding:60px 0;background:
+          linear-gradient(180deg, rgba(12,35,64,.82) 0%, rgba(12,35,64,.6) 42%, rgba(12,35,64,.74) 100%),
+          url('images/family-fun.webp') center 22% / cover no-repeat;
+          background-color:#0C2340;}
+      }
+    </style>
+  </section>
+
+  <!-- Soft close: free first, offer second (the landing page does the closing) -->
   <section style="background:linear-gradient(135deg,var(--navy),var(--navy2));text-align:center;">
     <div class="wrap">
-      <h2 class="h2" style="color:#fff;margin-bottom:8px;">Ready to see if this is a fit?</h2>
-      <p style="color:#C9D6E4;margin-bottom:24px;">Free 30-minute call. No pressure, just an honest conversation both ways.</p>
-      <a class="cta-btn" href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener">See the Freedom Framework</a>
+      <h2 class="h2" style="color:#fff;margin-bottom:8px;">Start where it's easiest</h2>
+      <p style="color:#C9D6E4;margin:0 auto 24px;max-width:50ch;">Find your #1 block in a couple of minutes, free. If it helps and you want to go deeper, that's where coaching comes in.</p>
+      <a class="cta-btn" href="/block-finder/">Take the free Block Finder</a>
+      <p style="margin:18px 0 0;font-size:14.5px;"><a href="https://coaching.scottyeastwood.com" target="_blank" rel="noopener" style="color:#9fd8f5;font-weight:600;text-decoration:none;">Or see how coaching works &rarr;</a></p>
     </div>
   </section>
 </div>
 
 <!-- ABOUT now lives on its own page: about.html (linked from nav + the home card). Kept as one canonical About for SEO and consistency. -->
 
-<!-- YOUTUBE / CONTENT -->
-<div class="page" id="page-youtube">
-  <img src="images/before-the-sun-sets-road-to-100k.webp" alt="Before the Sun Sets, Road to 100K" style="width:100%;height:auto;display:block;" loading="lazy" decoding="async">
-  <section style="padding-top:44px;">
-    <div class="wrap split s-8-4">
-      <div>
-        <div class="kicker">Content</div>
-        <h2 style="font-size:32px;font-weight:800;max-width:16ch;margin-bottom:16px;">Before the Sun Sets</h2>
-        <p class="lead" style="max-width:56ch;">Outdoor and family adventure content: dirt bikes, spearfishing, overlanding, and the real, unscripted stuff in between. Not a separate persona. Just the rest of who I am.</p>
-        <a class="cta-btn" href="https://www.youtube.com/@scottybeforethesunsets" target="_blank" rel="noopener" style="margin-top:8px;display:inline-block;">Subscribe on YouTube</a>
-      </div>
-      <img src="images/before-the-sun-sets-logo.png" alt="Before the Sun Sets logo" style="width:120px;height:120px;object-fit:contain;justify-self:end;" loading="lazy" decoding="async">
-    </div>
-  </section>
-
-  <section style="background:var(--paper);">
-    <div class="wrap">
-      <h2 class="h2" style="margin-bottom:24px;">Recent videos</h2>
-      <div style="display:grid;grid-template-columns:1fr;gap:20px;">
-        <a href="https://youtu.be/fSaVFfJkUU4" target="_blank" rel="noopener"><img src="images/spearfishing-and-sea-urchin-dive-video.jpg" alt="Spearfishing and sea urchin dive video" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <a href="https://youtu.be/1JagFYn9Nhs" target="_blank" rel="noopener"><img src="images/catch-and-cook-fishing-video-in-hawaii.jpg" alt="Catch and cook fishing video in Hawaii" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <a href="https://youtu.be/lwGobUkTWYc" target="_blank" rel="noopener"><img src="images/sur-ron-dirt-bike-overnight-moto-camp-video.jpg" alt="Sur-Ron dirt bike overnight moto camp video" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-      </div>
-    </div>
-    <style>
-      @media(min-width:800px){
-        #page-youtube section:nth-of-type(2) .wrap > div{grid-template-columns:repeat(3,1fr) !important;}
-      }
-    </style>
-  </section>
-
-  <section style="text-align:center;">
-    <div class="wrap" style="max-width:600px;">
-      <img src="images/road-to-100-000-subscribers-goal.jpg" alt="Road to 100,000 subscribers goal" style="width:220px;margin:0 auto 20px;display:block;" loading="lazy" decoding="async">
-      <h2 class="h2" style="margin-bottom:10px;">The goal: 100K before she turns 2</h2>
-      <p class="lead">Every subscriber is one step closer. If outdoor, family, and adventure content is your thing, come along for it.</p>
-      <a class="cta-btn" href="https://www.youtube.com/@scottybeforethesunsets" target="_blank" rel="noopener" style="margin-top:8px;display:inline-block;">Subscribe on YouTube</a>
-    </div>
-  </section>
-</div>
+<!-- Before the Sun Sets (YouTube) page removed: this is now a focused coaching site.
+     The channel lives on the About page + schema sameAs instead of a nav tab here. -->
 
 <!-- FREE RESOURCES page paused until the tools are ready. The RESOURCES data + renderResources() below are kept intact so this can be restored quickly. To bring it back: uncomment the nav link above and re-add the #page-resources section here. -->
 
@@ -539,6 +649,7 @@ function tInit(){
   tRender(); tRestart();
   const s = document.getElementById('tstage');
   if(s){ s.addEventListener('mouseenter', () => clearInterval(tTimer)); s.addEventListener('mouseleave', tRestart); }
+  let tRz; window.addEventListener('resize', () => { clearTimeout(tRz); tRz = setTimeout(tPosition, 150); });
 }
 if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', tInit); else tInit();
 </script>
@@ -564,6 +675,27 @@ if(document.readyState === 'loading') document.addEventListener('DOMContentLoade
   function visible(el){var r=el.getBoundingClientRect();return r.width>0&&r.height>0&&r.top<(window.innerHeight-16)&&r.bottom>16&&!(el.matches&&el.matches(':hover'));}
   function tick(){var v=btns.filter(visible);if(!v.length)return;btns.forEach(function(b){b.classList.remove('cta-wobble');});var el=v[i%v.length];i++;void el.offsetWidth;el.classList.add('cta-wobble');}
   setInterval(tick,3600);setTimeout(tick,2600);
+})();</script>
+
+<!-- Scroll-reveal: sections gently fade up as they enter, rewarding the scroll.
+     Content-safe: the reveal class (and hidden state) is only added for users who
+     have NOT asked for reduced motion, and never for the hero (already animated). -->
+<style>
+@media (prefers-reduced-motion:no-preference){
+  #page-home > section.reveal-on{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease;}
+  #page-home > section.reveal-on.in{opacity:1;transform:none;}
+}
+</style>
+<script>(function(){
+  if(window.matchMedia && window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+  var secs=[].slice.call(document.querySelectorAll('#page-home > section')).slice(1); // skip the hero
+  if(!secs.length) return;
+  secs.forEach(function(s){ s.classList.add('reveal-on'); });
+  if(!('IntersectionObserver' in window)){ secs.forEach(function(s){ s.classList.add('in'); }); return; }
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  },{threshold:0.12, rootMargin:'0px 0px -8% 0px'});
+  secs.forEach(function(s){ io.observe(s); });
 })();</script>
 </body>
 </html>
