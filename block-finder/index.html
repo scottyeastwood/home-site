@@ -209,12 +209,12 @@
     <!-- TOOL INTRO (shown inside the embedded widget) -->
     <div class="card-intro">
       <div class="ci-head">What's really stopping you from hitting the next level?</div>
-      <div class="ci-sub">Answer <span class="ci-num">4</span> quick questions to find out, <span class="ci-plus">+</span> the first step to fix it.</div>
+      <div class="ci-sub">Answer a few quick questions to find out, <span class="ci-plus">+</span> the first step to fix it.</div>
     </div>
     <!-- QUIZ -->
     <div id="quizStep" class="step on">
       <div class="progress"><i id="bar"></i></div>
-      <div class="qcount" id="qcount">Question 1 of 4</div>
+      <div class="qcount" id="qcount">Question 1</div>
       <div class="qstage" id="quizStage"></div>
       <button class="back" id="backBtn" style="display:none;">&larr; Back</button>
     </div>
@@ -260,6 +260,7 @@
           <p id="rCtaP">Book a free call: one honest conversation about what's stopping you and the first step past it.</p>
           <a class="cta-btn" id="bookBtn" href="/book/" target="_blank" rel="noopener" style="padding:14px 30px;">Book my free call</a>
         </div>
+        <div id="rExtra" style="text-align:center;"></div>
       </div>
     </div>
   </div>
@@ -299,7 +300,7 @@
     <div class="faq">
       <h2 style="border:none;margin-top:8px;">Block Finder FAQ</h2>
       <h3>How long does the Block Finder take?</h3>
-      <p>About two minutes. Three quick questions, a short follow-up to pinpoint your exact block, and you get your result right away.</p>
+      <p>About two minutes. A few quick questions that adapt to your answers, then you get your result right away.</p>
       <h3>What do I get at the end?</h3>
       <p>Your keystone block named specifically, why it's showing up, and a concrete first move you can take today to start clearing it.</p>
       <h3>Is it free?</h3>
@@ -331,289 +332,259 @@ var GHL = {
 /* =========================================================
    BLOCK CONTENT
 ========================================================= */
-var BLOCKS = {
-  F:{ name:"Fear", diag:"Fear is running the show",
-      cta:"We'll name the real fear and pick the one move you'll do scared. Just clarity on the next step." },
-  C:{ name:"Clarity", diag:"Your target is too fuzzy",
-      cta:"Bring your situation, and one call later you'll have a clear target and the few actions that hit it." },
-  P:{ name:"Priority", diag:"Your priorities are out of whack",
-      cta:"We'll find your actual needle-mover and what to cut. One conversation clears a lot of fog." },
-  D:{ name:"Discipline", diag:"Follow-through is where it breaks",
-      cta:"That outside accountability is literally what I do. Let's build the system that makes you consistent." },
-  B:{ name:"Limiting Belief", diag:"A limiting belief is capping you",
-      cta:"This is the deep work most people avoid. Let's talk through the story that's capping you, honest and judgment-free." }
-};
-
-/* specifying question options + the fix each unlocks */
-var SUBQ = {
-  F:[
-    {label:"What people would think if I tried and failed", key:"judgment",
-     sub:"Fear of Being Seen Fail",
-     spec:"Specifically: it's the fear of being seen fail.",
-     reframe:"You keep circling the bigger move and calling it being realistic. But what really stops you is the thought of people watching you try and fail, and that judgment was never yours to control. Most people fear being seen fail, not failing itself.",
-     move:"Write the exact thought you're afraid they'll have. Then take one small public rep this week, make the ask, post the thing, send the pitch, before you feel ready. Do it scared."},
-    {label:"That I'd actually fail, waste the time, money, or effort", key:"realism",
-     sub:"Fear of Actually Failing",
-     spec:"Specifically: it's the fear of actually failing.",
-     reframe:"You run the worst case on a loop, so you wait. But that worst case is almost always a fictional catastrophe, and you never give equal weight to the realistic best case, the question that actually matters.",
-     move:"Write the real worst case in one sentence and rate how likely it is, 1–10. Then write the realistic best case, the question you keep skipping. Then pick the smallest version of the move you can test this week. Reality beats imagination."},
-    {label:"That if it works, life gets harder or I change", key:"success",
-     sub:"Fear of Success",
-     spec:"Specifically: it's the fear of what success will cost you.",
-     reframe:"Part of you senses that if this works, life gets heavier, so you quietly keep it small. That's fear of success, and it's normal. Growth is supposed to stretch you, the way adding weight does in the gym.",
-     move:"Name the specific “bigger problem” you're bracing for, more responsibility, less time, harder calls. Then write the one skill or support that would make it manageable. That's your next thing to build, not avoid."}
-  ],
-  C:[
-    {label:"I don't have a clear end target", key:"target",
-     sub:"No Clear Target",
-     spec:"Specifically: you don't have a clear target.",
-     reframe:"You're busy and working hard, but you couldn't say in one number what you're actually aiming at. That's not an effort problem, it's a target problem, and your mind drifts to whatever's loudest until it has something concrete to lock onto.",
-     move:"Right now, write one number and a date: “I'll hit ___ by ___.” Exciting enough to pull you, measurable enough to track every single week."},
-    {label:"I have the target, but not the daily actions", key:"actions",
-     sub:"No Clear 20%",
-     spec:"Specifically: you have the target, but not the daily actions.",
-     reframe:"You know where you want to go, you just can't name the few moves that get you there, so the day fills with motion that doesn't move the needle. The target is set, the path isn't.",
-     move:"List everything you did last week. Circle the 20% that actually produced results. Next week, do more of those, and drop or delegate the rest."},
-    {label:"I have both, but my days still scatter", key:"scatter",
-     sub:"Scattered Days",
-     spec:"Specifically: your days scatter before you hit the target.",
-     reframe:"You've got the goal and even a plan, but the day gets away from you before you touch the thing that matters most. It's not drive you're missing, it's a protected block for the work that actually counts.",
-     move:"Tonight, write tomorrow's top 3 before bed and block the first 90 minutes for number one, phone in another room. Decide the night before so morning-you just executes."}
-  ],
-  P:[
-    {label:"Other people's urgent requests pull me away", key:"urgent",
-     sub:"Urgent Over Important",
-     spec:"Specifically: the urgent keeps beating the important.",
-     reframe:"You know exactly what matters most, and it keeps losing to whatever's urgent and in your face. But urgent and important aren't the same thing, and the important rarely shouts.",
-     move:"Tomorrow, do your one needle-mover first, before email, before anyone's asks. Protect the first hour like a meeting you can't move."},
-    {label:"Easier, more comfortable tasks win", key:"comfort",
-     sub:"The Comfort Trap",
-     spec:"Specifically: the comfortable keeps winning over the vital.",
-     reframe:"You drift to the easy, comfortable tasks and tell yourself they're productive. Sometimes it's pride, staying on what feels important instead of what actually is, while the vital thing sits there waiting.",
-     move:"When you catch yourself on an easy task, ask out loud: “Is this the most important thing I could do right now?” If no, switch. Name your needle-mover now so you've got the answer ready."},
-    {label:"I've said yes to too much", key:"overcommit",
-     sub:"Overcommitted",
-     spec:"Specifically: you're overcommitted.",
-     reframe:"You're not overworked, you're over-committed. You've said yes to so much that the few things that truly matter get buried, and every yes to the small was a quiet no to the big.",
-     move:"List your commitments, keep the 2–3 that actually move your goal, and make “not now” your default answer for the rest."}
-  ],
-  D:[
-    {label:"Starting, I put off the hard thing", key:"starting",
-     sub:"Trouble Starting",
-     spec:"Specifically: you stall at the starting line.",
-     reframe:"You know exactly what to do, you just can't seem to start. That stall is really fear of the discomfort of beginning, not laziness, and it shrinks the moment you take the first small step.",
-     move:"Tonight, lay out everything you need and set an exact start time. Decide: “I'm someone who starts.” Then start smaller than feels necessary, beginning is the hard part."},
-    {label:"Sustaining, I start strong, then fade", key:"sustaining",
-     sub:"Trouble Sustaining",
-     spec:"Specifically: you start strong, then fade.",
-     reframe:"You start strong, then a couple weeks later you've drifted back to how it was. You already show up to work whether you feel like it or not, so the discipline isn't missing, it just isn't attached to this yet.",
-     move:"Pick one keystone habit and do it daily for two weeks, badly is fine. Track it where you can see it. Don't break the chain."},
-    {label:"Accountability, no one's checking on me", key:"accountability",
-     sub:"No Accountability",
-     spec:"Specifically: no one is holding you accountable.",
-     reframe:"You know what to do, you even plan it, but with no one watching it quietly slides. Willpower alone is the slowest way there, and what you're missing is someone who'll keep it 100% real.",
-     move:"Tell one person who isn't impressed by you exactly what you'll do and by when, and ask them to check in."}
-  ],
-  B:[
-    {label:"I don't deserve or haven't earned it", key:"deserve",
-     sub:"“I Don't Deserve It”",
-     spec:"Specifically: part of you doesn't feel you deserve it.",
-     reframe:"You've built real things, and some quiet part of you still isn't sure you've earned the next level. That's identity, not effort. You've attached yourself to not enough, when the worth of a soul is great in the sight of God.",
-     move:"Write the sentence you keep believing (“I don't deserve ___”). Then list the evidence against it, what you've already built and earned. Read it back. You grant permission by acting like it's true before you feel it."},
-    {label:"Growing will cost me someone or something", key:"cost",
-     sub:"“It'll Cost Me”",
-     spec:"Specifically: you're afraid growth will cost you.",
-     reframe:"Part of you believes that growing will cost you something, or someone, you love, so you hold right where you are. That fear is real, don't dismiss it, but becoming always asks for something, and you can usually grow and still protect what matters with a plan.",
-     move:"Name exactly what you're afraid growth will cost you. Then ask: is that truly either/or, or can I grow AND protect it with a plan? Usually you can."},
-    {label:"I'm just not the type / not capable", key:"capable",
-     sub:"“I'm Not the Type”",
-     spec:"Specifically: you don't believe you're the type.",
-     reframe:"You look at the next level and some old voice says that's just not me. That's a belief, not a fact. You weren't born able to do most of what you already do well, you became it by reps.",
-     move:"List 3 things you're good at now that you were once terrible at. That's proof capability is built, not born. Then do one small rep of the new thing today."}
-  ]
-};
-
-/* short lines used only on the tiebreaker */
-var TIE_LINE = {
-  F:"Fear of putting myself out there and failing",
-  C:"Not being clear on what to aim at",
-  P:"Getting pulled off what matters most",
-  D:"Not following through consistently",
-  B:"A limiting story about what I'm capable of"
-};
-
-/* =========================================================
-   TIER 1 QUESTIONS (forced-choice, each option = a block)
-========================================================= */
-var QUESTIONS = [
-  { q:"It's Monday morning. The thing most likely to stall your week is…",
-    opts:[
-      {label:"A big move I keep avoiding", block:"F"},
-      {label:"Not knowing what matters most", block:"C"},
-      {label:"Doing small, urgent stuff over the big thing", block:"P"},
-      {label:"Knowing what to do, and not doing it", block:"D"},
-      {label:"A doubting voice saying it won't work", block:"B"}
-    ]},
-  { q:"The thing you're a little embarrassed to admit:",
-    opts:[
-      {label:"I care what people would think of me", block:"F"},
-      {label:"I'm not sure I deserve the next level", block:"B"},
-      {label:"My ego keeps me on the wrong things", block:"P"},
-      {label:"I've got no clear, exciting target", block:"C"},
-      {label:"I know better and still don't follow through", block:"D"}
-    ]},
-  { q:"When you don't do what you planned, it's usually because…",
-    opts:[
-      {label:"I didn't feel like it in the moment", block:"D"},
-      {label:"I didn't feel ready yet", block:"F"},
-      {label:"I wasn't sure it was the right thing", block:"C"},
-      {label:"Other to-dos pulled me away", block:"P"},
-      {label:"Part of me figured there was no point", block:"B"}
-    ]}
-];
-
-/* =========================================================
-   STATE + RENDER
-========================================================= */
-var idx = 0;
-var answers = [];       // Tier 1 picks (block letters)
 var started = false;
-var tiebreak = false;   // showing tiebreaker?
-var tieOptions = [];
-var LEADER = null;      // winning block letter
-var SUBKEY = null;      // chosen sub-type key
+var branch = null, behaviorKey = null, otherText = null, lastPickLabel = null, pathTotal = 2;
+var RESULT = null;
+var navStack = [];
 var stage = document.getElementById("quizStage");
-var subStage = document.getElementById("subStage");
 var bar = document.getElementById("bar");
 var qcount = document.getElementById("qcount");
 var backBtn = document.getElementById("backBtn");
 
-function renderQuestion(){
-  var Q = QUESTIONS[idx];
-  bar.style.width = (((idx+0.5)/4)*100) + "%";
-  qcount.textContent = "Question " + (idx+1) + " of 4";
-  var html = '<div class="qtext">' + Q.q + '</div><div class="opts">';
-  Q.opts.forEach(function(o,i){
-    var sel = (answers[idx] && answers[idx].i === i) ? " sel" : "";
-    html += '<button class="opt'+sel+'" data-i="'+i+'">'+o.label+'</button>';
-  });
-  html += '</div>';
-  stage.innerHTML = html;
-  stage.classList.remove("qstage"); void stage.offsetWidth; stage.classList.add("qstage");
-  backBtn.style.display = idx > 0 ? "inline-block" : "none";
-  bindOpts(stage, function(i){
-    answers[idx] = {i:i, block:Q.opts[i].block};
-    if(!started){ started = true; gtag("event","block_finder_start"); }
-    setTimeout(function(){ if(idx < QUESTIONS.length-1){ idx++; renderQuestion(); } else { afterTier1(); } }, 230);
-  });
+var Q1 = { q:"Which feels most true right now?", opts:[
+  {label:"I'm not clear on what my next goal actually is", go:"TARGET"},
+  {label:"I know the goal, but not the steps to get there", go:"PATH"},
+  {label:"I know my goal and what to do, but things keep getting in the way", go:"OBSTACLES"},
+  {label:"I know my goal and what to do and could do it, I just don't follow through", go:"EXECUTION"}
+]};
+
+var TARGET_Q = { q:"What makes it unclear?", opts:[
+  {label:"Too many directions to pick from", r:"TGT_SCATTER"},
+  {label:"I haven't given myself time to define what I really want", r:"TGT_UNDEFINED"},
+  {label:"I don't want to commit to a target and then miss it", r:"TGT_COMMIT"}
+]};
+
+var PATH_Q1 = { q:"Which feels most true right now?", opts:[
+  {label:"I don't know where to start", next:true},
+  {label:"I know where to start, but want more planned before I commit", r:"PATH_START"}
+]};
+var PATH_Q2 = { q:"Have you, or someone you know, done this (or something like it) before?", opts:[
+  {label:"Yes", r:"PATH_CLUES"},
+  {label:"No", r:"PATH_NEWGROUND"}
+]};
+
+var OBS_Q = { q:"Which feels most true right now?", opts:[
+  {label:"I don't have enough time", r:"OBS_TIME"},
+  {label:"I don't have enough money or resources", r:"OBS_RESOURCES"},
+  {label:"I don't feel ready, need to learn more, or the timing's off", r:"OBS_READY"},
+  {label:"Something else", other:true}
+]};
+
+var EXEC_A = { q:"When you sit down to do the big thing, what usually happens instead?", opts:[
+  {label:"I drift into other work, busywork, the safe or urgent stuff", b:"drift"},
+  {label:"I don't feel 100% today, so I figure I'll start next week when I can give it my all", b:"wait"},
+  {label:"I end up on my phone, social, videos, games, entertainment", b:"phone"},
+  {label:"I keep prepping, more research, more drafts, asking people what they think", b:"prep"}
+]};
+
+var FEAR_Q = { q:"And if you're honest, underneath that is...", opts:[
+  {label:"I'm afraid it won't work and I'll have wasted the effort", r:"FEAR_FAIL"},
+  {label:"I'm afraid of what people will think if I try and it flops", r:"FEAR_JUDGE"},
+  {label:"Part of me doubts I can really pull it off", r:"FEAR_BELIEF"},
+  {label:"It feels overwhelming, like too much", r:"FEAR_OVERWHELM"}
+]};
+
+var BEHAVIOR_LEAD = {
+  drift:"You stay busy on the safe, urgent work so the big thing never gets its turn.",
+  wait:"You tell yourself you'll start when you're at 100%, so next week keeps moving.",
+  phone:"You slip to your phone instead of sitting in the discomfort of starting.",
+  prep:"You prep and poll everyone instead of committing, because preparing feels safer than leaping."
+};
+
+var RESULTS = {
+  TGT_SCATTER:{block:"A scattered target", diag:"Your block is a scattered target.",
+    reframe:"You can only aim at one target at a time. When you have many, none of them get the attention they need and you dilute your focus across the board. You can't aim at multiple targets at once unless they completely overlap.",
+    move:"Pick the one target that matters most right now and aim everything at it. The rest wait their turn.",
+    cta:"We can pressure-test which one target deserves your full aim right now, on a free call."},
+  TGT_UNDEFINED:{block:"An undefined target", diag:"Your block is an undefined target.",
+    reframe:"You can't hit a target you don't know or can't see. If it's undefined, it doesn't exist yet, and you can't hit what doesn't exist.",
+    move:"Block 30 minutes this week and define it in one sentence: I'll hit [number] by [date]. Measurable enough to track, clear enough to aim at.",
+    cta:"Defining a target that's clear and worth chasing is exactly what we do on a free call."},
+  TGT_COMMIT:{block:"Fear of committing", diag:"Your block is the fear of committing.",
+    reframe:"Deep down, not committing is a way to avoid ever feeling like a failure. But you cannot fail if you don't give up. Keep trying consistently and you will get there. The only real failure is never stepping onto the playing field in the first place. And a missed goal still gets you further than never aiming at all.",
+    move:"Commit to the target and decide now that you keep working until you hit it.",
+    cta:"If the fear of missing is holding you back, that's exactly what we work through on a free call."},
+  PATH_CLUES:{block:"The path", diag:"Your block is the path, and you don't have to invent it.",
+    reframe:"Success leaves clues. We reverse engineer what's already worked, what's worked for you before in similar spots, and what's worked for others, then build your path from there.",
+    move:"Name one time you or someone you know pulled off something similar. Write the first three things that worked, and repeat step one this week.",
+    cta:"On a free call we'll reverse engineer the exact path from where you are to where you want to be."},
+  PATH_NEWGROUND:{block:"The path", diag:"Your block is the path, and you're closer to new ground.",
+    reframe:"If no one's done exactly this, we reverse engineer the closest thing, what's worked for you before, what's worked for others nearby, break it down to first principles, and define step one.",
+    move:"Find the closest example you can and write the single smallest step forward this week.",
+    cta:"Mapping a path through new ground is exactly what we'd build together on a free call."},
+  PATH_START:{block:"Starting", diag:"Your block isn't the plan, it's starting.",
+    reframe:"Having been in your shoes many times, I know the plan doesn't need to be perfect before you start. Starting makes the path clearer. It opens doors. Movement builds momentum, and momentum compounds. 100% started with 50% planned beats 100% planned and 0% started, every time. Action is where results happen.",
+    move:"You have enough to begin. Take the first real step this week, before the plan feels finished.",
+    cta:"If starting is your next block, that's a deeper one, and you just leveled up to it. Take the quiz again now that you've progressed, or book a free call and we'll clear it together.",
+    retake:true},
+  OBS_TIME:{block:"Priority, not time", diag:"Your block isn't time, it's priority.",
+    reframe:"Everyone gets the same hours. The ones winning aren't finding more, they're protecting them for what matters. Saying there's no time almost always means this isn't protected yet.",
+    move:"Block the first 90 minutes of tomorrow for your one needle-mover, phone in another room, before anything else gets a vote.",
+    cta:"On a free call I'll audit your week and show you the hours you can reclaim. Most people find 10 or more.",
+    link:{text:"Take the free Time Audit", href:"/time-audit/"}},
+  OBS_RESOURCES:{block:"Resourcefulness", diag:"Your block isn't resources, it's resourcefulness.",
+    reframe:"I made my first YouTube video on my phone, and that low-production video still pays me every month. If you had to make it happen, how would you? Even if it wasn't the perfection you'd want. 100% done and imperfect beats 0% done waiting for perfect.",
+    move:"Name the scrappy version of your next step you could do this week with exactly what you have. Then do it.",
+    cta:"We can find the resourceful path to your goal with what's already in your hands, on a free call."},
+  OBS_READY:{block:"The readiness trap", diag:"Your block is readiness, and readiness is a trap.",
+    reframe:"You become ready as you become. The path to becoming runs through discomfort, and no one is ever ready to face discomfort, but it's the only way to the growth you actually want. There's never a perfect time. Today is someday.",
+    move:"Take the smallest version of the move this week, before you feel ready. You become ready by starting.",
+    cta:"If not feeling ready is what's really in the way, that's exactly what we work through on a free call."},
+  FEAR_FAIL:{block:"Fear of failing", diag:"Your block is fear of failing.",
+    reframe:"Underneath it, you're avoiding the feeling of failing. But you cannot fail if you don't give up. Keep stepping up consistently and you will get there. The only real failure is never stepping onto the field. What if it actually works?",
+    move:"Write the real worst case and rate how likely it is, 1 to 10. Then write the realistic best case. Then take the smallest version of the move this week.",
+    cta:"We'll size up the real risk and build the move you'll make anyway, on a free call."},
+  FEAR_JUDGE:{block:"Fear of being judged", diag:"Your block is fear of being judged.",
+    reframe:"The thought of people watching you try and fail feels heavier than the thing itself. But even Jesus Christ, being perfect, was judged, mocked, and hated. Their judgment was never yours to carry. You were made to rise up and become the man God knows you can become, not to shrink for people's opinions.",
+    move:"Write the exact thought you're afraid they'll have. Then take one small public rep this week, make the ask, post the thing, send the pitch, before you feel ready. Do it scared.",
+    cta:"We'll get underneath the fear of judgment and pick the first rep you'll take anyway, on a free call."},
+  FEAR_BELIEF:{block:"A limiting belief", diag:"Your block is a limiting belief.",
+    reframe:"Some old voice says you're not the type. But that's a belief, not a fact. You weren't born able to do most of what you do well now, you became it by reps. God already knows who you're capable of becoming. Your job is to rise up and meet it.",
+    move:"List three things you're good at now that you were once terrible at. That's proof capability is built, not born. Then take one small rep today.",
+    cta:"If a story about what you're capable of is capping you, that's the deep work we do together on a free call."},
+  FEAR_OVERWHELM:{block:"Overwhelm", diag:"Your block is overwhelm.",
+    reframe:"The whole thing feels like too much, so your mind reaches for anything smaller. That's a signal the step is too big as-is. Overwhelm shrinks the moment you cut the next step small enough to move. Motion shifts emotion.",
+    move:"Shrink the next step until it feels almost too easy, then do just that piece today.",
+    cta:"We'll break it into a plan you can actually start, on a free call."}
+};
+
+function go(fn){ navStack.push(fn); fn(); updateChrome(); }
+function back(){ if(navStack.length>1){ navStack.pop(); navStack[navStack.length-1](); updateChrome(); } }
+function updateChrome(){
+  var n = navStack.length;
+  var pct = Math.min(n/Math.max(pathTotal, n), 1) * 100;
+  if(bar){ bar.style.width = pct + "%"; }
+  if(qcount){ qcount.textContent = "Question " + n; }
+  if(backBtn){ backBtn.style.display = n>1 ? "inline-block" : "none"; }
 }
 
 function bindOpts(container, cb){
   Array.prototype.forEach.call(container.querySelectorAll(".opt"), function(btn){
     btn.addEventListener("click", function(){
       var i = +btn.getAttribute("data-i");
-      Array.prototype.forEach.call(container.querySelectorAll(".opt"), function(b){b.classList.remove("sel");});
+      Array.prototype.forEach.call(container.querySelectorAll(".opt"), function(b){ b.classList.remove("sel"); });
       btn.classList.add("sel");
-      cb(i);
+      setTimeout(function(){ cb(i); }, 160);
     });
   });
 }
 
-backBtn.addEventListener("click", function(){
-  if(tiebreak){ tiebreak = false; idx = QUESTIONS.length-1; renderQuestion(); return; }
-  if(idx>0){ idx--; renderQuestion(); }
-});
-
-function tally(){
-  var c = {F:0,C:0,P:0,D:0,B:0};
-  answers.forEach(function(a){ if(a) c[a.block]++; });
-  var max = Math.max(c.F,c.C,c.P,c.D,c.B);
-  var order = ["F","C","P","D","B"];  // priority order for first-picked logic fallback
-  var leaders = order.filter(function(k){ return c[k] === max; });
-  return {counts:c, max:max, leaders:leaders};
-}
-
-function afterTier1(){
-  var t = tally();
-  if(t.leaders.length === 1){
-    LEADER = t.leaders[0];
-    showSpecifying();
-  } else {
-    // break ties by which tied block was picked earliest; if still equal, show tiebreaker
-    renderTiebreaker(t.leaders);
-  }
-}
-
-function renderTiebreaker(leaders){
-  // if one of the tied blocks was picked strictly earlier than the others, use it
-  var firstSeen = {};
-  answers.forEach(function(a,i){ if(a && firstSeen[a.block]===undefined) firstSeen[a.block]=i; });
-  // Only auto-resolve when exactly one leader appears and others never tie on first appearance:
-  // simplest + predictable: always ask the user when tied, so it reflects "right now".
-  tiebreak = true;
-  tieOptions = leaders;
-  bar.style.width = "70%";
-  qcount.textContent = "Quick tiebreaker";
-  var html = '<div class="qtext">Which of these sounds like the biggest hindrance right now?</div><div class="opts">';
-  leaders.forEach(function(b,i){
-    html += '<button class="opt" data-i="'+i+'">'+TIE_LINE[b]+'</button>';
-  });
+function renderOpts(q, opts, sublead, cb){
+  var html = "";
+  if(sublead){ html += '<div class="spec-lead">'+sublead+'</div>'; }
+  html += '<div class="qtext">'+q+'</div><div class="opts">';
+  opts.forEach(function(o,i){ html += '<button class="opt" data-i="'+i+'">'+o.label+'</button>'; });
   html += '</div>';
   stage.innerHTML = html;
   stage.classList.remove("qstage"); void stage.offsetWidth; stage.classList.add("qstage");
-  backBtn.style.display = "inline-block";
-  bindOpts(stage, function(i){
-    LEADER = tieOptions[i];
-    setTimeout(showSpecifying, 230);
+  bindOpts(stage, cb);
+  showStep("quizStep");
+}
+
+function renderQ1(){
+  renderOpts(Q1.q, Q1.opts, null, function(i){
+    if(!started){ started = true; gtag("event","block_finder_start"); }
+    var o = Q1.opts[i]; branch = o.go; lastPickLabel = o.label;
+    if(branch==="TARGET"){ pathTotal=2; go(renderTarget); }
+    else if(branch==="PATH"){ pathTotal=2; go(renderPathQ1); }
+    else if(branch==="OBSTACLES"){ pathTotal=2; go(renderObstacles); }
+    else { pathTotal=3; go(renderExecA); }
+  });
+}
+function renderTarget(){
+  renderOpts(TARGET_Q.q, TARGET_Q.opts, "You're close. One more to pinpoint it.", function(i){
+    lastPickLabel = TARGET_Q.opts[i].label; finish(TARGET_Q.opts[i].r);
+  });
+}
+function renderPathQ1(){
+  renderOpts(PATH_Q1.q, PATH_Q1.opts, "You're close. A couple quick ones to pinpoint it.", function(i){
+    var o = PATH_Q1.opts[i]; lastPickLabel = o.label;
+    if(o.r){ finish(o.r); } else { pathTotal=3; go(renderPathQ2); }
+  });
+}
+function renderPathQ2(){
+  renderOpts(PATH_Q2.q, PATH_Q2.opts, null, function(i){
+    lastPickLabel = PATH_Q2.opts[i].label; finish(PATH_Q2.opts[i].r);
+  });
+}
+function renderObstacles(){
+  renderOpts(OBS_Q.q, OBS_Q.opts, null, function(i){
+    var o = OBS_Q.opts[i]; lastPickLabel = o.label;
+    if(o.other){ pathTotal=3; go(renderOther); } else { finish(o.r); }
+  });
+}
+function renderOther(){
+  stage.innerHTML = '<div class="qtext">What is really getting in the way?</div>'+
+    '<textarea id="otherInput" rows="3" placeholder="Type what is really stopping you..." style="width:100%;box-sizing:border-box;border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:15px;font-family:inherit;resize:vertical;"></textarea>'+
+    '<div id="otherErr" style="color:#b00020;font-size:13px;margin-top:6px;display:none;">Type a few words first.</div>'+
+    '<button class="opt" id="otherGo" style="text-align:center;font-weight:600;margin-top:12px;">Continue</button>';
+  stage.classList.remove("qstage"); void stage.offsetWidth; stage.classList.add("qstage");
+  showStep("quizStep");
+  var inp = document.getElementById("otherInput"), err = document.getElementById("otherErr");
+  inp.addEventListener("input", function(){ err.style.display="none"; });
+  document.getElementById("otherGo").addEventListener("click", function(){
+    var v = (inp.value||"").trim();
+    if(v.length < 2){ err.style.display="block"; return; }
+    otherText = v; go(renderFearQ);
+  });
+}
+function renderExecA(){
+  renderOpts(EXEC_A.q, EXEC_A.opts, null, function(i){
+    behaviorKey = EXEC_A.opts[i].b; lastPickLabel = EXEC_A.opts[i].label; go(renderFearQ);
+  });
+}
+function renderFearQ(){
+  renderOpts(FEAR_Q.q, FEAR_Q.opts, null, function(i){
+    var o = FEAR_Q.opts[i];
+    lastPickLabel = otherText ? (otherText + " | " + o.label) : o.label;
+    finish(o.r);
   });
 }
 
-function showSpecifying(){
-  bar.style.width = "100%";
-  gtag("event","block_finder_block",{block:LEADER});
-  // render the specifying question like a normal question; the block stays hidden until the result
-  var subs = SUBQ[LEADER];
-  var html = '<div class="spec-lead">You&#39;re close. One more to pinpoint your block.</div><div class="qtext">What sounds like your biggest struggle right now?</div><div class="opts">';
-  subs.forEach(function(o,i){ html += '<button class="opt" data-i="'+i+'">'+o.label+'</button>'; });
-  html += '</div>';
-  subStage.innerHTML = html;
-  var b2 = document.getElementById("bar2"); if(b2){ b2.style.width = "87.5%"; }
-  bindOpts(subStage, function(i){
-    SUBKEY = subs[i].key;
-    setTimeout(showResult, 230);
-  });
-  showStep("blockStep");
+function finish(id){
+  var r = RESULTS[id];
+  var reframe = r.reframe;
+  if(behaviorKey && BEHAVIOR_LEAD[behaviorKey]){ reframe = BEHAVIOR_LEAD[behaviorKey] + " " + reframe; }
+  RESULT = { block:r.block, blockName:r.block, diag:r.diag, spec:"", reframe:reframe,
+             move:r.move, cta:r.cta, link:r.link||null, retake:!!r.retake,
+             sub:id, subName:(lastPickLabel||id) };
+  try{ localStorage.setItem("blockFinderResult", JSON.stringify(RESULT)); }catch(e){}
+  gtag("event","block_finder_block",{block:r.block});
+  showResult();
 }
-
-function currentSub(){
-  var subs = SUBQ[LEADER];
-  for(var i=0;i<subs.length;i++){ if(subs[i].key === SUBKEY) return subs[i]; }
-  return subs[0];
-}
-
-var RESULT = null;
 
 function populateDiagnosis(){
   document.getElementById("rDiag").textContent = RESULT.diag;
-  document.getElementById("rSpec").textContent = RESULT.spec;
+  var sp = document.getElementById("rSpec");
+  if(sp){ sp.textContent = RESULT.spec || ""; sp.style.display = RESULT.spec ? "" : "none"; }
   document.getElementById("rReframe").textContent = RESULT.reframe;
   document.getElementById("rMove").textContent = RESULT.move;
   document.getElementById("rCtaP").textContent = RESULT.cta;
 }
 
-/* after the specifying question: show the free diagnosis + gate the fix */
 function showResult(){
-  var B = BLOCKS[LEADER], s = currentSub();
-  RESULT = {block:LEADER, blockName:B.name, diag:B.diag, sub:SUBKEY, subName:s.sub,
-            spec:s.spec, reframe:s.reframe, move:s.move, cta:B.cta};
-  try{ localStorage.setItem("blockFinderResult", JSON.stringify(RESULT)); }catch(e){}
-  gtag("event","block_finder_complete",{block:LEADER, struggle:SUBKEY});
+  gtag("event","block_finder_complete",{block:RESULT.block});
   populateDiagnosis();
   document.getElementById("fixGate").style.display = "";
   document.getElementById("fixReveal").style.display = "none";
   mountForm();
   showStep("resultStep");
 }
+
+function restartQuiz(){
+  document.getElementById("fixReveal").style.display = "none";
+  document.getElementById("fixGate").style.display = "";
+  var ex = document.getElementById("rExtra"); if(ex){ ex.innerHTML = ""; }
+  branch=null; behaviorKey=null; otherText=null; lastPickLabel=null; RESULT=null; pathTotal=2;
+  navStack = []; go(renderQ1);
+}
+
+function start(){
+  started = false; branch=null; behaviorKey=null; otherText=null; lastPickLabel=null; RESULT=null; pathTotal=2;
+  navStack = []; go(renderQ1);
+}
+
+if(backBtn){ backBtn.addEventListener("click", back); }
 
 function buildSrc(){
   var params = [];
@@ -642,8 +613,15 @@ function revealFix(){
   populateDiagnosis();
   document.getElementById("fixGate").style.display = "none";
   document.getElementById("fixReveal").style.display = "";
+  var ex = document.getElementById("rExtra");
+  if(ex){
+    var h = "";
+    if(RESULT.link && RESULT.link.href){ h += '<a class="cta-btn" href="'+RESULT.link.href+'" style="display:inline-block;margin-top:12px;background:#fff;color:#0784BC;border:2px solid #04A4E9;">'+RESULT.link.text+'</a>'; }
+    if(RESULT.retake){ h += '<button type="button" class="cta-btn" onclick="restartQuiz()" style="display:inline-block;margin-top:12px;background:#fff;color:#0784BC;border:2px solid #04A4E9;cursor:pointer;">Take the quiz again</button>'; }
+    ex.innerHTML = h;
+  }
   showStep("resultStep");
-  gtag("event","block_finder_lead",{block:RESULT.block, struggle:RESULT.sub});
+  gtag("event","block_finder_lead",{block:RESULT.block});
 }
 
 document.getElementById("bookBtn").addEventListener("click", function(){ gtag("event","block_finder_book_click"); });
@@ -693,7 +671,7 @@ if(window.parent !== window){
   } else { setInterval(postHeight, 700); }
 }
 
-renderQuestion();
+start();
 
 /* Reveal-on-submit: set the GHL form's On-Submit action to redirect to
    https://scottyeastwood.com/block-finder/#results . After a real submission
