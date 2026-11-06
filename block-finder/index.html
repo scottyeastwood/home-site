@@ -66,7 +66,7 @@
   .hero .sub{color:#D8E3EE;font-size:clamp(16px,2.4vw,19px);max-width:52ch;margin:0 auto 8px;}
   .hero .trust{color:#96AAC0;font-size:13.5px;margin-top:14px;}
   /* quiz card */
-  .card{background:#fff;border-radius:14px;box-shadow:0 24px 60px rgba(12,35,64,.28);max-width:600px;margin:34px auto -46px;padding:26px 28px 28px;position:relative;text-align:left;}
+  .card{background:#fff;border-radius:14px;box-shadow:0 24px 60px rgba(12,35,64,.28);max-width:600px;margin:34px auto -46px;padding:26px 28px 28px;position:relative;text-align:left;scroll-margin-top:104px;}
   .progress{height:6px;background:var(--line);border-radius:99px;overflow:hidden;margin-bottom:8px;}
   .progress > i{display:block;height:100%;width:0;background:var(--blue);border-radius:99px;transition:width .35s ease;}
   .qcount{font-size:12.5px;color:var(--grey);font-weight:500;margin-bottom:20px;}
@@ -228,20 +228,17 @@
 
     <!-- RESULT: diagnosis (free) + gated fix -->
     <div id="resultStep" class="step">
-      <div class="r-tag-wrap"><span class="r-result-tag">YOUR RESULT</span></div>
-      <div class="r-diagnosis" id="rDiag"></div>
-      <div class="r-spec" id="rSpec"></div>
-      <div class="r-reframe" id="rReframe"></div>
-
-      <!-- GATED FIX -->
+      <!-- GATE: free name + problem + hook, then email to unlock -->
       <div id="fixGate">
-        <div class="fix-lead">Here's what to do about it.</div>
-        <div class="lock-card">
-          <div class="lock-h">&#128274; Your first steps to fix it</div>
-          <div class="blurwrap">Start by writing the exact thing you keep telling yourself, then take the one small rep this week that proves it wrong, and from there we work the next steps together until the block is cleared for good.</div>
-        </div>
-        <div class="gate-p">Drop your email to unlock your specific first steps to clear your block.</div>
+        <div class="r-tag-wrap"><span class="r-result-tag">YOUR RESULT</span></div>
+        <div class="r-diagnosis" id="rName"></div>
+        <div id="rLead" style="font-size:15.5px;color:var(--ink,#1A1D21);line-height:1.55;margin:4px 0 12px;"></div>
+        <div id="rPunch" style="font-weight:800;color:var(--navy,#0C2340);font-size:clamp(21px,5.4vw,28px);line-height:1.18;letter-spacing:-.01em;margin:0 0 10px;"></div>
+        <div id="rPromise" style="font-size:15px;font-weight:600;color:var(--ink,#1A1D21);line-height:1.5;margin:0 0 16px;"></div>
         <div id="formMount"></div>
+        <div class="gate-risk" style="font-size:13px;color:#6B7280;display:flex;gap:7px;align-items:center;justify-content:center;margin-top:10px;">&#128274; No spam, ever. Just your results.</div>
+        <div class="gate-or" style="text-align:center;color:#9aa3ad;font-size:13px;margin:14px 0 10px;">or</div>
+        <a class="cta-btn" id="gateBookBtn" href="/book/" target="_blank" rel="noopener" style="display:block;text-align:center;background:#fff;color:#0784BC;border:2px solid #04A4E9;">Skip ahead, book a free strategy call</a>
         <div class="gate-proof">
           <div class="stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="proof-quote">"I've gotten more done in the last two weeks working with Scotty than I had in the last four months."</p>
@@ -249,16 +246,16 @@
         </div>
       </div>
 
-      <!-- UNLOCKED FIX -->
+      <!-- CONFIRMATION: results emailed, nothing revealed on the page -->
       <div id="fixReveal" style="display:none;">
-        <div class="r-move">
-          <div class="mh"><span class="dot">&rarr;</span><span class="mt">Your first steps</span></div>
-          <p id="rMove"></p>
-        </div>
+        <div class="r-tag-wrap"><span class="r-result-tag">YOUR RESULT</span></div>
+        <div class="r-diagnosis" id="rNameConfirm" style="margin-bottom:12px;"></div>
+        <div class="sent-banner" style="background:#EAF7FE;border:1px solid #BDE3F7;border-radius:10px;padding:14px 16px;color:#0C2340;font-size:15px;line-height:1.55;margin-bottom:18px;">Your full breakdown is on its way to your inbox. If you don't see it in 5 minutes, check your spam folder and mark it <b>not spam</b> so we land in your inbox from here on.</div>
         <div class="r-cta">
-          <h3>Want help clearing it?</h3>
-          <p id="rCtaP">Book a free call: one honest conversation about what's stopping you and the first step past it.</p>
-          <a class="cta-btn" id="bookBtn" href="/book/" target="_blank" rel="noopener" style="padding:14px 30px;">Book my free call</a>
+          <h3>Your next step</h3>
+          <p>Start here, then let's talk it through on a free call.</p>
+          <a class="cta-btn" id="primaryCta" href="/book/" target="_blank" rel="noopener" style="padding:14px 30px;">Book my free strategy call</a>
+          <a class="cta-btn" id="secondaryCta" href="/book/" target="_blank" rel="noopener" style="display:none;margin-top:10px;background:#fff;color:#0784BC;border:2px solid #04A4E9;">Or book a free strategy call</a>
         </div>
         <div id="rExtra" style="text-align:center;"></div>
       </div>
@@ -302,9 +299,9 @@
       <h3>How long does the Block Finder take?</h3>
       <p>About two minutes. A few quick questions that adapt to your answers, then you get your result right away.</p>
       <h3>What do I get at the end?</h3>
-      <p>Your keystone block named specifically, why it's showing up, and a concrete first move you can take today to start clearing it.</p>
+      <p>Your exact block named, plus your full breakdown, why it's happening and your first steps to clear it, sent straight to your inbox.</p>
       <h3>Is it free?</h3>
-      <p>Yes. It is completely free. You enter your email to unlock your full personalized result and first move.</p>
+      <p>Yes, completely free. Drop your email and your personalized breakdown lands in your inbox in a couple of minutes.</p>
     </div>
   </div>
 </section>
@@ -392,60 +389,99 @@ var BEHAVIOR_LEAD = {
 };
 
 var RESULTS = {
-  TGT_SCATTER:{block:"A scattered target", diag:"Your block is a scattered target.",
-    reframe:"You can only aim at one target at a time. When you have many, none of them get the attention they need and you dilute your focus across the board. You can't aim at multiple targets at once unless they completely overlap.",
-    move:"Pick the one target that matters most right now and aim everything at it. The rest wait their turn.",
-    cta:"We can pressure-test which one target deserves your full aim right now, on a free call."},
-  TGT_UNDEFINED:{block:"An undefined target", diag:"Your block is an undefined target.",
-    reframe:"You can't hit a target you don't know or can't see. If it's undefined, it doesn't exist yet, and you can't hit what doesn't exist.",
-    move:"Block 30 minutes this week and define it in one sentence: I'll hit [number] by [date]. Measurable enough to track, clear enough to aim at.",
-    cta:"Defining a target that's clear and worth chasing is exactly what we do on a free call."},
-  TGT_COMMIT:{block:"Fear of committing", diag:"Your block is the fear of committing.",
-    reframe:"Deep down, not committing is a way to avoid ever feeling like a failure. But you cannot fail if you don't give up. Keep trying consistently and you will get there. The only real failure is never stepping onto the playing field in the first place. And a missed goal still gets you further than never aiming at all.",
-    move:"Commit to the target and decide now that you keep working until you hit it.",
-    cta:"If the fear of missing is holding you back, that's exactly what we work through on a free call."},
-  PATH_CLUES:{block:"The path", diag:"Your block is the path, and you don't have to invent it.",
-    reframe:"Success leaves clues. We reverse engineer what's already worked, what's worked for you before in similar spots, and what's worked for others, then build your path from there.",
-    move:"Name one time you or someone you know pulled off something similar. Write the first three things that worked, and repeat step one this week.",
-    cta:"On a free call we'll reverse engineer the exact path from where you are to where you want to be."},
-  PATH_NEWGROUND:{block:"The path", diag:"Your block is the path, and you're closer to new ground.",
-    reframe:"If no one's done exactly this, we reverse engineer the closest thing, what's worked for you before, what's worked for others nearby, break it down to first principles, and define step one.",
-    move:"Find the closest example you can and write the single smallest step forward this week.",
-    cta:"Mapping a path through new ground is exactly what we'd build together on a free call."},
-  PATH_START:{block:"Starting", diag:"Your block isn't the plan, it's starting.",
-    reframe:"Having been in your shoes many times, I know the plan doesn't need to be perfect before you start. Starting makes the path clearer. It opens doors. Movement builds momentum, and momentum compounds. 100% started with 50% planned beats 100% planned and 0% started, every time. Action is where results happen.",
-    move:"You have enough to begin. Take the first real step this week, before the plan feels finished.",
-    cta:"If starting is your next block, that's a deeper one, and you just leveled up to it. Take the quiz again now that you've progressed, or book a free call and we'll clear it together.",
+  TGT_SCATTER:{name:"The Split-Focus Trap",
+    lead:"You're not short on drive. You've got too many directions pulling at you at once.",
+    punch:"But the fix isn't saying no to everything.",
+    promise:"Drop your email and I'll send you the one move that clears it, straight to your inbox.",
+    why:"Why it's happening: you can only aim at one target at a time. Spread across five, each one gets a fraction of your focus and none of them break through. It isn't a work-ethic problem, it's a math problem. Divided attention divides results.",
+    steps:"The fix isn't saying no to everything, it's saying not right now. You give one goal space to breathe until it's strong enough to feed into the next, one target at a time, each one pouring into the one after it. This week, pick the target that makes the rest matter less and give it your full aim.",
+    cta:"This is exactly what we untangle together in 1:1 coaching. If you want it built with you instead of just explained, book a free call."},
+  TGT_UNDEFINED:{name:"The Missing Target Trap",
+    lead:"You're working hard, but if someone asked you to name your target in one number, you'd pause.",
+    punch:"Aim at nothing and you'll fall for everything.",
+    promise:"There's one move that changes it. Drop your email and I'll send you the why and the fix.",
+    why:"Why it's happening: you can't hit a target you can't see. An undefined goal doesn't exist yet, so your mind drifts to whatever's loudest until you give it something concrete to lock onto. Clarity isn't a nice-to-have, it's the whole engine. Every accomplishment started with a clear target, and the action followed.",
+    steps:"Block 30 minutes this week and define it in one sentence: I'll hit this number by this date. Measurable enough to track every week, clear enough to pull you toward it. That one sentence turns a wish into a target.",
+    cta:"On a free call we'll set a target that's both realistic and worth chasing, and this is the same work we do together in 1:1 coaching."},
+  TGT_COMMIT:{name:"The Fear-of-Missing Trap",
+    lead:"You keep the goal vague on purpose, because a goal you never set is one you can't miss.",
+    punch:"But the way out isn't lowering the goal or playing it safe.",
+    promise:"Drop your email and I'll send you the one reframe that makes missing almost impossible.",
+    why:"Why it's happening: a target you never set is one you can never miss, but it's also one you can never hit. The truth under the fear is this: you cannot fail if you don't give up. Keep showing up consistently and you get there. The only real failure is never stepping onto the playing field in the first place.",
+    steps:"Set the real target anyway, and decide now that you keep working until you reach it. Not a lowered one, not a safer one. A missed goal still carries you further than no goal at all.",
+    cta:"If the fear of missing is what keeps you small, that's exactly what we work through together in 1:1 coaching. Book a free call."},
+  PATH_CLUES:{name:"The Empty Map Trap",
+    lead:"You know where you want to go, you just can't see the first step.",
+    punch:"The best part? You don't have to draw the map from scratch.",
+    promise:"There's a shortcut most people miss. Drop your email and I'll show you where it is.",
+    why:"Why it's happening: you're trying to invent a path that already exists. Success leaves clues. Someone has done a version of this, and so have you in other areas of your life. You don't create the map, you reverse engineer it from what has already worked.",
+    steps:"Name one time you, or someone you know, pulled off something similar. Write down the first three things that worked, and repeat step one this week. That's your shortcut, you model what works instead of guessing.",
+    cta:"On a free call we'll reverse engineer the exact path from where you are to where you want to be, which is the heart of what we do in 1:1 coaching."},
+  PATH_NEWGROUND:{name:"The Uncharted Territory Trap",
+    lead:"You're attempting something you haven't seen anyone around you do, so there's no obvious playbook.",
+    punch:"But you're closer to a clear path than it feels.",
+    promise:"Drop your email for the first move, and this is one we should map together.",
+    why:"Why it's happening: uncharted doesn't mean impossible, it means you're the one drawing the map. You borrow the closest example, break the goal down to first principles, and define the next single step from there. Pioneers don't wait for a map, they make one as they walk.",
+    steps:"Find the closest adjacent example to what you're doing, then write the single smallest step forward you can take this week. One honest step clears more fog than a month of staring at the blank.",
+    cta:"Mapping new ground is exactly the kind of thing we build together on a free call, and in 1:1 coaching. This one really is better with a second set of eyes, mine."},
+  PATH_START:{name:"The Analysis Paralysis",
+    lead:"You know where to start. You just want the whole plan mapped before you commit.",
+    punch:"But more planning is the one thing that won't fix this.",
+    promise:"Drop your email and I'll send you the counterintuitive reason why, and what to do instead.",
+    why:"Why it's happening: waiting for the perfect plan is procrastination in a productive disguise. The plan clarifies by walking, not by waiting. Movement builds momentum and momentum compounds. 100% started with 50% planned beats 100% planned and 0% started, every single time. Action is where results happen.",
+    steps:"You already have enough to begin. Take the first real step this week, before the plan feels finished, and let the next step reveal itself once you're moving. If starting is still the hard part, that's a deeper block, and you just leveled up to it.",
+    cta:"Getting you moving and keeping you accountable is exactly what we do together in 1:1 coaching. Book a free call.",
     retake:true},
-  OBS_TIME:{block:"Priority, not time", diag:"Your block isn't time, it's priority.",
-    reframe:"Everyone gets the same hours. The ones winning aren't finding more, they're protecting them for what matters. Saying there's no time almost always means this isn't protected yet.",
-    move:"Block the first 90 minutes of tomorrow for your one needle-mover, phone in another room, before anything else gets a vote.",
-    cta:"On a free call I'll audit your week and show you the hours you can reclaim. Most people find 10 or more.",
-    link:{text:"Take the free Time Audit", href:"/time-audit/"}},
-  OBS_RESOURCES:{block:"Resourcefulness", diag:"Your block isn't resources, it's resourcefulness.",
-    reframe:"I made my first YouTube video on my phone, and that low-production video still pays me every month. If you had to make it happen, how would you? Even if it wasn't the perfection you'd want. 100% done and imperfect beats 0% done waiting for perfect.",
-    move:"Name the scrappy version of your next step you could do this week with exactly what you have. Then do it.",
-    cta:"We can find the resourceful path to your goal with what's already in your hands, on a free call."},
-  OBS_READY:{block:"The readiness trap", diag:"Your block is readiness, and readiness is a trap.",
-    reframe:"You become ready as you become. The path to becoming runs through discomfort, and no one is ever ready to face discomfort, but it's the only way to the growth you actually want. There's never a perfect time. Today is someday.",
-    move:"Take the smallest version of the move this week, before you feel ready. You become ready by starting.",
-    cta:"If not feeling ready is what's really in the way, that's exactly what we work through on a free call."},
-  FEAR_FAIL:{block:"Fear of failing", diag:"Your block is fear of failing.",
-    reframe:"Underneath it, you're avoiding the feeling of failing. But you cannot fail if you don't give up. Keep stepping up consistently and you will get there. The only real failure is never stepping onto the field. What if it actually works?",
-    move:"Write the real worst case and rate how likely it is, 1 to 10. Then write the realistic best case. Then take the smallest version of the move this week.",
-    cta:"We'll size up the real risk and build the move you'll make anyway, on a free call."},
-  FEAR_JUDGE:{block:"Fear of being judged", diag:"Your block is fear of being judged.",
-    reframe:"The thought of people watching you try and fail feels heavier than the thing itself. But even Jesus Christ, being perfect, was judged, mocked, and hated. Their judgment was never yours to carry. You were made to rise up and become the man God knows you can become, not to shrink for people's opinions.",
-    move:"Write the exact thought you're afraid they'll have. Then take one small public rep this week, make the ask, post the thing, send the pitch, before you feel ready. Do it scared.",
-    cta:"We'll get underneath the fear of judgment and pick the first rep you'll take anyway, on a free call."},
-  FEAR_BELIEF:{block:"A limiting belief", diag:"Your block is a limiting belief.",
-    reframe:"Some old voice says you're not the type. But that's a belief, not a fact. You weren't born able to do most of what you do well now, you became it by reps. God already knows who you're capable of becoming. Your job is to rise up and meet it.",
-    move:"List three things you're good at now that you were once terrible at. That's proof capability is built, not born. Then take one small rep today.",
-    cta:"If a story about what you're capable of is capping you, that's the deep work we do together on a free call."},
-  FEAR_OVERWHELM:{block:"Overwhelm", diag:"Your block is overwhelm.",
-    reframe:"The whole thing feels like too much, so your mind reaches for anything smaller. That's a signal the step is too big as-is. Overwhelm shrinks the moment you cut the next step small enough to move. Motion shifts emotion.",
-    move:"Shrink the next step until it feels almost too easy, then do just that piece today.",
-    cta:"We'll break it into a plan you can actually start, on a free call."}
+  OBS_TIME:{name:"The Time-Constraint Trap",
+    lead:"Between the business, the family, and everything pulling on you, it feels like there's never enough time.",
+    punch:"But the answer isn't more hours or a new app.",
+    promise:"Drop your email and I'll send you where your time is actually going, and the fix.",
+    why:"Why it's happening: the hours are usually there, they're just leaking. The average person now spends over 4 hours a day on their phone. That's not a judgment, it's a clue. The real problem is rarely a shortage of time, it's that the few things that move your life forward never get protected first. Everyone gets the same 24 hours, the ones winning just guard the right ones.",
+    steps:"Tomorrow, before email and before anyone's asks, block the first 90 minutes for your single highest-leverage task, phone in another room. Protect it like a meeting you can't move. Do that for one week and watch what shifts.",
+    cta:"Start with the free Time Audit to see exactly where your hours are leaking, then on a free call I'll help you rebuild the week around what matters. This is core to what we do in 1:1 coaching.",
+    tool:{text:"Take the free Time Audit", href:"/time-audit/"}},
+  OBS_RESOURCES:{name:"The Scarcity Trap",
+    lead:"It feels like you need more before you can really move, more money, more tools, more team.",
+    punch:"But you need far less than you think to start.",
+    promise:"Drop your email and I'll send you the one resourceful move most people skip.",
+    why:"Why it's happening: the constraint is rarely resources, it's resourcefulness. I made my first YouTube video on my phone, and that low-production video still pays me every month. The people who win with little get creative instead of waiting for enough. 100% done and imperfect beats 0% done waiting for perfect.",
+    steps:"Ask yourself: if I had to make this happen with exactly what I have right now, how would I? Name that scrappy version of the next step, and do it this week. You'll be amazed what you can build before you ever feel ready to.",
+    cta:"Finding the resourceful path with what's already in your hands is exactly what we do together in 1:1 coaching. Book a free call."},
+  OBS_READY:{name:"The “Someday” Trap",
+    lead:"You don't feel ready yet. Maybe you need to learn more, maybe the timing feels off.",
+    punch:"But you'll never feel ready, and that's exactly why waiting is the trap.",
+    promise:"Drop your email and I'll send you the way through.",
+    why:"Why it's happening: you don't get ready and then start, you start and become ready on the way. The path to becoming runs straight through discomfort, and nobody is ever ready to face discomfort, it's just the only road to the growth you want. There's never a perfect time. Someday isn't a day on the calendar. Today is someday.",
+    steps:"Take the smallest version of the move this week, before you feel ready. One real rep teaches you more than another month of preparing, and readiness is something you grow into by starting.",
+    cta:"If not feeling ready is what's really in the way, that's exactly what we work through together in 1:1 coaching. Book a free call."},
+  FEAR_FAIL:{name:"The “What-If” Trap",
+    lead:"Every time you get close to the big move, the what-ifs start, and you find other things to do instead.",
+    punch:"But that worst case you keep replaying is almost always fiction.",
+    promise:"Drop your email for the two-question test that shrinks the fear in about 60 seconds.",
+    why:"Why it's happening: the fear underneath is usually one of two things. Either the fear of being seen fail, or a quiet belief that if you fail it means something about you, that you ARE a failure. Avoiding the attempt feels safer than risking either one. But you run the worst case on a loop and never give equal weight to the realistic best case, and that worst case is almost always fiction.",
+    steps:"Write the real worst case in one sentence and rate how likely it is, 1 to 10. Then write the realistic best case, the question you keep skipping. Then take the smallest version of the move this week. Reality beats imagination, and the question that matters is, what if it actually works?",
+    cta:"Getting underneath the fear and building the move you'll actually make is exactly what we do together in 1:1 coaching. Book a free call."},
+  FEAR_JUDGE:{name:"The Fear Of Judgment Trap",
+    lead:"The thought of people watching you try and fall short feels heavier than the thing itself.",
+    punch:"But those opinions were never the scoreboard.",
+    promise:"Drop your email and I'll send you the reframe that frees you, and the first rep to take.",
+    why:"Why it's happening: what stops you isn't failing, it's being seen failing, and the fear it would confirm something about you. But that judgment was never yours to carry. Even Jesus Christ, being perfect, was judged, mocked, and hated. If perfection drew criticism, your imperfect attempt was always going to draw a few opinions too. Those opinions are not the scoreboard.",
+    steps:"Write the exact thought you're afraid they'll have. Then take one small public rep this week, make the ask, post the thing, send the pitch, before you feel ready. Do it scared, the courage comes after you move, not before. You were made to rise up and become the man God knows you can become, not to shrink for the crowd.",
+    cta:"On a free call we'll get underneath the fear and pick the first rep you'll take anyway, which is exactly the work we do in 1:1 coaching."},
+  FEAR_BELIEF:{name:"The Limiting Belief Trap",
+    lead:"Some part of you looks at the next level and quietly says, that's just not me.",
+    punch:"But that voice is lying, and there's a simple proof.",
+    promise:"Drop your email and I'll send it to you.",
+    why:"Why it's happening: that voice is a belief, not a fact, and often it's protecting you. If you never fully try, you never have to confront the fear that failing would prove you're not enough. But you weren't born able to do most of what you do well now, you became it by reps. God already knows who you're capable of becoming, your job is to rise up and meet it.",
+    steps:"List three things you're good at now that you were once terrible at. That's your proof that capability is built, not born. Then take one small rep of the new thing today, and start rewriting the story with evidence.",
+    cta:"If a false story about what you're capable of is capping you, that's the deep work we do together in 1:1 coaching. Book a free call."},
+  FEAR_OVERWHELM:{name:"The Overload Trap",
+    lead:"When you sit down to do the big thing, the whole weight of it lands at once and it just feels like too much.",
+    punch:"But the problem isn't the size of the goal, it's one thing you're doing with it.",
+    promise:"Drop your email and I'll send you the fix that makes starting feel easy.",
+    why:"Why it's happening: overwhelm almost always means the step is too big to start as-is. It's not that you can't do it, it's that your mind can't hold all of it at once. The moment you cut the next step down small enough to actually move, the overwhelm shrinks with it. Motion shifts emotion.",
+    steps:"Shrink the next step until it feels almost too easy, then do just that one piece today. Let momentum handle the rest. You don't climb the mountain in one leap, you take the next visible step.",
+    cta:"Breaking the overwhelming thing into a plan you can actually start, and keeping you moving on it, is exactly what we do together in 1:1 coaching. Book a free call."}
 };
 
 function go(fn){ navStack.push(fn); fn(); updateChrome(); }
@@ -543,28 +579,30 @@ function renderFearQ(){
 
 function finish(id){
   var r = RESULTS[id];
-  var reframe = r.reframe;
-  if(behaviorKey && BEHAVIOR_LEAD[behaviorKey]){ reframe = BEHAVIOR_LEAD[behaviorKey] + " " + reframe; }
-  RESULT = { block:r.block, blockName:r.block, diag:r.diag, spec:"", reframe:reframe,
-             move:r.move, cta:r.cta, link:r.link||null, retake:!!r.retake,
+  var lead = r.lead;
+  if(behaviorKey && BEHAVIOR_LEAD[behaviorKey]){ lead = BEHAVIOR_LEAD[behaviorKey] + " " + lead; }
+  var body = r.why + "\n\n" + r.steps + "\n\n" + r.cta;
+  RESULT = { name:r.name, block:r.name, blockName:r.name, lead:lead, punch:r.punch, promise:r.promise,
+             body:body, tool:r.tool||null, retake:!!r.retake,
              sub:id, subName:(lastPickLabel||id) };
   try{ localStorage.setItem("blockFinderResult", JSON.stringify(RESULT)); }catch(e){}
-  gtag("event","block_finder_block",{block:r.block});
+  gtag("event","block_finder_block",{block:r.name});
   showResult();
 }
 
-function populateDiagnosis(){
-  document.getElementById("rDiag").textContent = RESULT.diag;
-  var sp = document.getElementById("rSpec");
-  if(sp){ sp.textContent = RESULT.spec || ""; sp.style.display = RESULT.spec ? "" : "none"; }
-  document.getElementById("rReframe").textContent = RESULT.reframe;
-  document.getElementById("rMove").textContent = RESULT.move;
-  document.getElementById("rCtaP").textContent = RESULT.cta;
+function setDoor(el, isGate){
+  if(!el) return;
+  if(RESULT.tool){ el.textContent = (isGate ? "Skip ahead, " : "") + RESULT.tool.text; el.setAttribute("href", RESULT.tool.href); el.removeAttribute("target"); }
+  else { el.textContent = (isGate ? "Skip ahead, book a free strategy call" : "Book my free strategy call"); el.setAttribute("href","/book/"); el.setAttribute("target","_blank"); }
 }
 
 function showResult(){
   gtag("event","block_finder_complete",{block:RESULT.block});
-  populateDiagnosis();
+  document.getElementById("rName").textContent = "You're caught in " + RESULT.name + ".";
+  document.getElementById("rLead").textContent = RESULT.lead;
+  document.getElementById("rPunch").textContent = RESULT.punch;
+  document.getElementById("rPromise").textContent = RESULT.promise;
+  setDoor(document.getElementById("gateBookBtn"), true);
   document.getElementById("fixGate").style.display = "";
   document.getElementById("fixReveal").style.display = "none";
   mountForm();
@@ -588,7 +626,7 @@ if(backBtn){ backBtn.addEventListener("click", back); }
 
 function buildSrc(){
   var params = [];
-  var map = {block:RESULT.blockName, struggle:RESULT.subName, fix:RESULT.move};
+  var map = {block:RESULT.blockName, struggle:RESULT.subName, fix:RESULT.body};
   Object.keys(GHL.fieldKeys).forEach(function(f){
     var key = GHL.fieldKeys[f];
     if(key){ params.push(encodeURIComponent(key)+"="+encodeURIComponent(map[f])); }
@@ -610,21 +648,19 @@ function mountForm(){
 /* unlock the fix after GHL submit (diagnosis was already shown free) */
 function revealFix(){
   if(!RESULT) return;
-  populateDiagnosis();
   document.getElementById("fixGate").style.display = "none";
   document.getElementById("fixReveal").style.display = "";
+  var nm = document.getElementById("rNameConfirm"); if(nm){ nm.textContent = RESULT.name; }
+  setDoor(document.getElementById("primaryCta"), false);
+  var sec = document.getElementById("secondaryCta");
+  if(sec){ sec.style.display = RESULT.tool ? "inline-block" : "none"; }
   var ex = document.getElementById("rExtra");
-  if(ex){
-    var h = "";
-    if(RESULT.link && RESULT.link.href){ h += '<a class="cta-btn" href="'+RESULT.link.href+'" style="display:inline-block;margin-top:12px;background:#fff;color:#0784BC;border:2px solid #04A4E9;">'+RESULT.link.text+'</a>'; }
-    if(RESULT.retake){ h += '<button type="button" class="cta-btn" onclick="restartQuiz()" style="display:inline-block;margin-top:12px;background:#fff;color:#0784BC;border:2px solid #04A4E9;cursor:pointer;">Take the quiz again</button>'; }
-    ex.innerHTML = h;
-  }
+  if(ex){ ex.innerHTML = RESULT.retake ? '<button type="button" class="cta-btn" onclick="restartQuiz()" style="display:inline-block;margin-top:12px;background:#fff;color:#0784BC;border:2px solid #04A4E9;cursor:pointer;">Take the quiz again</button>' : ""; }
   showStep("resultStep");
   gtag("event","block_finder_lead",{block:RESULT.block});
 }
 
-document.getElementById("bookBtn").addEventListener("click", function(){ gtag("event","block_finder_book_click"); });
+["primaryCta","secondaryCta","gateBookBtn"].forEach(function(cid){ var el=document.getElementById(cid); if(el){ el.addEventListener("click", function(){ gtag("event","block_finder_cta_click",{cta:cid}); }); } });
 
 window.addEventListener("message", function(e){
   var d = e.data;
